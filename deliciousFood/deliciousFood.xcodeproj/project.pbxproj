@@ -27,6 +27,12 @@
 		B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DFD1BAF8A9600AE8193 /* ECSlidingSegue.m */; };
 		B2799E041BAF8A9600AE8193 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DFF1BAF8A9600AE8193 /* ECSlidingViewController.m */; };
 		B2799E071BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E061BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m */; };
+		B2799E0D1BAFA8FE00AE8193 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E0C1BAFA8FE00AE8193 /* TabViewController.m */; };
+		B2799E101BAFA91C00AE8193 /* firstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E0F1BAFA91C00AE8193 /* firstViewController.m */; };
+		B2799E131BAFA93900AE8193 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E121BAFA93900AE8193 /* secondViewController.m */; };
+		B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E151BAFAE6900AE8193 /* thirdViewController.m */; };
+		B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E181BAFAEBC00AE8193 /* loginViewController.m */; };
+		B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +83,18 @@
 		B2799DFF1BAF8A9600AE8193 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		B2799E051BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
 		B2799E061BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+		B2799E0B1BAFA8FE00AE8193 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		B2799E0C1BAFA8FE00AE8193 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		B2799E0E1BAFA91C00AE8193 /* firstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstViewController.h; sourceTree = "<group>"; };
+		B2799E0F1BAFA91C00AE8193 /* firstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstViewController.m; sourceTree = "<group>"; };
+		B2799E111BAFA93900AE8193 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		B2799E121BAFA93900AE8193 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
+		B2799E141BAFAE6900AE8193 /* thirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdViewController.h; sourceTree = "<group>"; };
+		B2799E151BAFAE6900AE8193 /* thirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thirdViewController.m; sourceTree = "<group>"; };
+		B2799E171BAFAEBC00AE8193 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		B2799E181BAFAEBC00AE8193 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resiveViewController.h; sourceTree = "<group>"; };
+		B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resiveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +218,7 @@
 			children = (
 				B2799DD81BAF84F600AE8193 /* Constants */,
 				B2799DD91BAF853800AE8193 /* ESClidingViewController */,
+				B2799E081BAFA6B700AE8193 /* image */,
 			);
 			name = 3rd;
 			sourceTree = "<group>";
@@ -227,6 +246,18 @@
 			children = (
 				B2799DB91BAF84A200AE8193 /* ViewController.h */,
 				B2799DBA1BAF84A200AE8193 /* ViewController.m */,
+				B2799E0B1BAFA8FE00AE8193 /* TabViewController.h */,
+				B2799E0C1BAFA8FE00AE8193 /* TabViewController.m */,
+				B2799E0E1BAFA91C00AE8193 /* firstViewController.h */,
+				B2799E0F1BAFA91C00AE8193 /* firstViewController.m */,
+				B2799E111BAFA93900AE8193 /* secondViewController.h */,
+				B2799E121BAFA93900AE8193 /* secondViewController.m */,
+				B2799E141BAFAE6900AE8193 /* thirdViewController.h */,
+				B2799E151BAFAE6900AE8193 /* thirdViewController.m */,
+				B2799E171BAFAEBC00AE8193 /* loginViewController.h */,
+				B2799E181BAFAEBC00AE8193 /* loginViewController.m */,
+				B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */,
+				B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -239,6 +270,14 @@
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		B2799E081BAFA6B700AE8193 /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = image;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,17 +380,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2799E0D1BAFA8FE00AE8193 /* TabViewController.m in Sources */,
 				B2799DBB1BAF84A200AE8193 /* ViewController.m in Sources */,
+				B2799E131BAFA93900AE8193 /* secondViewController.m in Sources */,
 				B2799E041BAF8A9600AE8193 /* ECSlidingViewController.m in Sources */,
+				B2799E101BAFA91C00AE8193 /* firstViewController.m in Sources */,
 				B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */,
+				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,
+				B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */,
 				B2799DB51BAF84A200AE8193 /* main.m in Sources */,
 				B2799E021BAF8A9600AE8193 /* ECSlidingInteractiveTransition.m in Sources */,
 				B2799E011BAF8A9600AE8193 /* ECSlidingAnimationController.m in Sources */,
 				B2799DE41BAF863C00AE8193 /* Utilities.m in Sources */,
 				B2799E001BAF8A9600AE8193 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				B2799E071BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m in Sources */,
+				B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
