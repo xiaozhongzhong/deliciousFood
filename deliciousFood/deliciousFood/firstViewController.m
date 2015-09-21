@@ -7,7 +7,7 @@
 //
 
 #import "firstViewController.h"
-
+#import "firstTableViewCell.h"
 @interface firstViewController ()
 
 @end
@@ -17,12 +17,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self requestData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)requestData {
+    PFQuery *query = [PFQuery queryWithClassName:@"Vegetables"];
+//    [query selectKeys:@[@"Dishes"]];
+//    [query selectKeys:@[@"Type"]];
+//    [query selectKeys:@[@"Price"]];
+//    [query selectKeys:@[@"Unlike"]];
+//    [query selectKeys:@[@"Like"]];
+//    [query selectKeys:@[@"Discriptiondetail"]];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [aiv stopAnimating];
+        if (!error) {
+            _objectsForShow = returnedObjects;
+             NSLog(@"%@", _objectsForShow);
+            [_TabV reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -33,5 +57,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.objectsForShow.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    firstTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    PFObject *object=[self.objectsForShow objectAtIndex:indexPath.row
+                      ];
+    cell.foodname.text=object[@"Dishes"];
+    cell.price.text=[NSString stringWithFormat:@"%@元",object[@"Price"]];
+    cell.like.text=[NSString stringWithFormat:@"%@",object[@"Like"]];
+    cell.unlike.text=[NSString stringWithFormat:@"%@",object[@"Unlike"]];
+    cell.foodDetail.text=object[@"Discriptiondetail"];
+    return cell;
+    
+}
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface daishouhuoViewController : UIViewController
+@interface daishouhuoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

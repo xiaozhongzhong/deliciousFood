@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dingdanViewController : UIViewController
+@interface dingdanViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

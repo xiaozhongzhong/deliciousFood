@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface firstViewController : UIViewController
+@interface firstViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *TabV;
+@property (strong,nonatomic) NSArray *objectsForShow;
 
 @end

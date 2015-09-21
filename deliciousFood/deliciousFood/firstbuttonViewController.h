@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface firstbuttonViewController : UIViewController
+@interface firstbuttonViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+
 
 @end

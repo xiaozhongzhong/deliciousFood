@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface firstcellViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface firstcellViewController : UIViewController
 
 @end
