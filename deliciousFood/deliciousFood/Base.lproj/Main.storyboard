@@ -126,10 +126,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="ZjZ-9b-jaO" id="up1-BC-Bgc"/>
-                                    <outlet property="delegate" destination="ZjZ-9b-jaO" id="uHU-iq-R45"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,10 +238,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="sYT-xq-1zX" id="hOp-Yz-St5"/>
-                                    <outlet property="delegate" destination="sYT-xq-1zX" id="Of2-zc-nzb"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -460,10 +452,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="x1h-eP-m3y" id="ub8-Ax-mi7"/>
-                                    <outlet property="delegate" destination="x1h-eP-m3y" id="kbu-OS-5xC"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -637,10 +625,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="jQG-3n-JNm" id="Dcw-Jy-04Y"/>
-                                    <outlet property="delegate" destination="jQG-3n-JNm" id="wbO-Uz-Ygb"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -870,10 +854,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="wVd-pQ-EJP" id="wFf-53-fmg"/>
-                                    <outlet property="delegate" destination="wVd-pQ-EJP" id="txC-BT-rQ9"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1037,10 +1017,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="x5W-Dz-Ojg" id="hhA-28-3jL"/>
-                                    <outlet property="delegate" destination="x5W-Dz-Ojg" id="v03-k2-SvY"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
