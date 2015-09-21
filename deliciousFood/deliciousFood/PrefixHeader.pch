@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  deliciousFood
+//
+//  Created by admin1 on 15/9/21.
+//  Copyright (c) 2015年 admin1. All rights reserved.
+//
+
+#ifndef deliciousFood_PrefixHeader_pch
+#define deliciousFood_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Parse/Parse.h>
+#import "Utilities.h"
+#import "storageMgr.h"
+#import "ECSlidingViewController.h"
+#import "Constants.h"
+
+
+#endif
