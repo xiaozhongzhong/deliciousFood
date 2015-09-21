@@ -8,6 +8,9 @@
 
 #import "firstViewController.h"
 #import "firstTableViewCell.h"
+#import "firstcellViewController.h"
+
+
 @interface firstViewController ()
 
 @end
@@ -38,7 +41,7 @@
         [aiv stopAnimating];
         if (!error) {
             _objectsForShow = returnedObjects;
-             NSLog(@"%@", _objectsForShow);
+             //NSLog(@"%@", _objectsForShow);
             [_TabV reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -48,15 +51,25 @@
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"Cell"]) {
+        //获得当前tableview行选中的数据
+        PFObject *object = [_objectsForShow objectAtIndex:[_TabV indexPathForSelectedRow].row];
+        firstcellViewController *firstcellVC = segue.destinationViewController;
+        firstcellVC.item = object;
+        firstcellVC.hidesBottomBarWhenPushed = YES;
+    }
+
 }
-*/
+
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.objectsForShow.count;
 }

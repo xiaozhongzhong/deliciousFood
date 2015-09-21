@@ -261,6 +261,8 @@
 		B2799DDC1BAF859700AE8193 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
+				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -274,8 +276,10 @@
 				B2799E0C1BAFA8FE00AE8193 /* TabViewController.m */,
 				B2799E0E1BAFA91C00AE8193 /* firstViewController.h */,
 				B2799E0F1BAFA91C00AE8193 /* firstViewController.m */,
-				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
-				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
+				B2799E231BAFCDC600AE8193 /* firstcellViewController.h */,
+				B2799E241BAFCDC600AE8193 /* firstcellViewController.m */,
+				B2799E261BAFD20800AE8193 /* firstbuttonViewController.h */,
+				B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */,
 				B2799E111BAFA93900AE8193 /* secondViewController.h */,
 				B2799E121BAFA93900AE8193 /* secondViewController.m */,
 				B2799E141BAFAE6900AE8193 /* thirdViewController.h */,
@@ -284,10 +288,6 @@
 				B2799E181BAFAEBC00AE8193 /* loginViewController.m */,
 				B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */,
 				B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */,
-				B2799E231BAFCDC600AE8193 /* firstcellViewController.h */,
-				B2799E241BAFCDC600AE8193 /* firstcellViewController.m */,
-				B2799E261BAFD20800AE8193 /* firstbuttonViewController.h */,
-				B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */,
 				B2799E291BAFD25C00AE8193 /* shopViewController.h */,
 				B2799E2A1BAFD25C00AE8193 /* shopViewController.m */,
 				B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */,

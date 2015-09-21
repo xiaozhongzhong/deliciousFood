@@ -10,4 +10,6 @@
 
 @interface firstcellViewController : UIViewController
 
+@property (strong,nonatomic) PFObject *item;
+
 @end
