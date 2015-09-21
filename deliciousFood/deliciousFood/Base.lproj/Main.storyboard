@@ -941,7 +941,7 @@
                                 <rect key="frame" x="0.0" y="129" width="320" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="jcK-z5-Cbk">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="jcK-z5-Cbk" customClass="firstTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jcK-z5-Cbk" id="MMv-Oo-AOe">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1026,6 +1026,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="foodDetail" destination="55E-kq-GWi" id="bql-BV-qKe"/>
+                                            <outlet property="foodname" destination="pMc-oy-Vdi" id="lrs-h9-eon"/>
+                                            <outlet property="imageVI" destination="m2U-ib-aXw" id="Gz3-3x-toz"/>
+                                            <outlet property="like" destination="qLk-4A-QLO" id="dMf-c5-Md1"/>
+                                            <outlet property="price" destination="l8S-d4-hzt" id="bPk-3G-5nF"/>
+                                            <outlet property="unlike" destination="Sw5-he-7eU" id="ZrW-Dd-u6f"/>
                                             <segue destination="2FH-xg-Vnj" kind="push" id="BTp-Nk-9Hj"/>
                                         </connections>
                                     </tableViewCell>

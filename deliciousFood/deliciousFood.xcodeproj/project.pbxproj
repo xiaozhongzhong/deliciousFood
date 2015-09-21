@@ -40,6 +40,7 @@
 		B2799E311BAFE00000AE8193 /* shoucangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E301BAFE00000AE8193 /* shoucangViewController.m */; };
 		B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E331BAFE00F00AE8193 /* dingdanViewController.m */; };
 		B2799E371BAFE02300AE8193 /* daishouhuoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */; };
+		B2799E3A1BAFEFB400AE8193 /* firstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,8 @@
 		B2799E331BAFE00F00AE8193 /* dingdanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dingdanViewController.m; sourceTree = "<group>"; };
 		B2799E351BAFE02300AE8193 /* daishouhuoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daishouhuoViewController.h; sourceTree = "<group>"; };
 		B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daishouhuoViewController.m; sourceTree = "<group>"; };
+		B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstTableViewCell.h; sourceTree = "<group>"; };
+		B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,8 @@
 				B2799E0C1BAFA8FE00AE8193 /* TabViewController.m */,
 				B2799E0E1BAFA91C00AE8193 /* firstViewController.h */,
 				B2799E0F1BAFA91C00AE8193 /* firstViewController.m */,
+				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
+				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
 				B2799E111BAFA93900AE8193 /* secondViewController.h */,
 				B2799E121BAFA93900AE8193 /* secondViewController.m */,
 				B2799E141BAFAE6900AE8193 /* thirdViewController.h */,
@@ -427,6 +432,7 @@
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,
 				B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */,
+				B2799E3A1BAFEFB400AE8193 /* firstTableViewCell.m in Sources */,
 				B2799DB51BAF84A200AE8193 /* main.m in Sources */,
 				B2799E021BAF8A9600AE8193 /* ECSlidingInteractiveTransition.m in Sources */,
 				B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */,
