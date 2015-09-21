@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface firstViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *TabV;
 
 @end

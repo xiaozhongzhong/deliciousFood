@@ -1064,6 +1064,7 @@
                     <navigationItem key="navigationItem" title="首页" id="YXc-B8-IsO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="TabV" destination="vJK-5R-Nmg" id="l55-Nc-XBk"/>
                         <segue destination="wVd-pQ-EJP" kind="push" id="sjM-qc-hwW"/>
                     </connections>
                 </viewController>
@@ -1353,6 +1354,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="R7x-ZA-vbI"/>
+        <segue reference="BTp-Nk-9Hj"/>
     </inferredMetricsTieBreakers>
 </document>
