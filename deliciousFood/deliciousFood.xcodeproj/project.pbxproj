@@ -10,7 +10,6 @@
 		B2799DB51BAF84A200AE8193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DB41BAF84A200AE8193 /* main.m */; };
 		B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DB71BAF84A200AE8193 /* AppDelegate.m */; };
 		B2799DBB1BAF84A200AE8193 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DBA1BAF84A200AE8193 /* ViewController.m */; };
-		B2799DBE1BAF84A200AE8193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2799DBC1BAF84A200AE8193 /* Main.storyboard */; };
 		B2799DC01BAF84A200AE8193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2799DBF1BAF84A200AE8193 /* Images.xcassets */; };
 		B2799DC31BAF84A200AE8193 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */; };
 		B2799DCF1BAF84A300AE8193 /* deliciousFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DCE1BAF84A300AE8193 /* deliciousFoodTests.m */; };
@@ -33,6 +32,7 @@
 		B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E151BAFAE6900AE8193 /* thirdViewController.m */; };
 		B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E181BAFAEBC00AE8193 /* loginViewController.m */; };
 		B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */; };
+		B2799E221BAFCC8200AE8193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2799E201BAFCC8200AE8193 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		B2799DB71BAF84A200AE8193 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B2799DB91BAF84A200AE8193 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B2799DBA1BAF84A200AE8193 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B2799DBD1BAF84A200AE8193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2799DBF1BAF84A200AE8193 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2799DC21BAF84A200AE8193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B2799DC81BAF84A300AE8193 /* deliciousFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = deliciousFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +94,7 @@
 		B2799E181BAFAEBC00AE8193 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resiveViewController.h; sourceTree = "<group>"; };
 		B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resiveViewController.m; sourceTree = "<group>"; };
+		B2799E211BAFCC8200AE8193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +265,7 @@
 		B2799DDE1BAF85AA00AE8193 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B2799DBC1BAF84A200AE8193 /* Main.storyboard */,
+				B2799E201BAFCC8200AE8193 /* Main.storyboard */,
 				B2799DBF1BAF84A200AE8193 /* Images.xcassets */,
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
 			);
@@ -360,7 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2799DBE1BAF84A200AE8193 /* Main.storyboard in Resources */,
+				B2799E221BAFCC8200AE8193 /* Main.storyboard in Resources */,
 				B2799DC31BAF84A200AE8193 /* LaunchScreen.xib in Resources */,
 				B2799DC01BAF84A200AE8193 /* Images.xcassets in Resources */,
 			);
@@ -419,20 +419,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2799DBC1BAF84A200AE8193 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2799DBD1BAF84A200AE8193 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B2799DC21BAF84A200AE8193 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		B2799E201BAFCC8200AE8193 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2799E211BAFCC8200AE8193 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
