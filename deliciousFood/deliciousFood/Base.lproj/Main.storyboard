@@ -926,7 +926,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全天供应" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAe-Nd-j2d">
-                                <rect key="frame" x="181" y="110" width="40" height="12"/>
+                                <rect key="frame" x="161" y="110" width="40" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1053,7 +1053,8 @@
                             <constraint firstItem="vJK-5R-Nmg" firstAttribute="leading" secondItem="Wzb-NC-VLf" secondAttribute="leading" id="YJb-bF-miz"/>
                             <constraint firstItem="vgP-g7-fil" firstAttribute="top" secondItem="q1H-b5-xbL" secondAttribute="bottom" constant="-1" id="eq4-OJ-iFC"/>
                             <constraint firstItem="TAe-Nd-j2d" firstAttribute="top" secondItem="ALt-ia-VrH" secondAttribute="bottom" id="hm3-Kv-7WN"/>
-                            <constraint firstItem="Bgd-Gu-M0R" firstAttribute="leading" secondItem="TAe-Nd-j2d" secondAttribute="trailing" constant="25" id="lrp-BL-k1g"/>
+                            <constraint firstItem="TAe-Nd-j2d" firstAttribute="top" secondItem="ALt-ia-VrH" secondAttribute="bottom" id="kbu-fV-MtC"/>
+                            <constraint firstItem="Bgd-Gu-M0R" firstAttribute="leading" secondItem="TAe-Nd-j2d" secondAttribute="trailing" constant="45" id="lrp-BL-k1g"/>
                             <constraint firstItem="Xpn-ne-V9u" firstAttribute="top" secondItem="vJK-5R-Nmg" secondAttribute="bottom" id="pg7-4u-OMj"/>
                             <constraint firstItem="ALt-ia-VrH" firstAttribute="leading" secondItem="B9l-VA-pkw" secondAttribute="trailing" constant="45" id="qJn-dN-xZJ"/>
                             <constraint firstItem="flq-Xd-aIV" firstAttribute="top" secondItem="B9l-VA-pkw" secondAttribute="bottom" id="qKb-M1-Dyo"/>
