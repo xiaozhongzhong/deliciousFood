@@ -34,6 +34,9 @@
 		B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */; };
 		B2799E221BAFCC8200AE8193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2799E201BAFCC8200AE8193 /* Main.storyboard */; };
 		B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E241BAFCDC600AE8193 /* firstcellViewController.m */; };
+		B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */; };
+		B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E2A1BAFD25C00AE8193 /* shopViewController.m */; };
+		B2799E2E1BAFD46E00AE8193 /* shopmoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,12 @@
 		B2799E211BAFCC8200AE8193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2799E231BAFCDC600AE8193 /* firstcellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstcellViewController.h; sourceTree = "<group>"; };
 		B2799E241BAFCDC600AE8193 /* firstcellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstcellViewController.m; sourceTree = "<group>"; };
+		B2799E261BAFD20800AE8193 /* firstbuttonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstbuttonViewController.h; sourceTree = "<group>"; };
+		B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstbuttonViewController.m; sourceTree = "<group>"; };
+		B2799E291BAFD25C00AE8193 /* shopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopViewController.h; sourceTree = "<group>"; };
+		B2799E2A1BAFD25C00AE8193 /* shopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopViewController.m; sourceTree = "<group>"; };
+		B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopmoneyViewController.h; sourceTree = "<group>"; };
+		B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopmoneyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +272,12 @@
 				B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */,
 				B2799E231BAFCDC600AE8193 /* firstcellViewController.h */,
 				B2799E241BAFCDC600AE8193 /* firstcellViewController.m */,
+				B2799E261BAFD20800AE8193 /* firstbuttonViewController.h */,
+				B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */,
+				B2799E291BAFD25C00AE8193 /* shopViewController.h */,
+				B2799E2A1BAFD25C00AE8193 /* shopViewController.m */,
+				B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */,
+				B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -393,15 +408,18 @@
 				B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */,
 				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
 				B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */,
+				B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */,
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,
 				B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */,
 				B2799DB51BAF84A200AE8193 /* main.m in Sources */,
 				B2799E021BAF8A9600AE8193 /* ECSlidingInteractiveTransition.m in Sources */,
+				B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */,
 				B2799E011BAF8A9600AE8193 /* ECSlidingAnimationController.m in Sources */,
 				B2799DE41BAF863C00AE8193 /* Utilities.m in Sources */,
 				B2799E001BAF8A9600AE8193 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				B2799E071BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m in Sources */,
+				B2799E2E1BAFD46E00AE8193 /* shopmoneyViewController.m in Sources */,
 				B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
