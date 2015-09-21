@@ -33,6 +33,7 @@
 		B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E181BAFAEBC00AE8193 /* loginViewController.m */; };
 		B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */; };
 		B2799E221BAFCC8200AE8193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2799E201BAFCC8200AE8193 /* Main.storyboard */; };
+		B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E241BAFCDC600AE8193 /* firstcellViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resiveViewController.h; sourceTree = "<group>"; };
 		B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resiveViewController.m; sourceTree = "<group>"; };
 		B2799E211BAFCC8200AE8193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2799E231BAFCDC600AE8193 /* firstcellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstcellViewController.h; sourceTree = "<group>"; };
+		B2799E241BAFCDC600AE8193 /* firstcellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstcellViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +261,8 @@
 				B2799E181BAFAEBC00AE8193 /* loginViewController.m */,
 				B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */,
 				B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */,
+				B2799E231BAFCDC600AE8193 /* firstcellViewController.h */,
+				B2799E241BAFCDC600AE8193 /* firstcellViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				B2799E101BAFA91C00AE8193 /* firstViewController.m in Sources */,
 				B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */,
 				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
+				B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */,
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,
 				B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */,
