@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vqW-CV-JJX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMh-4P-meO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="495" y="766"/>
+            <point key="canvasLocation" x="1027" y="766"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="ddv-1j-tLC">
@@ -234,35 +234,41 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-Ah-uOq">
-                                <rect key="frame" x="102" y="110" width="116" height="100"/>
+                                <rect key="frame" x="102" y="154" width="116" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="oI0-0N-7dN"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1h-5g-yZZ">
-                                <rect key="frame" x="30" y="249" width="260" height="30"/>
+                                <rect key="frame" x="30" y="293" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-Zt-3E4">
-                                <rect key="frame" x="30" y="304" width="260" height="30"/>
+                                <rect key="frame" x="30" y="348" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdF-tm-7mZ">
-                                <rect key="frame" x="16" y="434" width="288" height="26"/>
+                                <rect key="frame" x="16" y="478" width="288" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="快点加入我们吧！快来注册">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="RR6-K7-ne3" kind="push" id="3xK-Pt-vAR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gja-D9-2K0">
-                                <rect key="frame" x="16" y="371" width="288" height="32"/>
+                                <rect key="frame" x="16" y="415" width="288" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="登录">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginAction:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Olv-jY-1ne"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -284,14 +290,17 @@
                             <constraint firstItem="Umd-Ah-uOq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="90" id="ygl-Bf-NiZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3Ak-Yc-CEV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="WQm-Uv-wis" kind="push" identifier="toResive" id="vdu-BL-7a5"/>
+                        <outlet property="iamgeView" destination="Umd-Ah-uOq" id="DnW-hf-EuC"/>
+                        <outlet property="password" destination="ojz-Zt-3E4" id="6AH-0c-jgV"/>
+                        <outlet property="username" destination="F1h-5g-yZZ" id="vA9-rr-S95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="152"/>
+            <point key="canvasLocation" x="509" y="165"/>
         </scene>
         <!--Resive View Controller-->
         <scene sceneID="OWE-sJ-2WA">
@@ -339,14 +348,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="n7H-BL-5fn">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="4Rl-dq-HIB"/>
-                        <barButtonItem key="rightBarButtonItem" title="注册" id="cfF-kK-wuR"/>
+                        <barButtonItem key="rightBarButtonItem" title="注册" id="cfF-kK-wuR">
+                            <connections>
+                                <action selector="reserveAction:" destination="RR6-K7-ne3" id="CrP-Co-tir"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="address" destination="znE-Om-e7l" id="aLk-ac-xhF"/>
+                        <outlet property="confirm" destination="jT3-CF-Zh6" id="khA-Xo-9HS"/>
+                        <outlet property="email" destination="cd6-9P-XUE" id="Ybk-qJ-7JV"/>
+                        <outlet property="password" destination="sKm-er-CZP" id="TSj-T5-mka"/>
+                        <outlet property="phoneNumber" destination="3zF-G9-4lz" id="Tzu-Wi-dAI"/>
+                        <outlet property="username" destination="6VN-tI-r7P" id="LNa-lo-iU8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CC-kB-SQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="144"/>
+            <point key="canvasLocation" x="908" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EVc-Ng-TsW">
@@ -365,7 +385,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KM6-Yd-Bvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="766"/>
+            <point key="canvasLocation" x="629" y="766"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hTa-Li-CvV">
@@ -406,23 +426,22 @@
             <point key="canvasLocation" x="147" y="1426"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="3nd-fX-Q17">
+        <scene sceneID="lHw-MQ-Xmq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WQm-Uv-wis" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqW-CV-JJX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ZV7-Rd-G9X"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vqL-iY-c6s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YMf-Wd-HSR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RR6-K7-ne3" kind="relationship" relationship="rootViewController" id="nmN-8G-TAb"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="vXz-JT-PZt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fgN-fR-R9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bi-6i-hfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="134"/>
+            <point key="canvasLocation" x="97" y="165"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

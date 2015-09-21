@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface loginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *iamgeView;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 @end
