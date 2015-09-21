@@ -37,6 +37,9 @@
 		B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */; };
 		B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E2A1BAFD25C00AE8193 /* shopViewController.m */; };
 		B2799E2E1BAFD46E00AE8193 /* shopmoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */; };
+		B2799E311BAFE00000AE8193 /* shoucangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E301BAFE00000AE8193 /* shoucangViewController.m */; };
+		B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E331BAFE00F00AE8193 /* dingdanViewController.m */; };
+		B2799E371BAFE02300AE8193 /* daishouhuoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,12 @@
 		B2799E2A1BAFD25C00AE8193 /* shopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopViewController.m; sourceTree = "<group>"; };
 		B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopmoneyViewController.h; sourceTree = "<group>"; };
 		B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopmoneyViewController.m; sourceTree = "<group>"; };
+		B2799E2F1BAFE00000AE8193 /* shoucangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shoucangViewController.h; sourceTree = "<group>"; };
+		B2799E301BAFE00000AE8193 /* shoucangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shoucangViewController.m; sourceTree = "<group>"; };
+		B2799E321BAFE00F00AE8193 /* dingdanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dingdanViewController.h; sourceTree = "<group>"; };
+		B2799E331BAFE00F00AE8193 /* dingdanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dingdanViewController.m; sourceTree = "<group>"; };
+		B2799E351BAFE02300AE8193 /* daishouhuoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daishouhuoViewController.h; sourceTree = "<group>"; };
+		B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daishouhuoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +287,12 @@
 				B2799E2A1BAFD25C00AE8193 /* shopViewController.m */,
 				B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */,
 				B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */,
+				B2799E2F1BAFE00000AE8193 /* shoucangViewController.h */,
+				B2799E301BAFE00000AE8193 /* shoucangViewController.m */,
+				B2799E321BAFE00F00AE8193 /* dingdanViewController.h */,
+				B2799E331BAFE00F00AE8193 /* dingdanViewController.m */,
+				B2799E351BAFE02300AE8193 /* daishouhuoViewController.h */,
+				B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -416,10 +431,13 @@
 				B2799E021BAF8A9600AE8193 /* ECSlidingInteractiveTransition.m in Sources */,
 				B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */,
 				B2799E011BAF8A9600AE8193 /* ECSlidingAnimationController.m in Sources */,
+				B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */,
 				B2799DE41BAF863C00AE8193 /* Utilities.m in Sources */,
 				B2799E001BAF8A9600AE8193 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				B2799E071BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m in Sources */,
 				B2799E2E1BAFD46E00AE8193 /* shopmoneyViewController.m in Sources */,
+				B2799E371BAFE02300AE8193 /* daishouhuoViewController.m in Sources */,
+				B2799E311BAFE00000AE8193 /* shoucangViewController.m in Sources */,
 				B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
