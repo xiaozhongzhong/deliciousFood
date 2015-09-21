@@ -9,6 +9,7 @@
 #import "firstViewController.h"
 #import "firstTableViewCell.h"
 @interface firstViewController ()
+- (IBAction)zaodian:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -73,4 +74,7 @@
     
 }
 
+- (IBAction)zaodian:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self performSegueWithIdentifier:@"first" sender:self];
+}
 @end
