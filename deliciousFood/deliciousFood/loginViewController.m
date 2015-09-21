@@ -8,6 +8,7 @@
 
 #import "loginViewController.h"
 #import "resiveViewController.h"
+#import "TabViewController.h"
 
 @interface loginViewController ()
 
@@ -20,7 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    //登录成功后，退出后在打开第一时间显示用户名
+    if (![[Utilities getUserDefaults:@"userName"] isKindOfClass:[NSNull class]]) {
+        _username.text = [Utilities getUserDefaults:@"userName"];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +40,16 @@
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
 }
-
+-(void)popUpHomePage{
+     TabViewController *tabVC=[Utilities getStoryboardInstanceByIdentity:@"Tab"];
+    //创建导航控制器
+    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
+    //导航条隐藏
+    naviVC.navigationBarHidden = YES;
+    [self presentViewController:naviVC animated:YES completion:nil];
+    
+    
+}
 /*
 -(void)popUpHomePage{
     TapViewController *tabVC=[Utilities getStoryboardInstanceByIdentity:@"tap"];
@@ -85,6 +99,38 @@
 //
 //}
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    NSString *username = _username.text;
+    NSString *password = _password.text;
     
+    if ([username isEqualToString:@""] || [password isEqualToString:@""]) {
+        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
+        return;
+    }
+    
+    UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    aiv.frame = self.view.bounds;
+    [self.view addSubview:aiv];
+    [aiv startAnimating];
+    
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+        
+        [aiv stopAnimating];
+        if (user) {
+            PFUser *curr=[PFUser currentUser];
+            
+            [Utilities setUserDefaults:@"userName" content:curr[@"username"]];
+            [Utilities setUserDefaults:@"passWord" content:password];
+            //_usernameTF.text = @"";
+            _password.text = @"";
+            [self popUpHomePage];
+        } else if (error.code == 101) {
+            [Utilities popUpAlertViewWithMsg:@"用户名或密码错误" andTitle:nil];
+        } else if (error.code == 100) {
+            [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
+        }else{
+            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+        }
+    }];
+
 }
 @end
