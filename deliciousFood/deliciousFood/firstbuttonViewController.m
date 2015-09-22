@@ -18,35 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self requestData];
-}
+    [self zaodian];
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-- (void)requestData {
+-(void)zaodian{
     PFQuery *query = [PFQuery queryWithClassName:@"Vegetables"];
-    //[query selectKeys:@[@"Type"]];
-   // NSLog(@"%@",query);
-    //[query includeKey:@"Type"];
-    
     [query whereKey:@"Type" equalTo:@"早点"];
-    
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
             _objectsForShow = returnedObjects;
-            //NSLog(@"ttt=%@", _objectsForShow);
-            [_tableview reloadData];
+            [self.tableview reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-}
+   }
+
 /*
 #pragma mark - Navigation
 
@@ -58,7 +51,6 @@
 */
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //return 1;
     return self.objectsForShow.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -66,9 +58,6 @@
     
     PFObject *object=[self.objectsForShow objectAtIndex:indexPath.row
                       ];
-    NSLog(@"%@",object);
-//    PFObject *type=object[@"Type"];
-//    NSLog(@"%@",type);
     cell.foodname.text=object[@"Dishes"];
     cell.price.text=[NSString stringWithFormat:@"%@元",object[@"Price"]];
     cell.like.text=[NSString stringWithFormat:@"%@",object[@"Like"]];
@@ -88,6 +77,9 @@
     return cell;
     
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //回到当前页面,取消刚刚的选项
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end

@@ -31,21 +31,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (void)requestData {
     PFQuery *query = [PFQuery queryWithClassName:@"Vegetables"];
-//    [query selectKeys:@[@"Dishes"]];
-//    [query selectKeys:@[@"Type"]];
-//    [query selectKeys:@[@"Price"]];
-//    [query selectKeys:@[@"Unlike"]];
-//    [query selectKeys:@[@"Like"]];
-//    [query selectKeys:@[@"Discriptiondetail"]];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
             _objectsForShow = returnedObjects;
-             //NSLog(@"%@", _objectsForShow);
+           
             [_TabV reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -60,9 +53,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"Cell"]) {
+        if ([segue.identifier isEqualToString:@"Cell"]) {
         //获得当前tableview行选中的数据
         PFObject *object = [_objectsForShow objectAtIndex:[_TabV indexPathForSelectedRow].row];
         firstcellViewController *firstcellVC = segue.destinationViewController;
@@ -98,17 +89,26 @@
     return cell;
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //回到当前页面,取消刚刚的选项
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 
 - (IBAction)zaodian:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self performSegueWithIdentifier:@"first" sender:self];
+       [self performSegueWithIdentifier:@"first" sender:self];
 }
 
 - (IBAction)caociaAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self performSegueWithIdentifier:@"first" sender:self];
 }
 
 - (IBAction)tangAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self performSegueWithIdentifier:@"first" sender:self];
 }
 
 - (IBAction)yeAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self performSegueWithIdentifier:@"first" sender:self];
 }
 @end
