@@ -50,6 +50,7 @@
         PFObject *object = [_objectsForShow objectAtIndex:[self.tableview indexPathForSelectedRow].row];
         firstcellViewController *firstcellVC = segue.destinationViewController;
         firstcellVC.item = object;
+        
         firstcellVC.hidesBottomBarWhenPushed = YES;
     }
 }

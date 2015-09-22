@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   NSLog(@"%@",_item);
 
     self.label.text=self.item[@"Discriptiondetail"];
 
@@ -54,6 +53,9 @@
 */
 
 - (IBAction)shopAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    
+    
 }
 
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {

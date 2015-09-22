@@ -71,6 +71,17 @@
     //回到当前页面,取消刚刚的选项
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Cell"]) {
+        //获得当前tableview行选中的数据
+        PFObject *object = [_objectsForShow objectAtIndex:[self.tableview indexPathForSelectedRow].row];
+        firstcellViewController *firstcellVC = segue.destinationViewController;
+        firstcellVC.item = object;
+       
+        firstcellVC.hidesBottomBarWhenPushed = YES;
+    }
+}
+
 /*
 #pragma mark - Navigation
 
