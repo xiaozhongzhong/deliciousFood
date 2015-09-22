@@ -59,6 +59,27 @@
 }
 
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {
+   
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    PFObject *booking=[PFObject objectWithClassName:@"Favarites"];
+    booking[@"Timer"]=strDate;
     
+    PFUser *currentUser = [PFUser currentUser];
+    booking[@"FavaritesUser"]=currentUser;
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [ booking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [aiv stopAnimating];
+        if (succeeded) {
+            //回到上一页前更新页面的通知
+            // [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];
+            //返回上一页
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+        }
+    }];
+
 }
 @end
