@@ -62,7 +62,12 @@
     user[@"Address"]=address;
     user[@"Phonenumber"] = phoneNumber;
     user[@"Money"] = @10000;
-//    UIImage *imag=[UIImage imageNamed:@"1.png"];
+    
+     UIImage *imag=[UIImage imageNamed:@"1.png"];
+    NSData *photoData = UIImagePNGRepresentation(imag);
+    PFFile *photoFile = [PFFile fileWithName:@"photo.png" data:photoData];
+    user[@"TouXiang"] = photoFile;
+ 
 //    
 //    PFFile *photo =[Utilities image_transform_Data:imag];
 //    [user saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
