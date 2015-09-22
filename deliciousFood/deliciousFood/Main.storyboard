@@ -183,28 +183,15 @@
                                     <action selector="tuichiAction:forEvent:" destination="F4V-sj-w65" eventType="touchUpInside" id="aei-2p-gTJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urn-ik-Iix">
-                                <rect key="frame" x="16" y="309" width="240" height="50"/>
-                                <color key="backgroundColor" red="0.016692715401089409" green="0.38096324398890818" blue="0.66666666666666663" alpha="0.47000000000000003" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-P3-MLr">
+                                <rect key="frame" x="16" y="209" width="288" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="6N0-Tz-SvD"/>
-                                    <constraint firstAttribute="height" constant="50" id="F3y-TO-zUd"/>
+                                    <constraint firstAttribute="width" constant="288" id="zRW-ep-3nF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="修改密码">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="passwordAction:forEvent:" destination="F4V-sj-w65" eventType="touchUpInside" id="7OO-EE-wgH"/>
-                                    <segue destination="bhx-Jl-O1x" kind="push" identifier="password" id="zHW-PP-9Tm"/>
-                                </connections>
-                            </button>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-pU-b2z">
                                 <rect key="frame" x="16" y="243" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.018957684325469366" green="0.37964462278455979" blue="0.66666666666666663" alpha="0.47000000000000003" colorSpace="calibratedRGB"/>
@@ -226,15 +213,28 @@
                                     <action selector="usenameAction:forEvent:" destination="F4V-sj-w65" eventType="touchUpInside" id="HYZ-Qo-wuo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-P3-MLr">
-                                <rect key="frame" x="16" y="209" width="288" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urn-ik-Iix">
+                                <rect key="frame" x="16" y="309" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.016692715401089409" green="0.38096324398890818" blue="0.66666666666666663" alpha="0.47000000000000003" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="zRW-ep-3nF"/>
+                                    <constraint firstAttribute="width" constant="240" id="6N0-Tz-SvD"/>
+                                    <constraint firstAttribute="height" constant="50" id="F3y-TO-zUd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="修改密码">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="passwordAction:forEvent:" destination="F4V-sj-w65" eventType="touchUpInside" id="7OO-EE-wgH"/>
+                                    <segue destination="9VG-pu-3OZ" kind="push" identifier="pass" id="Ol5-DX-Acg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -326,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="235-JM-PYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1491" y="2976"/>
+            <point key="canvasLocation" x="2023" y="2976"/>
         </scene>
         <!--待收货-->
         <scene sceneID="FEH-E3-g8h">
@@ -2030,6 +2030,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tov-vK-bbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="661" y="2976"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v0Y-sV-qha">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9VG-pu-3OZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Xyv-zL-ONt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i8F-ZA-trn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bhx-Jl-O1x" kind="relationship" relationship="rootViewController" id="n2e-N0-xvO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvM-aO-sya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="2976"/>
         </scene>
     </scenes>
     <resources>
