@@ -9,6 +9,10 @@
 #import "LeftViewController.h"
 
 @interface LeftViewController ()
+- (IBAction)usenameAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)passwordAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)adressAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,4 +38,15 @@
 }
 */
 
+- (IBAction)usenameAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)passwordAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)adressAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end
