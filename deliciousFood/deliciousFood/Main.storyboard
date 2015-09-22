@@ -935,7 +935,7 @@
         <!--炒菜-->
         <scene sceneID="gjl-cP-km5">
             <objects>
-                <viewController storyboardIdentifier="caocai" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yYc-qi-Yx0" customClass="caocaiViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="caocai" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yYc-qi-Yx0" customClass="caocaiViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4KC-hM-ePA"/>
                         <viewControllerLayoutGuide type="bottom" id="9XH-BR-fLJ"/>
@@ -944,7 +944,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hzA-qk-o4e">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hzA-qk-o4e">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1058,6 +1058,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="炒菜" id="vSn-Qg-pq8"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="hzA-qk-o4e" id="WVQ-Qc-Sgf"/>
                     </connections>
@@ -1069,7 +1070,7 @@
         <!--夜宵-->
         <scene sceneID="qUO-FN-TC8">
             <objects>
-                <viewController storyboardIdentifier="yexiao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H7k-np-ms5" customClass="yexiaoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yexiao" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H7k-np-ms5" customClass="yexiaoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhy-5Q-GaN"/>
                         <viewControllerLayoutGuide type="bottom" id="49b-pd-DCc"/>
@@ -1078,7 +1079,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-Po-Myj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-Po-Myj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1192,6 +1193,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="夜宵" id="dOX-kJ-cuG"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="tWK-Po-Myj" id="Wli-W3-sX6"/>
                     </connections>
@@ -1203,7 +1205,7 @@
         <!--汤-->
         <scene sceneID="uhX-Iz-Soq">
             <objects>
-                <viewController storyboardIdentifier="tang" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lpw-6a-k0Z" customClass="tangViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tang" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lpw-6a-k0Z" customClass="tangViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yWT-Hc-buG"/>
                         <viewControllerLayoutGuide type="bottom" id="dCj-On-9s2"/>
@@ -1212,8 +1214,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-Na-bgZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-Na-bgZ">
+                                <rect key="frame" x="0.0" y="15" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="pEb-Wf-PYG" customClass="caileiTableViewCell">
@@ -1326,6 +1328,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="汤" id="0lQ-Lm-uHa"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="eZt-Na-bgZ" id="Q2p-Ot-SSR"/>
                     </connections>
@@ -1986,6 +1989,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7f6-tz-oj5"/>
+        <segue reference="sVn-bg-0ec"/>
     </inferredMetricsTieBreakers>
 </document>
