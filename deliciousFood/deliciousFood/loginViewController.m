@@ -28,6 +28,15 @@
 
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if ([[[storageMgr singletonStorageMgr]objectForKey:@"signup"]integerValue]==1) {
+        [[storageMgr singletonStorageMgr]removeObjectForKey:@"signup"];
+        [self popUpHomePage];
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -48,6 +57,7 @@
     //导航条隐藏
     naviVC.navigationBarHidden = YES;
     self.slidingViewController =[ECSlidingViewController slidingWithTopViewController:naviVC];
+    _slidingViewController.delegate =self;
     //左滑与右滑默认时间
     _slidingViewController.defaultTransitionDuration = 0.25;
     //设置手势（触摸与拖拽）
@@ -60,7 +70,7 @@
     //设置滑动的页面
     _slidingViewController.underLeftViewController = leftVC;
     //当滑出左侧菜单时，中间页面左边到屏幕右边的距离
-    _slidingViewController.anchorRightPeekAmount = UI_SCREEN_W /2;
+    _slidingViewController.anchorRightPeekAmount = UI_SCREEN_W /4;
     //anchorLeftpeekAmount:当滑出右侧菜单时，中间页面右边到屏幕左边的距离
     //下面是三个通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leftSwitchAction) name:@"leftSwitch" object:nil];
@@ -140,4 +150,112 @@
     }];
 
 }
+#pragma mark - ECSlidingViewControllerDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)slidingViewController:(ECSlidingViewController *)slidingViewController animationControllerForOperation:(ECSlidingViewControllerOperation)operation topViewController:(UIViewController *)topViewController {
+    _operation =operation;//获得当前操作
+    return self;
+}
+
+- (id<ECSlidingViewControllerLayout>)slidingViewController:(ECSlidingViewController *)slidingViewController layoutControllerForTopViewPosition:(ECSlidingViewControllerTopViewPosition)topViewPosition {
+    return self;
+}
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
+    return 0.25;
+}
+
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+    UIViewController *topViewController = [transitionContext viewControllerForKey:ECTransitionContextTopViewControllerKey];
+    UIViewController *underLeftViewController  = [transitionContext viewControllerForKey:ECTransitionContextUnderLeftControllerKey];
+    UIView *containerView = [transitionContext containerView];
+    
+    UIView *topView = topViewController.view;
+    topView.frame = containerView.bounds;
+    underLeftViewController.view.layer.transform = CATransform3DIdentity;
+    
+    if (_operation == ECSlidingViewControllerOperationAnchorRight) {
+        [containerView insertSubview:underLeftViewController.view belowSubview:topView];
+        
+        [self topViewStartingStateLeft:topView containerFrame:containerView.bounds];
+        [self underLeftViewStartingState:underLeftViewController.view containerFrame:containerView.bounds];
+        
+        NSTimeInterval duration = [self transitionDuration:transitionContext];
+        [UIView animateWithDuration:duration animations:^{
+            [self underLeftViewEndState:underLeftViewController.view];
+            [self topViewAnchorRightEndState:topView anchoredFrame:[transitionContext finalFrameForViewController:topViewController]];
+        } completion:^(BOOL finished) {
+            if ([transitionContext transitionWasCancelled]) {
+                underLeftViewController.view.frame = [transitionContext finalFrameForViewController:underLeftViewController];
+                underLeftViewController.view.alpha = 1;
+                [self topViewStartingStateLeft:topView containerFrame:containerView.bounds];
+            }
+            [transitionContext completeTransition:finished];
+        }];
+    } else if (_operation == ECSlidingViewControllerOperationResetFromRight) {
+        [self topViewAnchorRightEndState:topView anchoredFrame:[transitionContext initialFrameForViewController:topViewController]];
+        [self underLeftViewEndState:underLeftViewController.view];
+        
+        NSTimeInterval duration = [self transitionDuration:transitionContext];
+        [UIView animateWithDuration:duration animations:^{
+            [self underLeftViewStartingState:underLeftViewController.view containerFrame:containerView.bounds];
+            [self topViewStartingStateLeft:topView containerFrame:containerView.bounds];
+        } completion:^(BOOL finished) {
+            if ([transitionContext transitionWasCancelled]) {
+                [self underLeftViewEndState:underLeftViewController.view];
+                [self topViewAnchorRightEndState:topView anchoredFrame:[transitionContext initialFrameForViewController:topViewController]];
+            } else {
+                underLeftViewController.view.alpha = 1;
+                underLeftViewController.view.layer.transform = CATransform3DIdentity;
+                [underLeftViewController.view removeFromSuperview];
+            }
+            [transitionContext completeTransition:finished];
+        }];
+    }
+}
+
+
+#pragma mark - ECSlidingViewControllerLayout
+//当移动中间页面（右边）时，变一个位置
+- (CGRect)slidingViewController:(ECSlidingViewController *)slidingViewController frameForViewController:(UIViewController *)viewController topViewPosition:(ECSlidingViewControllerTopViewPosition)topViewPosition {
+    if (topViewPosition == ECSlidingViewControllerTopViewPositionAnchoredRight && viewController == slidingViewController.topViewController) {
+        return [self topViewAnchoredRightFrame:slidingViewController];
+    } else {
+        return CGRectInfinite;
+    }
+}
+
+#pragma mark - Private
+
+- (CGRect)topViewAnchoredRightFrame:(ECSlidingViewController *)slidingViewController {
+    CGRect frame = slidingViewController.view.bounds;
+    
+    frame.origin.x = slidingViewController.anchorRightRevealAmount;
+    frame.size.width = frame.size.width * 0.75;
+    frame.size.height = frame.size.height * 0.75;
+    frame.origin.y = (slidingViewController.view.bounds.size.height - frame.size.height) / 2;
+    
+    return frame;
+}
+- (void)topViewStartingStateLeft:(UIView *)topView containerFrame:(CGRect)containerFrame {
+    topView.layer.transform = CATransform3DIdentity;
+    topView.layer.position = CGPointMake(containerFrame.size.width / 2, containerFrame.size.height / 2);
+}
+
+- (void)underLeftViewStartingState:(UIView *)underLeftView containerFrame:(CGRect)containerFrame {
+    underLeftView.alpha = 0;
+    underLeftView.frame = containerFrame;
+    underLeftView.layer.transform = CATransform3DMakeScale(1.25, 1.25, 1);
+}
+
+- (void)underLeftViewEndState:(UIView *)underLeftView {
+    underLeftView.alpha = 1;
+    underLeftView.layer.transform = CATransform3DIdentity;
+}
+
+- (void)topViewAnchorRightEndState:(UIView *)topView anchoredFrame:(CGRect)anchoredFrame {
+    topView.layer.transform = CATransform3DMakeScale(0.75, 0.75, 1);
+    topView.frame = anchoredFrame;
+    topView.layer.position  = CGPointMake(anchoredFrame.origin.x + ((topView.layer.bounds.size.width * 0.75) / 2), topView.layer.position.y);
+}
+
 @end

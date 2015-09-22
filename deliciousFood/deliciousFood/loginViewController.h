@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
-@interface loginViewController : UIViewController
+@interface loginViewController : UIViewController<UIViewControllerAnimatedTransitioning, ECSlidingViewControllerDelegate, ECSlidingViewControllerLayout>
 @property (weak, nonatomic) IBOutlet UIImageView *iamgeView;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property(strong,nonatomic)ECSlidingViewController *slidingViewController;
-
+@property(assign,nonatomic)ECSlidingViewControllerOperation operation;
 @end
