@@ -736,20 +736,20 @@
                                     <constraint firstAttribute="height" constant="160" id="aM4-ni-lmN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
-                                <rect key="frame" x="16" y="340" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
+                                <rect key="frame" x="16" y="360" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
-                                <rect key="frame" x="16" y="369" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
+                                <rect key="frame" x="16" y="389" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
-                                <rect key="frame" x="16" y="429" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
+                                <rect key="frame" x="16" y="449" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加入购物车">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -758,8 +758,8 @@
                                     <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
-                                <rect key="frame" x="229" y="429" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
+                                <rect key="frame" x="229" y="449" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加入收藏夹">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -805,6 +805,8 @@
                         <outlet property="label" destination="1jY-Ue-TVD" id="Ate-vO-nzJ"/>
                         <outlet property="name" destination="rT1-bU-sAz" id="tTS-Y9-PGR"/>
                         <outlet property="pirce" destination="7GZ-Tr-hpV" id="afR-vO-5CK"/>
+                        <outlet property="shopcar" destination="DhT-lA-sOt" id="nlh-8Q-Tfx"/>
+                        <outlet property="shoucangjia" destination="NOY-Fx-17S" id="vdI-jK-fMC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZ0-AJ-qmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1037,7 +1039,7 @@
                                             <outlet property="jieshao" destination="cps-xg-VSU" id="SOx-q2-IyD"/>
                                             <outlet property="like" destination="qgI-w4-MQh" id="V53-Di-0gL"/>
                                             <outlet property="price" destination="tNH-qb-8WT" id="wwK-1P-cwB"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="6dk-6Y-Uhd"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="6dk-6Y-Uhd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1172,7 +1174,7 @@
                                             <outlet property="jieshao" destination="3rE-DL-fJA" id="l8G-MY-lf1"/>
                                             <outlet property="like" destination="OTM-ur-Jau" id="m24-nW-NzM"/>
                                             <outlet property="price" destination="bk2-L2-T20" id="5aO-5x-AfI"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="sVn-bg-0ec"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="sVn-bg-0ec"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1307,7 +1309,7 @@
                                             <outlet property="jieshao" destination="FuL-xk-LZL" id="nGa-Z7-PUi"/>
                                             <outlet property="like" destination="kwu-eu-941" id="q08-75-lKV"/>
                                             <outlet property="price" destination="p92-Tb-r0y" id="QkL-RI-bfT"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="7f6-tz-oj5"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="7f6-tz-oj5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
