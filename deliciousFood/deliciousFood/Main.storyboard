@@ -1754,7 +1754,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1h-5g-yZZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1h-5g-yZZ">
                                 <rect key="frame" x="30" y="211" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1762,7 +1762,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="rar-CU-cdV"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-Zt-3E4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-Zt-3E4">
                                 <rect key="frame" x="30" y="266" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1770,7 +1770,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="zBj-ZQ-0Xa"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdF-tm-7mZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdF-tm-7mZ">
                                 <rect key="frame" x="16" y="396" width="288" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="快点加入我们吧！快来注册">
@@ -1780,7 +1780,7 @@
                                     <segue destination="RR6-K7-ne3" kind="push" id="3xK-Pt-vAR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gja-D9-2K0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gja-D9-2K0">
                                 <rect key="frame" x="16" y="333" width="288" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -1791,7 +1791,7 @@
                                     <action selector="loginAction:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Olv-jY-1ne"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-Ah-uOq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-Ah-uOq">
                                 <rect key="frame" x="110" y="72" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1810,12 +1810,12 @@
                             <constraint firstItem="F1h-5g-yZZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="0TE-uT-GjU"/>
                             <constraint firstItem="F1h-5g-yZZ" firstAttribute="top" secondItem="Umd-Ah-uOq" secondAttribute="bottom" constant="39" id="1R4-am-mTx"/>
                             <constraint firstItem="ojz-Zt-3E4" firstAttribute="top" secondItem="F1h-5g-yZZ" secondAttribute="bottom" constant="25" id="1xT-Dv-G30"/>
-                            <constraint firstItem="gja-D9-2K0" firstAttribute="top" secondItem="ojz-Zt-3E4" secondAttribute="bottom" constant="37" id="4XZ-xX-9cA"/>
                             <constraint firstAttribute="trailing" secondItem="ojz-Zt-3E4" secondAttribute="trailing" constant="30" id="5XA-lO-scW"/>
                             <constraint firstItem="ojz-Zt-3E4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="5XU-Ei-2iD"/>
                             <constraint firstItem="gja-D9-2K0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="Lal-n6-DiP"/>
                             <constraint firstAttribute="centerX" secondItem="Umd-Ah-uOq" secondAttribute="centerX" id="TMK-gr-T8P"/>
                             <constraint firstAttribute="trailing" secondItem="F1h-5g-yZZ" secondAttribute="trailing" constant="30" id="Uqu-MW-2TR"/>
+                            <constraint firstItem="gja-D9-2K0" firstAttribute="top" secondItem="ojz-Zt-3E4" secondAttribute="bottom" constant="37" id="Xl2-85-a1n"/>
                             <constraint firstAttribute="trailing" secondItem="SdF-tm-7mZ" secondAttribute="trailing" constant="16" id="hiY-gk-cj2"/>
                             <constraint firstItem="SdF-tm-7mZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="mQd-gB-EDf"/>
                             <constraint firstItem="SdF-tm-7mZ" firstAttribute="top" secondItem="gja-D9-2K0" secondAttribute="bottom" constant="31" id="niS-pG-4Ta"/>
