@@ -60,12 +60,18 @@
 }
 
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {
-   
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
     PFObject *booking=[PFObject objectWithClassName:@"Favarites"];
+    
     booking[@"Timer"]=strDate;
+    booking[@"Name"]=self.name.text;
+    
+    PFFile *photo =self.item[@"Photo"];
+  //  NSData *photoData = UIImagePNGRepresentation(photo);
+   // PFFile *photoFile = photo;
+    booking[@"Photo"] =photo;
     
     PFUser *currentUser = [PFUser currentUser];
     booking[@"FavaritesUser"]=currentUser;
@@ -76,6 +82,7 @@
             //回到上一页前更新页面的通知
             // [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];
             //返回上一页
+            [Utilities popUpAlertViewWithMsg:@"收藏成功！" andTitle:nil];
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];

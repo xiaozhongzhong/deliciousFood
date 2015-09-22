@@ -33,13 +33,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+//-(void)query
+//{
+//    PFQuery *query=[PFQuery queryWithClassName:@"Vegetables"];
+//    [query includeKey:@"VegetablesFav"];
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
+//        if (!error) {
+//            self.objectForShow = array;
+//            [self.tableview reloadData];
+//        }else {
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+//}
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return _objectForShow.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+   // PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
+    
+  //  PFObject *Favarites = object[@"FavaritesUser"];
+    
+    
+
     return cell;
     
 }
