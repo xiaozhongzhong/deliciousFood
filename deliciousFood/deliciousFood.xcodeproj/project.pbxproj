@@ -46,7 +46,7 @@
 		B2E9D5811BB0EA2A005B1F43 /* dingdanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */; };
 		B2E9D5841BB0EB18005B1F43 /* shopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */; };
 		B2E9D5871BB0F005005B1F43 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5861BB0F005005B1F43 /* LeftViewController.m */; };
-		B2E9D5891BB0F4E7005B1F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E9D5881BB0F4E7005B1F43 /* Main.storyboard */; };
+		B2E9D58B1BB0F5EB005B1F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +136,7 @@
 		B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopTableViewCell.m; sourceTree = "<group>"; };
 		B2E9D5851BB0F005005B1F43 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		B2E9D5861BB0F005005B1F43 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
-		B2E9D5881BB0F4E7005B1F43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,8 +323,8 @@
 		B2799DDE1BAF85AA00AE8193 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B2E9D5881BB0F4E7005B1F43 /* Main.storyboard */,
 				B2799DBF1BAF84A200AE8193 /* Images.xcassets */,
+				B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */,
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
 				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
 				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
@@ -430,7 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E9D5891BB0F4E7005B1F43 /* Main.storyboard in Resources */,
+				B2E9D58B1BB0F5EB005B1F43 /* Main.storyboard in Resources */,
 				B2799DC31BAF84A200AE8193 /* LaunchScreen.xib in Resources */,
 				B2799DC01BAF84A200AE8193 /* Images.xcassets in Resources */,
 			);

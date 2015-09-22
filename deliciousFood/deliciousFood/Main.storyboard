@@ -148,36 +148,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-<<<<<<< HEAD
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-P3-MLr">
-                                <rect key="frame" x="87" y="230" width="217" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="217" id="zRW-ep-3nF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-pU-b2z">
-                                <rect key="frame" x="60" y="296" width="200" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8Ve-Z5-fyp"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="d3U-eV-aUh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="修改密码">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-Re-Bxb">
-                                <rect key="frame" x="60" y="425" width="200" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3OP-7w-e7L"/>
-                                    <constraint firstAttribute="width" constant="200" id="hMW-cV-tI9"/>
-                                </constraints>
-=======
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-pU-b2z">
                                 <rect key="frame" x="60" y="296" width="200" height="46"/>
                                 <state key="normal" title="Button">
@@ -192,7 +162,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-Re-Bxb">
                                 <rect key="frame" x="137" y="425" width="46" height="30"/>
->>>>>>> c0896666bfac5a146d451ce92deef05b32326a3b
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -203,24 +172,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-<<<<<<< HEAD
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urn-ik-Iix">
-                                <rect key="frame" x="60" y="361" width="200" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="3Oe-uQ-Vrg"/>
-                                    <constraint firstAttribute="height" constant="50" id="5AD-gd-ApN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="修改用户名">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4TQ-Re-Bxb" secondAttribute="trailing" constant="60" id="1LQ-mA-tuo"/>
-=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-P3-MLr">
                                 <rect key="frame" x="87" y="230" width="217" height="21"/>
                                 <constraints>
@@ -233,25 +184,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
->>>>>>> c0896666bfac5a146d451ce92deef05b32326a3b
                             <constraint firstAttribute="trailing" secondItem="iAQ-P3-MLr" secondAttribute="trailing" constant="16" id="6vo-AH-N1C"/>
                             <constraint firstAttribute="trailing" secondItem="O0Z-pU-b2z" secondAttribute="trailing" constant="60" id="Sdd-GD-fKT"/>
                             <constraint firstItem="O0Z-pU-b2z" firstAttribute="top" secondItem="iAQ-P3-MLr" secondAttribute="bottom" constant="45" id="Whn-S7-YXc"/>
                             <constraint firstItem="Vbf-QZ-FBt" firstAttribute="top" secondItem="LBI-Fy-lBv" secondAttribute="bottom" constant="10" id="XXk-7w-2ou"/>
-<<<<<<< HEAD
-                            <constraint firstItem="urn-ik-Iix" firstAttribute="top" secondItem="O0Z-pU-b2z" secondAttribute="bottom" constant="15" id="XcT-xl-v2A"/>
-                            <constraint firstItem="K7G-RJ-rEV" firstAttribute="leading" secondItem="47D-AN-Bh0" secondAttribute="leading" constant="16" id="aG8-C1-BZK"/>
-                            <constraint firstItem="O0Z-pU-b2z" firstAttribute="leading" secondItem="47D-AN-Bh0" secondAttribute="leading" constant="60" id="cdT-GV-Z5b"/>
-                            <constraint firstItem="urn-ik-Iix" firstAttribute="leading" secondItem="47D-AN-Bh0" secondAttribute="leading" constant="60" id="dSU-CA-0Uu"/>
-                            <constraint firstItem="iAQ-P3-MLr" firstAttribute="top" secondItem="Vbf-QZ-FBt" secondAttribute="bottom" constant="36" id="fBF-mt-gnz"/>
-                            <constraint firstItem="4TQ-Re-Bxb" firstAttribute="leading" secondItem="47D-AN-Bh0" secondAttribute="leading" constant="60" id="gVo-Ab-YLS"/>
-                            <constraint firstItem="4TQ-Re-Bxb" firstAttribute="top" secondItem="urn-ik-Iix" secondAttribute="bottom" constant="14" id="lGv-ww-THe"/>
-                            <constraint firstAttribute="trailing" secondItem="urn-ik-Iix" secondAttribute="trailing" constant="60" id="lLk-T9-SJm"/>
-=======
                             <constraint firstItem="K7G-RJ-rEV" firstAttribute="leading" secondItem="47D-AN-Bh0" secondAttribute="leading" constant="16" id="aG8-C1-BZK"/>
                             <constraint firstItem="O0Z-pU-b2z" firstAttribute="leading" secondItem="47D-AN-Bh0" secondAttribute="leading" constant="60" id="cdT-GV-Z5b"/>
                             <constraint firstItem="iAQ-P3-MLr" firstAttribute="top" secondItem="Vbf-QZ-FBt" secondAttribute="bottom" constant="36" id="fBF-mt-gnz"/>
->>>>>>> c0896666bfac5a146d451ce92deef05b32326a3b
                             <constraint firstItem="iAQ-P3-MLr" firstAttribute="leading" secondItem="K7G-RJ-rEV" secondAttribute="trailing" constant="15" id="op4-8a-uKj"/>
                             <constraint firstItem="K7G-RJ-rEV" firstAttribute="top" secondItem="Vbf-QZ-FBt" secondAttribute="bottom" constant="36" id="ozO-2Z-Ibr"/>
                             <constraint firstAttribute="centerX" secondItem="Vbf-QZ-FBt" secondAttribute="centerX" id="vHK-RN-gel"/>
