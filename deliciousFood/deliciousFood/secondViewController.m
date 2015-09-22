@@ -9,6 +9,8 @@
 #import "secondViewController.h"
 
 @interface secondViewController ()
+- (IBAction)jiesuanAction:(UIBarButtonItem *)sender;
+
 
 @end
 
@@ -34,4 +36,6 @@
 }
 */
 
+- (IBAction)jiesuanAction:(UIBarButtonItem *)sender {
+}
 @end

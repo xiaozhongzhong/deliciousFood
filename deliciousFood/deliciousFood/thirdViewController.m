@@ -9,6 +9,9 @@
 #import "thirdViewController.h"
 
 @interface thirdViewController ()
+- (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)daifahuoAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)dingdanAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,4 +37,12 @@
 }
 */
 
+- (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)daifahuoAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)dingdanAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end

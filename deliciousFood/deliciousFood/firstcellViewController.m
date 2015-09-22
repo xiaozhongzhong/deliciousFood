@@ -9,6 +9,8 @@
 #import "firstcellViewController.h"
 
 @interface firstcellViewController ()
+- (IBAction)shopAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -35,4 +37,9 @@
 }
 */
 
+- (IBAction)shopAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end
