@@ -20,7 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
    NSLog(@"%@",_item);
+
     self.label.text=self.item[@"Discriptiondetail"];
+
     self.name.text=self.item[@"Dishes"];
     self.pirce.text=[NSString stringWithFormat:@"价格：  %@元",_item[@"Price"]];
 }
