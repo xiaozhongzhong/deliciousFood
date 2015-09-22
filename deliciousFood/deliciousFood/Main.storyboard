@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="z1Y-Dv-hzu" customClass="shopTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="z1Y-Dv-hzu" customClass="shopTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z1Y-Dv-hzu" id="Ook-DR-bJW">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p03-qY-zgg">
-                                                    <rect key="frame" x="123" y="8" width="156" height="21"/>
+                                                    <rect key="frame" x="123" y="8" width="189" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                         <barButtonItem key="rightBarButtonItem" title="结算" id="Jbu-gW-gYm">
                             <connections>
                                 <action selector="jiesuanAction:" destination="cva-by-KqC" id="xwP-zx-uaK"/>
-                                <segue destination="BBF-Es-J07" kind="push" id="l32-bj-mYg"/>
+                                <segue destination="BBF-Es-J07" kind="push" identifier="jiesuan" id="l32-bj-mYg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,7 +194,7 @@
                                 </state>
                                 <connections>
                                     <action selector="passwordAction:forEvent:" destination="F4V-sj-w65" eventType="touchUpInside" id="7OO-EE-wgH"/>
-                                    <segue destination="bhx-Jl-O1x" kind="push" id="zHW-PP-9Tm"/>
+                                    <segue destination="bhx-Jl-O1x" kind="push" identifier="password" id="zHW-PP-9Tm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-pU-b2z">
@@ -244,12 +244,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7d-ZO-Kdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1518" y="3028"/>
+            <point key="canvasLocation" x="1037" y="2976"/>
         </scene>
         <!--修改密码-->
         <scene sceneID="wvd-nQ-Qc6">
             <objects>
-                <viewController id="bhx-Jl-O1x" customClass="passwordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="passWord" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bhx-Jl-O1x" customClass="passwordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GiE-GC-icg"/>
                         <viewControllerLayoutGuide type="bottom" id="K0y-Hg-ca0"/>
@@ -307,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="235-JM-PYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="3028"/>
+            <point key="canvasLocation" x="1491" y="2976"/>
         </scene>
         <!--待收货-->
         <scene sceneID="FEH-E3-g8h">
@@ -533,7 +533,7 @@
                                 </state>
                                 <connections>
                                     <action selector="shoucangAction:forEvent:" destination="1QY-0k-IG2" eventType="touchUpInside" id="oob-tx-wmI"/>
-                                    <segue destination="x1h-eP-m3y" kind="push" id="pwG-I8-fzG"/>
+                                    <segue destination="x1h-eP-m3y" kind="push" identifier="shoucang" id="pwG-I8-fzG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEi-Ck-MoK">
@@ -548,7 +548,7 @@
                                 </state>
                                 <connections>
                                     <action selector="daifahuoAction:forEvent:" destination="1QY-0k-IG2" eventType="touchUpInside" id="Nkw-8k-UFo"/>
-                                    <segue destination="ZjZ-9b-jaO" kind="push" id="mJB-BC-4MA"/>
+                                    <segue destination="ZjZ-9b-jaO" kind="push" identifier="daishouhuo" id="mJB-BC-4MA"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ca-n2-ei1">
@@ -595,7 +595,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dingdanAction:forEvent:" destination="1QY-0k-IG2" eventType="touchUpInside" id="L7g-C2-kVm"/>
-                                    <segue destination="sYT-xq-1zX" kind="push" id="eMp-4E-9cA"/>
+                                    <segue destination="sYT-xq-1zX" kind="push" identifier="dingdan" id="eMp-4E-9cA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -603,6 +603,7 @@
                         <constraints>
                             <constraint firstItem="0d6-Ud-D6L" firstAttribute="leading" secondItem="sHO-PQ-N9r" secondAttribute="leading" constant="16" id="1Bi-R5-vd1"/>
                             <constraint firstAttribute="trailing" secondItem="D5b-J8-6Sr" secondAttribute="trailing" id="7Z4-k0-4oO"/>
+                            <constraint firstItem="D5b-J8-6Sr" firstAttribute="leading" secondItem="oEi-Ck-MoK" secondAttribute="trailing" constant="-1" id="FEO-rg-Sad"/>
                             <constraint firstItem="hEN-o6-UbJ" firstAttribute="top" secondItem="oEi-Ck-MoK" secondAttribute="bottom" id="H1K-kJ-mfl"/>
                             <constraint firstAttribute="trailing" secondItem="3ca-n2-ei1" secondAttribute="trailing" constant="80" id="Lu1-iJ-i2e"/>
                             <constraint firstItem="hEN-o6-UbJ" firstAttribute="top" secondItem="D5b-J8-6Sr" secondAttribute="bottom" id="QJe-OD-cjQ"/>
@@ -748,16 +749,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
-                                <rect key="frame" x="16" y="449" width="75" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="加入购物车">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
                                 <rect key="frame" x="229" y="449" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -778,6 +769,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
+                                <rect key="frame" x="16" y="449" width="75" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="加入购物车">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1337,7 +1338,7 @@
             </objects>
             <point key="canvasLocation" x="1455" y="-578"/>
         </scene>
-        <!--菜类-->
+        <!--早点-->
         <scene sceneID="AOu-2P-4gf">
             <objects>
                 <viewController storyboardIdentifier="firstcell" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wVd-pQ-EJP" customClass="firstbuttonViewController" sceneMemberID="viewController">
@@ -1462,7 +1463,7 @@
                             <constraint firstAttribute="trailing" secondItem="vvK-AW-0uw" secondAttribute="trailing" id="v12-8c-hdi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="菜类" id="B5O-4M-fjs"/>
+                    <navigationItem key="navigationItem" title="早点" id="B5O-4M-fjs"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="vvK-AW-0uw" id="xv5-eF-M3P"/>
@@ -1470,7 +1471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEC-Wy-OD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="861"/>
+            <point key="canvasLocation" x="1455" y="648"/>
         </scene>
         <!--首页-->
         <scene sceneID="tbn-yl-3uh">
@@ -1980,7 +1981,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tov-vK-bbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="3028"/>
+            <point key="canvasLocation" x="661" y="2976"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
