@@ -22,7 +22,7 @@
    NSLog(@"%@",_item);
     self.textview.text=self.item[@" Discriptiondetail"];
     self.name.text=self.item[@"Dishes"];
-    self.pirce.text=[NSString stringWithFormat:@"%@元",_item[@"Price"]];
+    self.pirce.text=[NSString stringWithFormat:@"价格：  %@元",_item[@"Price"]];
 }
 
 - (void)didReceiveMemoryWarning {
