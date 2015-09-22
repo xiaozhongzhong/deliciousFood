@@ -276,21 +276,6 @@
 		B2799DDC1BAF859700AE8193 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-=======
-				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
-				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
-				B2E9D5761BB0E596005B1F43 /* caileiTableViewCell.h */,
-				B2E9D5771BB0E596005B1F43 /* caileiTableViewCell.m */,
-				B2E9D5791BB0E881005B1F43 /* shoucangTableViewCell.h */,
-				B2E9D57A1BB0E881005B1F43 /* shoucangTableViewCell.m */,
-				B2E9D57C1BB0E988005B1F43 /* daishouhuoTableViewCell.h */,
-				B2E9D57D1BB0E988005B1F43 /* daishouhuoTableViewCell.m */,
-				B2E9D57F1BB0EA2A005B1F43 /* dingdanTableViewCell.h */,
-				B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */,
-				B2E9D5821BB0EB18005B1F43 /* shopTableViewCell.h */,
-				B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */,
->>>>>>> f96e9b74b0c400faf16e07666ee3cef71e00f2c9
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,6 +323,16 @@
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
 				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
 				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
+				B2E9D5761BB0E596005B1F43 /* caileiTableViewCell.h */,
+				B2E9D5771BB0E596005B1F43 /* caileiTableViewCell.m */,
+				B2E9D5791BB0E881005B1F43 /* shoucangTableViewCell.h */,
+				B2E9D57A1BB0E881005B1F43 /* shoucangTableViewCell.m */,
+				B2E9D57C1BB0E988005B1F43 /* daishouhuoTableViewCell.h */,
+				B2E9D57D1BB0E988005B1F43 /* daishouhuoTableViewCell.m */,
+				B2E9D57F1BB0EA2A005B1F43 /* dingdanTableViewCell.h */,
+				B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */,
+				B2E9D5821BB0EB18005B1F43 /* shopTableViewCell.h */,
+				B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

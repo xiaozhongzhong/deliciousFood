@@ -7,7 +7,7 @@
 //
 
 #import "firstbuttonViewController.h"
-#import "firstTableViewCell.h"
+#import "caileiTableViewCell.h"
 
 @interface firstbuttonViewController ()
 
@@ -62,7 +62,7 @@
     return self.objectsForShow.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    firstTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    caileiTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     PFObject *object=[self.objectsForShow objectAtIndex:indexPath.row
                       ];
@@ -72,14 +72,14 @@
     cell.foodname.text=object[@"Dishes"];
     cell.price.text=[NSString stringWithFormat:@"%@元",object[@"Price"]];
     cell.like.text=[NSString stringWithFormat:@"%@",object[@"Like"]];
-    cell.unlike.text=[NSString stringWithFormat:@"%@",object[@"Unlike"]];
-    cell.foodDetail.text=object[@"Discriptiondetail"];
+    cell.Umlike.text=[NSString stringWithFormat:@"%@",object[@"Unlike"]];
+    cell.foodname.text=object[@"Discriptiondetail"];
     PFFile *photo =object[@"Photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
             dispatch_async(dispatch_get_main_queue(), ^{
-                cell.imageVI.image = image;
+                cell.imageVi.image = image;
             });
         }
     }];
