@@ -16,12 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self query];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    [self query];
+    
     // Dispose of any resources that can be recreated.
 }
 
@@ -40,6 +41,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             self.objectForShow = array;
+            NSLog(@"%@",array);
             [self.tableview reloadData];
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -55,10 +57,7 @@
     shoucangTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
     cell.name.text=object[@"Name"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *strDate = [dateFormatter stringFromDate:object[@"Timer"]];
-    cell.times.text=strDate;
+    cell.times.text=[NSString stringWithFormat:@"收藏时间：%@",object[@"Timer"]];
     PFFile *photo =object[@"Photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
