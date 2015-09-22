@@ -52,6 +52,7 @@
 		B2E9D5911BB0FCEE005B1F43 /* caocaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5901BB0FCEE005B1F43 /* caocaiViewController.m */; };
 		B2E9D5941BB0FCFA005B1F43 /* tangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */; };
 		B2E9D5971BB0FD09005B1F43 /* yexiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */; };
+		B2E9D5A31BB144BC005B1F43 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E9D5A21BB144BC005B1F43 /* 5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tangViewController.m; sourceTree = "<group>"; };
 		B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yexiaoViewController.h; sourceTree = "<group>"; };
 		B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yexiaoViewController.m; sourceTree = "<group>"; };
+		B2E9D5A21BB144BC005B1F43 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 			children = (
 				B2799DBF1BAF84A200AE8193 /* Images.xcassets */,
 				4651A9031BB111DD0042EFF5 /* 1.png */,
+				B2E9D5A21BB144BC005B1F43 /* 5.png */,
 				B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */,
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
 				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
@@ -455,6 +458,7 @@
 			files = (
 				B2E9D58B1BB0F5EB005B1F43 /* Main.storyboard in Resources */,
 				4651A9041BB111DD0042EFF5 /* 1.png in Resources */,
+				B2E9D5A31BB144BC005B1F43 /* 5.png in Resources */,
 				B2799DC31BAF84A200AE8193 /* LaunchScreen.xib in Resources */,
 				B2799DC01BAF84A200AE8193 /* Images.xcassets in Resources */,
 			);

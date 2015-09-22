@@ -20,6 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImage *image=[UIImage imageNamed:@"5.png"];
+    self.view.layer.contents=(__bridge id)(image.CGImage);
+    self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
+    
+    //self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"2.png"]];
     [self readingUsername];
     // Do any additional setup after loading the view.
 }
@@ -33,7 +39,7 @@
 -(void)readingUsername{
     //读取用户名
     PFUser *currentUser = [PFUser currentUser];
-    self.username.text=[NSString stringWithFormat:@"%@",currentUser[@"username"]];
+    self.username.text=[NSString stringWithFormat:@"账号信息：%@",currentUser[@"username"]];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
