@@ -625,13 +625,7 @@
                             <constraint firstItem="wbE-5L-ugr" firstAttribute="leading" secondItem="sHO-PQ-N9r" secondAttribute="leading" id="ygv-wd-rgv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="我的" id="e4c-PJ-xIB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="vbF-qy-qLL">
-                            <connections>
-                                <action selector="menuAction:" destination="1QY-0k-IG2" id="31l-hT-8rz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="我的" id="e4c-PJ-xIB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="imageview" destination="3ca-n2-ei1" id="DKY-2p-Wp5"/>
@@ -742,17 +736,30 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
-                                <rect key="frame" x="16" y="360" width="288" height="21"/>
+                                <rect key="frame" x="16" y="360" width="118" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="aXr-zY-rCM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
-                                <rect key="frame" x="16" y="389" width="288" height="21"/>
+                                <rect key="frame" x="16" y="389" width="191" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
+                                <rect key="frame" x="16" y="449" width="75" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="加入购物车">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
                                 <rect key="frame" x="229" y="449" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -773,42 +780,53 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
-                                <rect key="frame" x="16" y="449" width="75" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="加入购物车">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="F8d-26-fIQ">
+                                <rect key="frame" x="226" y="385" width="94" height="29"/>
                                 <connections>
-                                    <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
+                                    <action selector="addAction:forEvent:" destination="2FH-xg-Vnj" eventType="valueChanged" id="PjX-ag-b35"/>
                                 </connections>
-                            </button>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR1-HS-UAk">
+                                <rect key="frame" x="226" y="356" width="94" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="EXB-kA-w8m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="F8d-26-fIQ" firstAttribute="top" secondItem="7GZ-Tr-hpV" secondAttribute="bottom" constant="-25" id="1y4-OK-SGC"/>
+                            <constraint firstItem="NOY-Fx-17S" firstAttribute="top" secondItem="F8d-26-fIQ" secondAttribute="bottom" constant="35" id="5Ev-G8-OTK"/>
                             <constraint firstItem="1jY-Ue-TVD" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="5P8-Wg-ewY"/>
+                            <constraint firstItem="F8d-26-fIQ" firstAttribute="leading" secondItem="7GZ-Tr-hpV" secondAttribute="trailing" constant="19" id="5U6-zX-k73"/>
                             <constraint firstItem="7GZ-Tr-hpV" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="660-cz-htA"/>
                             <constraint firstAttribute="trailing" secondItem="OoY-iV-dj4" secondAttribute="trailing" constant="16" id="7Ln-2Y-gGc"/>
                             <constraint firstItem="1jY-Ue-TVD" firstAttribute="top" secondItem="OoY-iV-dj4" secondAttribute="bottom" constant="8" id="FJh-b9-2LU"/>
+                            <constraint firstAttribute="trailing" secondItem="jR1-HS-UAk" secondAttribute="trailing" id="JNo-uO-Zro"/>
                             <constraint firstItem="rT1-bU-sAz" firstAttribute="top" secondItem="1jY-Ue-TVD" secondAttribute="bottom" constant="28" id="LGP-SN-aqa"/>
                             <constraint firstAttribute="trailing" secondItem="NOY-Fx-17S" secondAttribute="trailing" constant="16" id="Vle-02-3Zv"/>
-                            <constraint firstAttribute="trailing" secondItem="7GZ-Tr-hpV" secondAttribute="trailing" constant="16" id="X0W-PN-0Mf"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="top" secondItem="7GZ-Tr-hpV" secondAttribute="bottom" constant="39" id="Ysk-9O-LgE"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="baseline" secondItem="NOY-Fx-17S" secondAttribute="baseline" id="fXI-Fi-192"/>
                             <constraint firstItem="OoY-iV-dj4" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="h6d-n1-U4f"/>
+                            <constraint firstAttribute="trailing" secondItem="F8d-26-fIQ" secondAttribute="trailing" id="h92-u1-wxC"/>
                             <constraint firstItem="OoY-iV-dj4" firstAttribute="top" secondItem="655-3h-SbQ" secondAttribute="bottom" id="jSk-eq-3nu"/>
                             <constraint firstAttribute="trailing" secondItem="1jY-Ue-TVD" secondAttribute="trailing" constant="16" id="jaq-xK-JZ9"/>
                             <constraint firstItem="rT1-bU-sAz" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="jlR-9g-rim"/>
+                            <constraint firstItem="F8d-26-fIQ" firstAttribute="top" secondItem="jR1-HS-UAk" secondAttribute="bottom" constant="8" id="kXh-14-u1L"/>
                             <constraint firstItem="7GZ-Tr-hpV" firstAttribute="top" secondItem="rT1-bU-sAz" secondAttribute="bottom" constant="8" id="m3K-gX-gPh"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="nSl-X5-KLf"/>
-                            <constraint firstAttribute="trailing" secondItem="rT1-bU-sAz" secondAttribute="trailing" constant="16" id="nYm-jL-qw0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="详情" id="Kvy-5B-JUB"/>
                     <connections>
+                        <outlet property="add" destination="F8d-26-fIQ" id="Jfh-sQ-GMB"/>
                         <outlet property="imageview" destination="OoY-iV-dj4" id="nop-6c-Nij"/>
                         <outlet property="label" destination="1jY-Ue-TVD" id="Ate-vO-nzJ"/>
                         <outlet property="name" destination="rT1-bU-sAz" id="tTS-Y9-PGR"/>
+                        <outlet property="numbers" destination="jR1-HS-UAk" id="EJ9-lO-k0x"/>
                         <outlet property="pirce" destination="7GZ-Tr-hpV" id="afR-vO-5CK"/>
                         <outlet property="shopcar" destination="DhT-lA-sOt" id="nlh-8Q-Tfx"/>
                         <outlet property="shoucangjia" destination="NOY-Fx-17S" id="vdI-jK-fMC"/>
@@ -1683,7 +1701,13 @@
                             <constraint firstItem="B9l-VA-pkw" firstAttribute="leading" secondItem="q1H-b5-xbL" secondAttribute="trailing" constant="50" id="xMa-B9-KOd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="YXc-B8-IsO"/>
+                    <navigationItem key="navigationItem" title="首页" id="YXc-B8-IsO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="Oqd-cz-0rg">
+                            <connections>
+                                <action selector="menuAction:" destination="x5W-Dz-Ojg" id="W6h-wJ-Fbm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="TabV" destination="vJK-5R-Nmg" id="l55-Nc-XBk"/>
@@ -1995,6 +2019,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="R7x-ZA-vbI"/>
+        <segue reference="BTp-Nk-9Hj"/>
     </inferredMetricsTieBreakers>
 </document>

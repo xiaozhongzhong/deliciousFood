@@ -11,6 +11,7 @@
 @interface firstcellViewController ()
 - (IBAction)shopAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -81,5 +82,8 @@
         }
     }];
 
+}
+
+- (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event {
 }
 @end

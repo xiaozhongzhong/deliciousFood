@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *shopcar;
 @property (weak, nonatomic) IBOutlet UIButton *shoucangjia;
+@property (weak, nonatomic) IBOutlet UILabel *numbers;
+@property (weak, nonatomic) IBOutlet UIStepper *add;
 
 
 @end
