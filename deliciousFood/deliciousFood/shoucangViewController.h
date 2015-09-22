@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "shoucangTableViewCell.h"
 
 
 @interface shoucangViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic)NSArray *objectForShow;
 
 @end
