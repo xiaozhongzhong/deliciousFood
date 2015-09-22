@@ -70,7 +70,7 @@
     //设置滑动的页面
     _slidingViewController.underLeftViewController = leftVC;
     //当滑出左侧菜单时，中间页面左边到屏幕右边的距离
-    _slidingViewController.anchorRightPeekAmount = UI_SCREEN_W /4;
+    _slidingViewController.anchorRightPeekAmount = UI_SCREEN_W /3;
     //anchorLeftpeekAmount:当滑出右侧菜单时，中间页面右边到屏幕左边的距离
     //下面是三个通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leftSwitchAction) name:@"leftSwitch" object:nil];
