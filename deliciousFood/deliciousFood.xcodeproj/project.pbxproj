@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4651A9041BB111DD0042EFF5 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4651A9031BB111DD0042EFF5 /* 1.png */; };
 		B2799DB51BAF84A200AE8193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DB41BAF84A200AE8193 /* main.m */; };
 		B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DB71BAF84A200AE8193 /* AppDelegate.m */; };
 		B2799DBB1BAF84A200AE8193 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DBA1BAF84A200AE8193 /* ViewController.m */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4651A9031BB111DD0042EFF5 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		B2799DAF1BAF84A100AE8193 /* deliciousFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliciousFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2799DB31BAF84A100AE8193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2799DB41BAF84A200AE8193 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				B2799DBF1BAF84A200AE8193 /* Images.xcassets */,
+				4651A9031BB111DD0042EFF5 /* 1.png */,
 				B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */,
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
 				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
@@ -451,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E9D58B1BB0F5EB005B1F43 /* Main.storyboard in Resources */,
+				4651A9041BB111DD0042EFF5 /* 1.png in Resources */,
 				B2799DC31BAF84A200AE8193 /* LaunchScreen.xib in Resources */,
 				B2799DC01BAF84A200AE8193 /* Images.xcassets in Resources */,
 			);

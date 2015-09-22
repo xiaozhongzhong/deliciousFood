@@ -22,4 +22,5 @@
 + (void)popUpAlertViewWithMsg:(NSString *)msg andTitle:(NSString* )title;
 //活动指示器
 + (UIActivityIndicatorView *)getCoverOnView:(UIView *)view;
+
 @end

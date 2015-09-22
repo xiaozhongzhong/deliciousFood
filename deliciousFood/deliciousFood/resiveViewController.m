@@ -62,6 +62,18 @@
     user[@"Address"]=address;
     user[@"Phonenumber"] = phoneNumber;
     user[@"Money"] = @10000;
+//    UIImage *imag=[UIImage imageNamed:@"1.png"];
+//    
+//    PFFile *photo =[Utilities image_transform_Data:imag];
+//    [user saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
+//        if (!error) {
+//            //UIImage *image = [UIImage imageWithData:photoData];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                //self.imageview.image = image;
+//                user[@"TouXiang"]=photo;
+//            });
+//        }
+//    }];
     
     //活动指示器
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
