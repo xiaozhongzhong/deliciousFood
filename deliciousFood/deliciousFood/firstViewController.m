@@ -101,14 +101,13 @@
 }
 
 - (IBAction)caociaAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self performSegueWithIdentifier:@"first" sender:self];
+   
 }
 
 - (IBAction)tangAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self performSegueWithIdentifier:@"first" sender:self];
+   
 }
 
 - (IBAction)yeAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self performSegueWithIdentifier:@"first" sender:self];
-}
+   }
 @end
