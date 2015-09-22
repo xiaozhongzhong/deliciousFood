@@ -73,7 +73,8 @@
     cell.price.text=[NSString stringWithFormat:@"%@元",object[@"Price"]];
     cell.like.text=[NSString stringWithFormat:@"%@",object[@"Like"]];
     cell.Umlike.text=[NSString stringWithFormat:@"%@",object[@"Unlike"]];
-    cell.foodname.text=object[@"Discriptiondetail"];
+    cell.jieshao.text=object[@"Discriptiondetail"];
+    
     PFFile *photo =object[@"Photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
