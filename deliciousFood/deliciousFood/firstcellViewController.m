@@ -25,6 +25,17 @@
 
     self.name.text=self.item[@"Dishes"];
     self.pirce.text=[NSString stringWithFormat:@"价格：  %@元",_item[@"Price"]];
+    PFFile *photo =self.item[@"Photo"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageview.image = image;
+            });
+        }
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
