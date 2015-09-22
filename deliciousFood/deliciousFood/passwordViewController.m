@@ -10,6 +10,7 @@
 
 @interface passwordViewController ()
 - (IBAction)cancelAction:(UIBarButtonItem *)sender;
+- (IBAction)doneAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -38,5 +39,8 @@
 - (IBAction)canceAction:(UIBarButtonItem *)sender {
 }
 - (IBAction)cancelAction:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)doneAction:(UIBarButtonItem *)sender {
 }
 @end

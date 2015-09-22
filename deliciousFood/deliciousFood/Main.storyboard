@@ -293,7 +293,11 @@
                                 <action selector="cancelAction:" destination="bhx-Jl-O1x" id="66s-3e-x3G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LEg-XY-2Wm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LEg-XY-2Wm">
+                            <connections>
+                                <action selector="doneAction:" destination="bhx-Jl-O1x" id="f7X-0l-0eg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="newnewpassword" destination="tmn-px-bdf" id="LpT-kT-jJ6"/>
