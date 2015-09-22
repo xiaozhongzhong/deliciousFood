@@ -736,19 +736,19 @@
                                     <constraint firstAttribute="height" constant="160" id="aM4-ni-lmN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
                                 <rect key="frame" x="16" y="340" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
                                 <rect key="frame" x="16" y="369" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
                                 <rect key="frame" x="16" y="429" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加入购物车">
@@ -758,7 +758,7 @@
                                     <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
                                 <rect key="frame" x="229" y="429" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加入收藏夹">
@@ -769,12 +769,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jY-Ue-TVD">
-                                <rect key="frame" x="16" y="232" width="288" height="80"/>
+                                <rect key="frame" x="16" y="232" width="288" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="RA3-uC-aTf"/>
-                                    <constraint firstAttribute="height" constant="80" id="vO9-3E-rn1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="3H1-g2-nrH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="acq-Fh-Fvu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -785,6 +785,7 @@
                             <constraint firstItem="7GZ-Tr-hpV" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="660-cz-htA"/>
                             <constraint firstAttribute="trailing" secondItem="OoY-iV-dj4" secondAttribute="trailing" constant="16" id="7Ln-2Y-gGc"/>
                             <constraint firstItem="1jY-Ue-TVD" firstAttribute="top" secondItem="OoY-iV-dj4" secondAttribute="bottom" constant="8" id="FJh-b9-2LU"/>
+                            <constraint firstItem="rT1-bU-sAz" firstAttribute="top" secondItem="1jY-Ue-TVD" secondAttribute="bottom" constant="28" id="LGP-SN-aqa"/>
                             <constraint firstAttribute="trailing" secondItem="NOY-Fx-17S" secondAttribute="trailing" constant="16" id="Vle-02-3Zv"/>
                             <constraint firstAttribute="trailing" secondItem="7GZ-Tr-hpV" secondAttribute="trailing" constant="16" id="X0W-PN-0Mf"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="top" secondItem="7GZ-Tr-hpV" secondAttribute="bottom" constant="39" id="Ysk-9O-LgE"/>
