@@ -13,6 +13,9 @@
 
 @interface firstViewController ()
 - (IBAction)zaodian:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)caociaAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)tangAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)yeAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -98,5 +101,14 @@
 
 - (IBAction)zaodian:(UIButton *)sender forEvent:(UIEvent *)event {
     [self performSegueWithIdentifier:@"first" sender:self];
+}
+
+- (IBAction)caociaAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)tangAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)yeAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 @end
