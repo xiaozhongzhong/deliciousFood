@@ -10,5 +10,4 @@
 
 @interface tangViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-
-@end
+@property (strong, nonatomic)NSArray *objectsForShow;@end
