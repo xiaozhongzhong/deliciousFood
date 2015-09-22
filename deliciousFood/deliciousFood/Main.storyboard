@@ -1444,7 +1444,7 @@
                                             <outlet property="jieshao" destination="ogy-Uc-K8S" id="Xds-t9-YTr"/>
                                             <outlet property="like" destination="O6E-8l-Lml" id="SJO-Rb-kia"/>
                                             <outlet property="price" destination="9ny-5e-rxV" id="rnX-kz-QMM"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="R7x-ZA-vbI"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="R7x-ZA-vbI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1470,7 +1470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEC-Wy-OD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="654"/>
+            <point key="canvasLocation" x="1500" y="861"/>
         </scene>
         <!--首页-->
         <scene sceneID="tbn-yl-3uh">
@@ -1989,6 +1989,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sVn-bg-0ec"/>
+        <segue reference="R7x-ZA-vbI"/>
     </inferredMetricsTieBreakers>
 </document>
