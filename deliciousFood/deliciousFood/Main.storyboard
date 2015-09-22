@@ -716,8 +716,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="sYT-xq-1zX" id="wqz-qH-KNL"/>
-                                    <outlet property="delegate" destination="sYT-xq-1zX" id="ryH-o0-fcK"/>
+                                    <outlet property="dataSource" destination="x1h-eP-m3y" id="VRd-zh-hzM"/>
+                                    <outlet property="delegate" destination="x1h-eP-m3y" id="oCu-Xy-Fr1"/>
                                 </connections>
                             </tableView>
                         </subviews>
