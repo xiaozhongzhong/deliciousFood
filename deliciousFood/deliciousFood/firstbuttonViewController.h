@@ -10,7 +10,7 @@
 
 @interface firstbuttonViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-
+@property (strong, nonatomic)NSArray *objectsForShow;
 
 
 @end

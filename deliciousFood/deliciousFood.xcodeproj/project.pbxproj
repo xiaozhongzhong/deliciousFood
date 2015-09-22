@@ -261,8 +261,6 @@
 		B2799DDC1BAF859700AE8193 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
-				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -308,6 +306,8 @@
 				B2799E201BAFCC8200AE8193 /* Main.storyboard */,
 				B2799DBF1BAF84A200AE8193 /* Images.xcassets */,
 				B2799DC11BAF84A200AE8193 /* LaunchScreen.xib */,
+				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
+				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
