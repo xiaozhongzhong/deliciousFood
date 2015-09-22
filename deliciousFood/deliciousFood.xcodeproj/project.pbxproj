@@ -47,6 +47,10 @@
 		B2E9D5841BB0EB18005B1F43 /* shopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */; };
 		B2E9D5871BB0F005005B1F43 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5861BB0F005005B1F43 /* LeftViewController.m */; };
 		B2E9D58B1BB0F5EB005B1F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */; };
+		B2E9D58E1BB0FBEF005B1F43 /* passwordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D58D1BB0FBEF005B1F43 /* passwordViewController.m */; };
+		B2E9D5911BB0FCEE005B1F43 /* caocaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5901BB0FCEE005B1F43 /* caocaiViewController.m */; };
+		B2E9D5941BB0FCFA005B1F43 /* tangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */; };
+		B2E9D5971BB0FD09005B1F43 /* yexiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,14 @@
 		B2E9D5851BB0F005005B1F43 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		B2E9D5861BB0F005005B1F43 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B2E9D58C1BB0FBEF005B1F43 /* passwordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passwordViewController.h; sourceTree = "<group>"; };
+		B2E9D58D1BB0FBEF005B1F43 /* passwordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = passwordViewController.m; sourceTree = "<group>"; };
+		B2E9D58F1BB0FCEE005B1F43 /* caocaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caocaiViewController.h; sourceTree = "<group>"; };
+		B2E9D5901BB0FCEE005B1F43 /* caocaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = caocaiViewController.m; sourceTree = "<group>"; };
+		B2E9D5921BB0FCFA005B1F43 /* tangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tangViewController.h; sourceTree = "<group>"; };
+		B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tangViewController.m; sourceTree = "<group>"; };
+		B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yexiaoViewController.h; sourceTree = "<group>"; };
+		B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yexiaoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +328,14 @@
 				B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */,
 				B2E9D5851BB0F005005B1F43 /* LeftViewController.h */,
 				B2E9D5861BB0F005005B1F43 /* LeftViewController.m */,
+				B2E9D58C1BB0FBEF005B1F43 /* passwordViewController.h */,
+				B2E9D58D1BB0FBEF005B1F43 /* passwordViewController.m */,
+				B2E9D58F1BB0FCEE005B1F43 /* caocaiViewController.h */,
+				B2E9D5901BB0FCEE005B1F43 /* caocaiViewController.m */,
+				B2E9D5921BB0FCFA005B1F43 /* tangViewController.h */,
+				B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */,
+				B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */,
+				B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -451,10 +471,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2799E0D1BAFA8FE00AE8193 /* TabViewController.m in Sources */,
+				B2E9D5971BB0FD09005B1F43 /* yexiaoViewController.m in Sources */,
 				B2799DBB1BAF84A200AE8193 /* ViewController.m in Sources */,
 				B2799E131BAFA93900AE8193 /* secondViewController.m in Sources */,
 				B2799E041BAF8A9600AE8193 /* ECSlidingViewController.m in Sources */,
 				B2E9D57E1BB0E988005B1F43 /* daishouhuoTableViewCell.m in Sources */,
+				B2E9D58E1BB0FBEF005B1F43 /* passwordViewController.m in Sources */,
 				B2799E101BAFA91C00AE8193 /* firstViewController.m in Sources */,
 				B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */,
 				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
@@ -479,8 +501,10 @@
 				B2799E2E1BAFD46E00AE8193 /* shopmoneyViewController.m in Sources */,
 				B2799E371BAFE02300AE8193 /* daishouhuoViewController.m in Sources */,
 				B2799E311BAFE00000AE8193 /* shoucangViewController.m in Sources */,
+				B2E9D5941BB0FCFA005B1F43 /* tangViewController.m in Sources */,
 				B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */,
 				B2E9D5841BB0EB18005B1F43 /* shopTableViewCell.m in Sources */,
+				B2E9D5911BB0FCEE005B1F43 /* caocaiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,22 +1,19 @@
 //
-//  LeftViewController.m
+//  passwordViewController.m
 //  deliciousFood
 //
 //  Created by admin1 on 15/9/22.
 //  Copyright (c) 2015年 admin1. All rights reserved.
 //
 
-#import "LeftViewController.h"
+#import "passwordViewController.h"
 
-@interface LeftViewController ()
-- (IBAction)usenameAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)passwordAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)adressAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event;
+@interface passwordViewController ()
+- (IBAction)cancelAction:(UIBarButtonItem *)sender;
 
 @end
 
-@implementation LeftViewController
+@implementation passwordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,15 +35,8 @@
 }
 */
 
-- (IBAction)usenameAction:(UIButton *)sender forEvent:(UIEvent *)event {
+- (IBAction)canceAction:(UIBarButtonItem *)sender {
 }
-
-- (IBAction)passwordAction:(UIButton *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)adressAction:(UIButton *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event {
+- (IBAction)cancelAction:(UIBarButtonItem *)sender {
 }
 @end

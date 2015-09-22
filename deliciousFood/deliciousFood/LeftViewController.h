@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LeftViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UIButton *xiugaiusername;
+@property (weak, nonatomic) IBOutlet UIButton *xiugaipassword;
+@property (weak, nonatomic) IBOutlet UIButton *xiugaiaddress;
 
 @end
