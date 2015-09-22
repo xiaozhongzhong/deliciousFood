@@ -60,6 +60,7 @@
 }
 
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
 }
 
 - (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event {
