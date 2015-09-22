@@ -12,6 +12,8 @@
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)daifahuoAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)dingdanAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)menuAction:(UIBarButtonItem *)sender;
+
 
 @end
 
@@ -44,5 +46,11 @@
 }
 
 - (IBAction)dingdanAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)menuAction:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)menu:(UIBarButtonItem *)sender {
 }
 @end

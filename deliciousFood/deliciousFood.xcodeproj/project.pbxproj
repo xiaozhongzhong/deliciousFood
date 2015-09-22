@@ -46,6 +46,7 @@
 		B2E9D57E1BB0E988005B1F43 /* daishouhuoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D57D1BB0E988005B1F43 /* daishouhuoTableViewCell.m */; };
 		B2E9D5811BB0EA2A005B1F43 /* dingdanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */; };
 		B2E9D5841BB0EB18005B1F43 /* shopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */; };
+		B2E9D5871BB0F005005B1F43 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5861BB0F005005B1F43 /* LeftViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,8 @@
 		B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dingdanTableViewCell.m; sourceTree = "<group>"; };
 		B2E9D5821BB0EB18005B1F43 /* shopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopTableViewCell.h; sourceTree = "<group>"; };
 		B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopTableViewCell.m; sourceTree = "<group>"; };
+		B2E9D5851BB0F005005B1F43 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		B2E9D5861BB0F005005B1F43 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +326,8 @@
 				B2799E331BAFE00F00AE8193 /* dingdanViewController.m */,
 				B2799E351BAFE02300AE8193 /* daishouhuoViewController.h */,
 				B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */,
+				B2E9D5851BB0F005005B1F43 /* LeftViewController.h */,
+				B2E9D5861BB0F005005B1F43 /* LeftViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */,
 				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
 				B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */,
+				B2E9D5871BB0F005005B1F43 /* LeftViewController.m in Sources */,
 				B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */,
 				B2E9D5811BB0EA2A005B1F43 /* dingdanTableViewCell.m in Sources */,
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
