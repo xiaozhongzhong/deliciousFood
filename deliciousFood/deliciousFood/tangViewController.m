@@ -8,6 +8,7 @@
 
 #import "tangViewController.h"
 #import "caileiTableViewCell.h"
+#import "firstcellViewController.h"
 @interface tangViewController ()
 
 @end
