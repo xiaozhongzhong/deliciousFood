@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface firstbuttonViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 
 

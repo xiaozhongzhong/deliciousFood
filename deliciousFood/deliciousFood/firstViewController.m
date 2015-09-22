@@ -83,6 +83,15 @@
     cell.like.text=[NSString stringWithFormat:@"%@",object[@"Like"]];
     cell.unlike.text=[NSString stringWithFormat:@"%@",object[@"Unlike"]];
     cell.foodDetail.text=object[@"Discriptiondetail"];
+    PFFile *photo =object[@"Photo"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageVI.image = image;
+            });
+        }
+    }];
     return cell;
     
 }
