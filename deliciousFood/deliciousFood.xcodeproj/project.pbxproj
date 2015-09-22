@@ -41,6 +41,11 @@
 		B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E331BAFE00F00AE8193 /* dingdanViewController.m */; };
 		B2799E371BAFE02300AE8193 /* daishouhuoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */; };
 		B2799E3A1BAFEFB400AE8193 /* firstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */; };
+		B2E9D5781BB0E596005B1F43 /* caileiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5771BB0E596005B1F43 /* caileiTableViewCell.m */; };
+		B2E9D57B1BB0E881005B1F43 /* shoucangTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D57A1BB0E881005B1F43 /* shoucangTableViewCell.m */; };
+		B2E9D57E1BB0E988005B1F43 /* daishouhuoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D57D1BB0E988005B1F43 /* daishouhuoTableViewCell.m */; };
+		B2E9D5811BB0EA2A005B1F43 /* dingdanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */; };
+		B2E9D5841BB0EB18005B1F43 /* shopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,16 @@
 		B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daishouhuoViewController.m; sourceTree = "<group>"; };
 		B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstTableViewCell.h; sourceTree = "<group>"; };
 		B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstTableViewCell.m; sourceTree = "<group>"; };
+		B2E9D5761BB0E596005B1F43 /* caileiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caileiTableViewCell.h; sourceTree = "<group>"; };
+		B2E9D5771BB0E596005B1F43 /* caileiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = caileiTableViewCell.m; sourceTree = "<group>"; };
+		B2E9D5791BB0E881005B1F43 /* shoucangTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shoucangTableViewCell.h; sourceTree = "<group>"; };
+		B2E9D57A1BB0E881005B1F43 /* shoucangTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shoucangTableViewCell.m; sourceTree = "<group>"; };
+		B2E9D57C1BB0E988005B1F43 /* daishouhuoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daishouhuoTableViewCell.h; sourceTree = "<group>"; };
+		B2E9D57D1BB0E988005B1F43 /* daishouhuoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daishouhuoTableViewCell.m; sourceTree = "<group>"; };
+		B2E9D57F1BB0EA2A005B1F43 /* dingdanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dingdanTableViewCell.h; sourceTree = "<group>"; };
+		B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dingdanTableViewCell.m; sourceTree = "<group>"; };
+		B2E9D5821BB0EB18005B1F43 /* shopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopTableViewCell.h; sourceTree = "<group>"; };
+		B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +276,21 @@
 		B2799DDC1BAF859700AE8193 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				B2799E381BAFEFB400AE8193 /* firstTableViewCell.h */,
+				B2799E391BAFEFB400AE8193 /* firstTableViewCell.m */,
+				B2E9D5761BB0E596005B1F43 /* caileiTableViewCell.h */,
+				B2E9D5771BB0E596005B1F43 /* caileiTableViewCell.m */,
+				B2E9D5791BB0E881005B1F43 /* shoucangTableViewCell.h */,
+				B2E9D57A1BB0E881005B1F43 /* shoucangTableViewCell.m */,
+				B2E9D57C1BB0E988005B1F43 /* daishouhuoTableViewCell.h */,
+				B2E9D57D1BB0E988005B1F43 /* daishouhuoTableViewCell.m */,
+				B2E9D57F1BB0EA2A005B1F43 /* dingdanTableViewCell.h */,
+				B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */,
+				B2E9D5821BB0EB18005B1F43 /* shopTableViewCell.h */,
+				B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */,
+>>>>>>> f96e9b74b0c400faf16e07666ee3cef71e00f2c9
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -424,11 +454,13 @@
 				B2799DBB1BAF84A200AE8193 /* ViewController.m in Sources */,
 				B2799E131BAFA93900AE8193 /* secondViewController.m in Sources */,
 				B2799E041BAF8A9600AE8193 /* ECSlidingViewController.m in Sources */,
+				B2E9D57E1BB0E988005B1F43 /* daishouhuoTableViewCell.m in Sources */,
 				B2799E101BAFA91C00AE8193 /* firstViewController.m in Sources */,
 				B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */,
 				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
 				B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */,
 				B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */,
+				B2E9D5811BB0EA2A005B1F43 /* dingdanTableViewCell.m in Sources */,
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,
 				B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */,
@@ -436,6 +468,8 @@
 				B2799DB51BAF84A200AE8193 /* main.m in Sources */,
 				B2799E021BAF8A9600AE8193 /* ECSlidingInteractiveTransition.m in Sources */,
 				B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */,
+				B2E9D5781BB0E596005B1F43 /* caileiTableViewCell.m in Sources */,
+				B2E9D57B1BB0E881005B1F43 /* shoucangTableViewCell.m in Sources */,
 				B2799E011BAF8A9600AE8193 /* ECSlidingAnimationController.m in Sources */,
 				B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */,
 				B2799DE41BAF863C00AE8193 /* Utilities.m in Sources */,
@@ -445,6 +479,7 @@
 				B2799E371BAFE02300AE8193 /* daishouhuoViewController.m in Sources */,
 				B2799E311BAFE00000AE8193 /* shoucangViewController.m in Sources */,
 				B2799E161BAFAE6900AE8193 /* thirdViewController.m in Sources */,
+				B2E9D5841BB0EB18005B1F43 /* shopTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

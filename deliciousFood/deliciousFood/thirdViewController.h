@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface thirdViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *toprice;
 
 @end

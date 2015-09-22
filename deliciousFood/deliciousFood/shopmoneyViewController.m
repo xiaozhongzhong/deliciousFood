@@ -9,6 +9,7 @@
 #import "shopmoneyViewController.h"
 
 @interface shopmoneyViewController ()
+- (IBAction)querenAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,4 +35,6 @@
 }
 */
 
+- (IBAction)querenAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end
