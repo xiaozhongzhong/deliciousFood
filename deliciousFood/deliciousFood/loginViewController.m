@@ -54,7 +54,7 @@
     _slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
     //增加手势到View
     [naviVC.view addGestureRecognizer:self.slidingViewController.panGesture];
-    LeftViewController *leftVC = [Utilities getStoryboardInstanceByIdentity:@"Left"];
+    LeftViewController *leftVC = [Utilities getStoryboardInstanceByIdentity:@"left"];
     
     
     //设置滑动的页面
@@ -129,7 +129,7 @@
             [Utilities setUserDefaults:@"passWord" content:password];
 
             _password.text = @"";
-            [self popUpHomePage];
+        [self popUpHomePage];
         } else if (error.code == 101) {
             [Utilities popUpAlertViewWithMsg:@"用户名或密码错误" andTitle:nil];
         } else if (error.code == 100) {
