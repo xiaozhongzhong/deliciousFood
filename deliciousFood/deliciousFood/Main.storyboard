@@ -1039,7 +1039,7 @@
                                             <outlet property="jieshao" destination="cps-xg-VSU" id="SOx-q2-IyD"/>
                                             <outlet property="like" destination="qgI-w4-MQh" id="V53-Di-0gL"/>
                                             <outlet property="price" destination="tNH-qb-8WT" id="wwK-1P-cwB"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="6dk-6Y-Uhd"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="6dk-6Y-Uhd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1174,7 +1174,7 @@
                                             <outlet property="jieshao" destination="3rE-DL-fJA" id="l8G-MY-lf1"/>
                                             <outlet property="like" destination="OTM-ur-Jau" id="m24-nW-NzM"/>
                                             <outlet property="price" destination="bk2-L2-T20" id="5aO-5x-AfI"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="sVn-bg-0ec"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="sVn-bg-0ec"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1309,7 +1309,7 @@
                                             <outlet property="jieshao" destination="FuL-xk-LZL" id="nGa-Z7-PUi"/>
                                             <outlet property="like" destination="kwu-eu-941" id="q08-75-lKV"/>
                                             <outlet property="price" destination="p92-Tb-r0y" id="QkL-RI-bfT"/>
-                                            <segue destination="2FH-xg-Vnj" kind="push" id="7f6-tz-oj5"/>
+                                            <segue destination="2FH-xg-Vnj" kind="push" identifier="Cell" id="7f6-tz-oj5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
