@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *toprice;
-
+@property(strong,nonatomic)PFObject *number;
+@property(strong,nonatomic)PFObject *image;
 @end

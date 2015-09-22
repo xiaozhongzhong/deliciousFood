@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="width" constant="120" id="WFe-dy-ehM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="60"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -551,14 +551,6 @@
                                     <segue destination="ZjZ-9b-jaO" kind="push" identifier="daishouhuo" id="mJB-BC-4MA"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ca-n2-ei1">
-                                <rect key="frame" x="80" y="72" width="160" height="160"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="qiR-Dt-3m1"/>
-                                    <constraint firstAttribute="width" constant="160" id="rKK-ey-l2O"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d6-Ud-D6L">
                                 <rect key="frame" x="16" y="246" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -598,6 +590,19 @@
                                     <segue destination="sYT-xq-1zX" kind="push" identifier="dingdan" id="eMp-4E-9cA"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ca-n2-ei1">
+                                <rect key="frame" x="80" y="72" width="160" height="160"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="qiR-Dt-3m1"/>
+                                    <constraint firstAttribute="width" constant="160" id="rKK-ey-l2O"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -605,15 +610,14 @@
                             <constraint firstAttribute="trailing" secondItem="D5b-J8-6Sr" secondAttribute="trailing" id="7Z4-k0-4oO"/>
                             <constraint firstItem="D5b-J8-6Sr" firstAttribute="leading" secondItem="oEi-Ck-MoK" secondAttribute="trailing" constant="-1" id="FEO-rg-Sad"/>
                             <constraint firstItem="hEN-o6-UbJ" firstAttribute="top" secondItem="oEi-Ck-MoK" secondAttribute="bottom" id="H1K-kJ-mfl"/>
-                            <constraint firstAttribute="trailing" secondItem="3ca-n2-ei1" secondAttribute="trailing" constant="80" id="Lu1-iJ-i2e"/>
                             <constraint firstItem="hEN-o6-UbJ" firstAttribute="top" secondItem="D5b-J8-6Sr" secondAttribute="bottom" id="QJe-OD-cjQ"/>
                             <constraint firstItem="0d6-Ud-D6L" firstAttribute="top" secondItem="3ca-n2-ei1" secondAttribute="bottom" constant="14" id="USI-xa-QgO"/>
                             <constraint firstItem="oEi-Ck-MoK" firstAttribute="leading" secondItem="wbE-5L-ugr" secondAttribute="trailing" constant="-1" id="cps-re-7FZ"/>
                             <constraint firstItem="KqP-eD-wUJ" firstAttribute="top" secondItem="QKe-uM-zog" secondAttribute="bottom" constant="7" id="ex8-el-7QA"/>
                             <constraint firstItem="KqP-eD-wUJ" firstAttribute="leading" secondItem="sHO-PQ-N9r" secondAttribute="leading" constant="85" id="fdn-uh-98g"/>
-                            <constraint firstItem="3ca-n2-ei1" firstAttribute="leading" secondItem="sHO-PQ-N9r" secondAttribute="leading" constant="80" id="lQB-37-zC1"/>
                             <constraint firstItem="QKe-uM-zog" firstAttribute="leading" secondItem="sHO-PQ-N9r" secondAttribute="leading" constant="16" id="lcL-FX-191"/>
                             <constraint firstItem="QKe-uM-zog" firstAttribute="top" secondItem="0d6-Ud-D6L" secondAttribute="bottom" constant="38" id="mJU-PG-VVx"/>
+                            <constraint firstAttribute="centerX" secondItem="3ca-n2-ei1" secondAttribute="centerX" id="tA7-Gx-z6Y"/>
                             <constraint firstItem="hEN-o6-UbJ" firstAttribute="top" secondItem="wbE-5L-ugr" secondAttribute="bottom" id="u4S-sN-0Be"/>
                             <constraint firstItem="3ca-n2-ei1" firstAttribute="top" secondItem="BuU-TT-fxA" secondAttribute="bottom" constant="8" id="vhU-m7-qUA"/>
                             <constraint firstItem="njg-Pi-Vy9" firstAttribute="top" secondItem="0d6-Ud-D6L" secondAttribute="bottom" constant="6" id="wDl-g6-VJ7"/>
@@ -1760,14 +1764,12 @@
                                     <action selector="loginAction:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Olv-jY-1ne"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-Ah-uOq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-Ah-uOq">
                                 <rect key="frame" x="110" y="72" width="100" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="HJ5-53-RUg"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Hbk-ge-C01"/>
-                                    <constraint firstAttribute="width" constant="100" id="WrI-Sf-XfA"/>
-                                    <constraint firstAttribute="height" constant="100" id="oI0-0N-7dN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1945,7 +1947,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoi-3X-nhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="1500"/>
+            <point key="canvasLocation" x="220" y="1617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lHw-MQ-Xmq">
@@ -1984,6 +1986,9 @@
             <point key="canvasLocation" x="661" y="2976"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="33" height="33"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
