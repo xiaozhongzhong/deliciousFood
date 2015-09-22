@@ -12,7 +12,7 @@
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)daifahuoAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)dingdanAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)menuAction:(UIBarButtonItem *)sender;
+
 
 
 @end
@@ -24,9 +24,9 @@
     //读取用户名
     PFUser *currentUser = [PFUser currentUser];
      NSNumberFormatter *numberFortnatters=[[NSNumberFormatter alloc]init];
-    self.username.text=[NSString stringWithFormat:@"%@元",currentUser[@"username"]];
+    self.username.text=[NSString stringWithFormat:@"%@",currentUser[@"username"]];
     NSString *numbers=[numberFortnatters stringFromNumber:currentUser[@"Money"]];
-    self.toprice.text=numbers;
+    self.toprice.text=[NSString stringWithFormat:@"%@元",numbers];
     PFFile *photo =currentUser[@"TouXiang"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
@@ -44,6 +44,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -64,9 +66,7 @@
 - (IBAction)dingdanAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 
-- (IBAction)menuAction:(UIBarButtonItem *)sender {
-      [[NSNotificationCenter defaultCenter] postNotificationName:@"left" object:self];
-}
+
 
 
 

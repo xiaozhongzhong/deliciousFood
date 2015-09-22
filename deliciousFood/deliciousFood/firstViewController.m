@@ -16,6 +16,7 @@
 - (IBAction)caociaAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)tangAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)yeAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)menuAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -47,6 +48,18 @@
 }
 
 
+//当回到页面时执行下面的通知
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //点击执行ViewController里面的一个通知(打开手势的通知)
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"enablePanGes" object:self];
+}
+//当离开页面时执行下面的通知
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    //点击执行ViewController里面的一个通知(关闭手势的通知)
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"disablePanGes" object:self];
+}
 
 
 #pragma mark - Navigation
@@ -110,4 +123,8 @@
 
 - (IBAction)yeAction:(UIButton *)sender forEvent:(UIEvent *)event {
    }
+
+- (IBAction)menuAction:(UIBarButtonItem *)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
+}
 @end

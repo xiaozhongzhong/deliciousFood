@@ -9,7 +9,7 @@
 #import "loginViewController.h"
 #import "resiveViewController.h"
 #import "TabViewController.h"
-
+#import "LeftViewController.h"
 @interface loginViewController ()
 
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -40,19 +40,9 @@
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
 }
+
 -(void)popUpHomePage{
-     TabViewController *tabVC=[Utilities getStoryboardInstanceByIdentity:@"Tab"];
-    //创建导航控制器
-    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
-    //导航条隐藏
-    naviVC.navigationBarHidden = YES;
-    [self presentViewController:naviVC animated:YES completion:nil];
-    
-    
-}
-/*
--(void)popUpHomePage{
-    TapViewController *tabVC=[Utilities getStoryboardInstanceByIdentity:@"tap"];
+    TabViewController *tabVC=[Utilities getStoryboardInstanceByIdentity:@"Tab"];
     //创建导航控制器
     UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
     //导航条隐藏
@@ -81,7 +71,27 @@
     [self presentViewController:self.slidingViewController animated:YES completion:nil];
  
 }
- */
+
+//中间页面的滑动和回证
+- (void)leftSwitchAction {
+    //当前的中间位置视图在右边
+    if (_slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredRight) {
+        //回证到中间页面
+        [_slidingViewController resetTopViewAnimated:YES];
+    } else {
+        //滑会右边
+        [_slidingViewController anchorTopViewToRightAnimated:YES];
+    }
+}
+- (void)enablePanGesOnSliding {
+    _slidingViewController.panGesture.enabled = YES;
+}
+
+- (void)disablePanGesOnSliding {
+    _slidingViewController.panGesture.enabled = NO;
+}
+
+
 
 
 /*
@@ -94,10 +104,7 @@
 }
 */
 
-//- (IBAction)resiveAction:(UIButton *)sender forEvent:(UIEvent *)event {
-//    [self performSegueWithIdentifier:@"toResice" sender:self];
-//
-//}
+
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event {
     NSString *username = _username.text;
     NSString *password = _password.text;
@@ -120,7 +127,7 @@
             
             [Utilities setUserDefaults:@"userName" content:curr[@"username"]];
             [Utilities setUserDefaults:@"passWord" content:password];
-            //_usernameTF.text = @"";
+
             _password.text = @"";
             [self popUpHomePage];
         } else if (error.code == 101) {
