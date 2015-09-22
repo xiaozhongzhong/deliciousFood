@@ -9,6 +9,7 @@
 #import "passwordViewController.h"
 
 @interface passwordViewController ()
+- (IBAction)cancelAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -34,4 +35,8 @@
 }
 */
 
+- (IBAction)canceAction:(UIBarButtonItem *)sender {
+}
+- (IBAction)cancelAction:(UIBarButtonItem *)sender {
+}
 @end
