@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *pirce;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIButton *shopcar;
+@property (weak, nonatomic) IBOutlet UIButton *shoucangjia;
 
 
 @end
