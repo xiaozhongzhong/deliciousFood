@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface yexiaoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end
