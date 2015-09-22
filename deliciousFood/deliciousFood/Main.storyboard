@@ -736,19 +736,19 @@
                                     <constraint firstAttribute="height" constant="160" id="aM4-ni-lmN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-bU-sAz">
                                 <rect key="frame" x="16" y="340" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-Tr-hpV">
                                 <rect key="frame" x="16" y="369" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-lA-sOt">
                                 <rect key="frame" x="16" y="429" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加入购物车">
@@ -758,7 +758,7 @@
                                     <action selector="shopAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="YQ4-Yn-tzb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-Fx-17S">
                                 <rect key="frame" x="229" y="429" width="75" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.16869314839999999" blue="0.15822658019999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加入收藏夹">
@@ -768,45 +768,42 @@
                                     <action selector="shoucangAction:forEvent:" destination="2FH-xg-Vnj" eventType="touchUpInside" id="0lT-02-xU6"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM2-Dt-Zli">
-                                <rect key="frame" x="16" y="232" width="288" height="100"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jY-Ue-TVD">
+                                <rect key="frame" x="16" y="232" width="288" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="A7c-Hd-MAr"/>
+                                    <constraint firstAttribute="width" constant="288" id="RA3-uC-aTf"/>
+                                    <constraint firstAttribute="height" constant="80" id="vO9-3E-rn1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="2FH-xg-Vnj" id="UDq-pO-y4E"/>
-                                </connections>
-                            </textView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1jY-Ue-TVD" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="5P8-Wg-ewY"/>
                             <constraint firstItem="7GZ-Tr-hpV" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="660-cz-htA"/>
-                            <constraint firstItem="oM2-Dt-Zli" firstAttribute="top" secondItem="OoY-iV-dj4" secondAttribute="bottom" constant="8" id="6Fz-Vk-RLs"/>
                             <constraint firstAttribute="trailing" secondItem="OoY-iV-dj4" secondAttribute="trailing" constant="16" id="7Ln-2Y-gGc"/>
+                            <constraint firstItem="1jY-Ue-TVD" firstAttribute="top" secondItem="OoY-iV-dj4" secondAttribute="bottom" constant="8" id="FJh-b9-2LU"/>
                             <constraint firstAttribute="trailing" secondItem="NOY-Fx-17S" secondAttribute="trailing" constant="16" id="Vle-02-3Zv"/>
                             <constraint firstAttribute="trailing" secondItem="7GZ-Tr-hpV" secondAttribute="trailing" constant="16" id="X0W-PN-0Mf"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="top" secondItem="7GZ-Tr-hpV" secondAttribute="bottom" constant="39" id="Ysk-9O-LgE"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="baseline" secondItem="NOY-Fx-17S" secondAttribute="baseline" id="fXI-Fi-192"/>
                             <constraint firstItem="OoY-iV-dj4" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="h6d-n1-U4f"/>
-                            <constraint firstItem="oM2-Dt-Zli" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="iI7-4I-kMR"/>
                             <constraint firstItem="OoY-iV-dj4" firstAttribute="top" secondItem="655-3h-SbQ" secondAttribute="bottom" id="jSk-eq-3nu"/>
+                            <constraint firstAttribute="trailing" secondItem="1jY-Ue-TVD" secondAttribute="trailing" constant="16" id="jaq-xK-JZ9"/>
                             <constraint firstItem="rT1-bU-sAz" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="jlR-9g-rim"/>
                             <constraint firstItem="7GZ-Tr-hpV" firstAttribute="top" secondItem="rT1-bU-sAz" secondAttribute="bottom" constant="8" id="m3K-gX-gPh"/>
                             <constraint firstItem="DhT-lA-sOt" firstAttribute="leading" secondItem="6vS-mJ-Amg" secondAttribute="leading" constant="16" id="nSl-X5-KLf"/>
-                            <constraint firstAttribute="trailing" secondItem="oM2-Dt-Zli" secondAttribute="trailing" constant="16" id="nTg-gr-9xh"/>
                             <constraint firstAttribute="trailing" secondItem="rT1-bU-sAz" secondAttribute="trailing" constant="16" id="nYm-jL-qw0"/>
-                            <constraint firstItem="rT1-bU-sAz" firstAttribute="top" secondItem="oM2-Dt-Zli" secondAttribute="bottom" constant="8" id="pIp-9C-qvD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="详情" id="Kvy-5B-JUB"/>
                     <connections>
                         <outlet property="imageview" destination="OoY-iV-dj4" id="nop-6c-Nij"/>
+                        <outlet property="label" destination="1jY-Ue-TVD" id="Ate-vO-nzJ"/>
                         <outlet property="name" destination="rT1-bU-sAz" id="tTS-Y9-PGR"/>
                         <outlet property="pirce" destination="7GZ-Tr-hpV" id="afR-vO-5CK"/>
-                        <outlet property="textview" destination="oM2-Dt-Zli" id="U2R-Ca-YuJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZ0-AJ-qmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
