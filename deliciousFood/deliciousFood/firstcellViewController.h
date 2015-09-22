@@ -12,9 +12,10 @@
 
 @property (strong,nonatomic) PFObject *item;
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
-@property (weak, nonatomic) IBOutlet UITextView *textview;
+
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *pirce;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 
 @end
