@@ -26,19 +26,19 @@
 //    [paragraphStyle setFirstLineHeadIndent:self.label.frame.size.width + 5];//首行缩进 根据用户昵称宽度在加5个像素
     
 
+//    self.numbers.text=[NSString stringWithFormat:@"1"];
+//
+//    index = 0;
+//
+//
+//    // Do any additional setup after loading the view.
+//
+//    //NSLog(@"%@",_item);
+//    index = 0;
+
     self.numbers.text=[NSString stringWithFormat:@"1"];
 
-    index = 0;
-
-
-    // Do any additional setup after loading the view.
-
-    //NSLog(@"%@",_item);
-    index = 0;
-
-    self.numbers.text=[NSString stringWithFormat:@"1"];
-
-    index = 0;
+    
     //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
 
     self.label.text=self.item[@"Discriptiondetail"];
@@ -58,28 +58,22 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     PFQuery *query = [PFQuery queryWithClassName:@"Favarites"];
-
-
+    [query whereKey:@"FavVegs" equalTo:_item];
     
-    
-//    [query includeKey:@"FavVegs"];
-    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
-//        if (!error) {
-//            self.storArray = array;
-//            NSLog(@"sss=%@",self.storArray);
-//        }else {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
-    
-
-//          if([self.item[@"Dishes"] isEqualToString:<#(NSString *)#>){
-//        
-//        [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
-//    }else{
-//        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-//}
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError *error){
+        if (!error) {
+            if (number == 0) {
+                [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
+                index = 0;
+            } else {
+                [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
+                index = 1;
+                //PFObject *object=[PFObject object];
+            }
+        }else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     
 }
 
@@ -129,7 +123,6 @@
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
         }
     }];
-
     
     
 }
@@ -168,15 +161,15 @@
             }
         }];
     }else{
+        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
         [_booking deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-                index = 0;
                 [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
+                index = 0;
             }
         }];
-        }
-         
+    }
+    
 }
 
 - (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event {

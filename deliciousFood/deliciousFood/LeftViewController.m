@@ -47,41 +47,75 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+   
+        if (alertView.tag == 9001) {
     if (buttonIndex==1) {
-        [self readingUsername];
-        UITextField *textField = [alertView textFieldAtIndex:0];
-        if ([textField.text isEqualToString:@""]||[textField.text isEqualToString:self.username.text]) {
-            [Utilities popUpAlertViewWithMsg:@"你输入的用户名为空或重复" andTitle:nil]
-            ;
-            return;
-        }
-        PFUser *user=[PFUser currentUser];
-        user[@"username"]=textField.text;
-        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            [aiv stopAnimating];
-            if (succeeded) {
-                [Utilities setUserDefaults:@"userName" content:textField.text];
-                [self readingUsername];
-                
-            } else {
-                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+            [self readingUsername];
+            UITextField *textField = [alertView textFieldAtIndex:0];
+        
+            if ([textField.text isEqualToString:@""]||[textField.text isEqualToString:self.username.text]) {
+                [Utilities popUpAlertViewWithMsg:@"你输入的用户名为空或重复" andTitle:nil]
+                ;
+                return;
             }
-        }];
-    }
-}
+            PFUser *user=[PFUser currentUser];
+            user[@"username"]=textField.text;
+            user[@"Address"]=textField.text;
+            UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+            [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [aiv stopAnimating];
+                if (succeeded) {
+                    [Utilities setUserDefaults:@"userName" content:textField.text];
+                    [Utilities popUpAlertViewWithMsg:@"修改用户名成功" andTitle:nil];
+                    [self.navigationController popViewControllerAnimated:YES];
+                    [self readingUsername];
+                    
+                } else {
+                    [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                }
+            }];
+        }
+    } else {
+        if (buttonIndex==1) {
+            [self readingUsername];
+            UITextField *textField = [alertView textFieldAtIndex:0];
+           
+            if ([textField.text isEqualToString:@""]||[textField.text isEqualToString:self.username.text]) {
+                [Utilities popUpAlertViewWithMsg:@"你输入的地址为空或重复" andTitle:nil]
+                ;
+                return;
+            }
+            PFUser *user=[PFUser currentUser];
+            user[@"Address"]=textField.text;
+            UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+            [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [aiv stopAnimating];
+                if (succeeded) {
+                    [Utilities popUpAlertViewWithMsg:@"修改地址成功" andTitle:nil];
+                    [self.navigationController popViewControllerAnimated:YES];
 
+                } else {
+                    [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                }
+            }];
+        }
+        }
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    
    }
 
 
 - (IBAction)usenameAction:(UIButton *)sender forEvent:(UIEvent *)event {
     UIAlertView *sellView = [[UIAlertView alloc]initWithTitle:@"警告" message:[NSString stringWithFormat:@"修改的用户名是：%@\n请输入你修改后的用户名",self.username.text] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [sellView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    sellView.tag = 9001;
         [sellView show];
 
 }
@@ -91,8 +125,16 @@
 }
 
 - (IBAction)adressAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    PFUser *currentUser = [PFUser currentUser];
+    NSString *address;
+    address = currentUser[@"Address"];
+    UIAlertView *sellView = [[UIAlertView alloc]initWithTitle:@"修改地址" message:[NSString stringWithFormat:@"修改的地址是：%@\n请输入你修改后的地址",address] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [sellView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    sellView.tag = 8001;
+    [sellView show];
     
-  }
+}
+
 
 - (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:YES completion:nil];
