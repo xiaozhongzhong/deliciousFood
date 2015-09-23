@@ -41,7 +41,6 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             self.objectForShow = array;
-            NSLog(@"%@",array);
             [self.tableview reloadData];
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
