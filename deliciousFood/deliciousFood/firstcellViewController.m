@@ -20,8 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //NSLog(@"%@",_item);
     index = 0;
-    //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
     self.label.text=self.item[@"Discriptiondetail"];
 
     self.name.text=self.item[@"Dishes"];
@@ -36,7 +36,32 @@
         }
     }];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
     
+//    NSLog(@"%@",query);
+//    PFObject *object;
+//    NSLog(@"%@",object[@"Name"]);
+//    //[query whereKey:@"objectId" containedIn:_item[@"objectId"]];
+//    NSString *str = object[@"objectId"];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Favarites"];
+    [query whereKey:@"FavVegs" equalTo:_item[@"Dishes"]];
+    PFObject *object;
+    NSString *str = object[@"Dishes"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+//        if (!error) {
+//            [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
+//        } else {
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+    
+//    if(){
+//        [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
+//    }else{
+//        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,15 +91,18 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
         NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
         _booking=[PFObject objectWithClassName:@"Favarites"];
-    
+        
         _booking[@"Timer"]=strDate;
         _booking[@"Name"]=self.name.text;
     
         PFFile *photo =self.item[@"Photo"];
         _booking[@"Photo"] =photo;
         
+        //关联用户和食物
         PFUser *currentUser = [PFUser currentUser];
         _booking[@"FavaritesUser"]=currentUser;
+        _booking[@"FavVegs"]=_item;
+        
         UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
         [ _booking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv stopAnimating];
