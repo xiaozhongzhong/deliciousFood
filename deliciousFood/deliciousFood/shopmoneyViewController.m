@@ -17,13 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    PFUser *user=[PFUser currentUser];
+    self.shouhuorenTF.text=user[@"username"];
+    self.phoneTF.text=user[@"Phonenumber"];
+    self.addressTF.text=user[@"Address"];
+    
+    //self.zongjinumber.text=[NSString stringWithFormat:@"%@元",self.Item[@"TotalPrice"]];
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

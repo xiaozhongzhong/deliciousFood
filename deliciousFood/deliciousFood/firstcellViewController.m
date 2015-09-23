@@ -25,10 +25,33 @@
 //    paragraphStyle.lineSpacing = 5;  //行自定义行高度
 //    [paragraphStyle setFirstLineHeadIndent:self.label.frame.size.width + 5];//首行缩进 根据用户昵称宽度在加5个像素
     
+<<<<<<< HEAD
     self.numbers.text=[NSString stringWithFormat:@"1"];
 
     index = 0;
 
+=======
+    // Do any additional setup after loading the view.
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+    //NSLog(@"%@",_item);
+    index = 0;
+=======
+<<<<<<< HEAD
+>>>>>>> 5008cdfe91b919ce0e0f012b4d69efcadf8f969e
+    self.numbers.text=[NSString stringWithFormat:@"1"];
+
+    index = 0;
+    //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
+<<<<<<< HEAD
+
+=======
+>>>>>>> 037bec7834ac418bdf7da26cfb58dbf37a47bda7
+>>>>>>> 2ad88f011ef6dce1641275351aa94b7eff35acbd
+>>>>>>> 5008cdfe91b919ce0e0f012b4d69efcadf8f969e
+>>>>>>> 335ea5c62e28c72a62def48584795a6e27322b66
     self.label.text=self.item[@"Discriptiondetail"];
 
     self.name.text=[NSString stringWithFormat:@"菜名：  %@",self.item[@"Dishes"]];
