@@ -10,5 +10,5 @@
 
 @interface secondViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-
+@property (strong, nonatomic)NSArray *objectForShow;
 @end
