@@ -10,10 +10,9 @@
 
 @interface secondViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (strong, nonatomic)NSArray *objectForShow;
-@property(strong,nonatomic)NSArray *dataArray;
+@property (strong, nonatomic)NSMutableArray *objectForShow;
 @property(strong,nonatomic)NSMutableDictionary *deleDic;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *button;
-
+@property(strong,nonatomic) PFObject *item;
 
 @end
