@@ -26,7 +26,12 @@
 //    [paragraphStyle setFirstLineHeadIndent:self.label.frame.size.width + 5];//首行缩进 根据用户昵称宽度在加5个像素
     
     // Do any additional setup after loading the view.
+<<<<<<< HEAD
     self.numbers.text=[NSString stringWithFormat:@"1"];
+=======
+    index = 0;
+    //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
+>>>>>>> 037bec7834ac418bdf7da26cfb58dbf37a47bda7
     self.label.text=self.item[@"Discriptiondetail"];
 
     self.name.text=[NSString stringWithFormat:@"菜名：  %@",self.item[@"Dishes"]];
@@ -94,34 +99,44 @@
 }
 
 - (IBAction)shoucangAction:(UIButton *)sender forEvent:(UIEvent *)event {
-      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
-    PFObject *booking=[PFObject objectWithClassName:@"Favarites"];
+    if (index == 0){
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+        _booking=[PFObject objectWithClassName:@"Favarites"];
     
-    booking[@"Timer"]=strDate;
-    booking[@"Name"]=self.name.text;
+        _booking[@"Timer"]=strDate;
+        _booking[@"Name"]=self.name.text;
     
-    PFFile *photo =self.item[@"Photo"];
-  //  NSData *photoData = UIImagePNGRepresentation(photo);
-   // PFFile *photoFile = photo;
-    booking[@"Photo"] =photo;
-    
-    PFUser *currentUser = [PFUser currentUser];
-    booking[@"FavaritesUser"]=currentUser;
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-    [ booking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        PFFile *photo =self.item[@"Photo"];
+        _booking[@"Photo"] =photo;
+        
+        PFUser *currentUser = [PFUser currentUser];
+        _booking[@"FavaritesUser"]=currentUser;
+        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+        [ _booking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv stopAnimating];
-        if (succeeded) {
+            if (succeeded) {
             //回到上一页前更新页面的通知
             // [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];
             //返回上一页
-            [Utilities popUpAlertViewWithMsg:@"收藏成功！" andTitle:nil];
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
-        }
-    }];
+               [Utilities popUpAlertViewWithMsg:@"收藏成功！" andTitle:nil];
+               index = 1;
+               [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
+              //[self.navigationController popViewControllerAnimated:YES];
+            } else {
+                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+            }
+        }];
+    }else{
+        [_booking deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
+                index = 0;
+                [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
+            }
+        }];
+    }
 
 }
 
