@@ -9,8 +9,13 @@
 #import "secondViewController.h"
 #import "firstcellViewController.h"
 #import "shopTableViewCell.h"
+#import "shopmoneyViewController.h"
+
+
 @interface secondViewController ()
+
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender;
+
 
 
 @end
@@ -20,30 +25,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self query];
-    // Do any additional setup after loading the view.
+    
+    
+       // Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"Cell"]) {
+        //获得当前tableview行选中的数据
+        PFObject *object = [_objectForShow objectAtIndex:[self.tableview indexPathForSelectedRow].row];
+        shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
+        shopMoneyVC.Item = object;
+        shopMoneyVC.hidesBottomBarWhenPushed = YES;
+    }
+
+
 }
-*/
+
 -(void)query
 {
     PFQuery *query=[PFQuery queryWithClassName:@"Shoppingcart"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             self.objectForShow = array;
-            NSLog(@"%@",array);
             [self.tableview reloadData];
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -70,12 +85,23 @@
                             });
         }
     }];
+        return cell;
+ 
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    shopTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     return cell;
-    
 }
 
 
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender {
+   }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //回到当前页面,取消刚刚的选项
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
 @end

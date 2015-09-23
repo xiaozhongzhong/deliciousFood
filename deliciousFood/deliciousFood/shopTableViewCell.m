@@ -9,7 +9,6 @@
 #import "shopTableViewCell.h"
 
 @implementation shopTableViewCell
-
 - (void)awakeFromNib {
     // Initialization code
 }

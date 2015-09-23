@@ -26,12 +26,12 @@
 //    [paragraphStyle setFirstLineHeadIndent:self.label.frame.size.width + 5];//首行缩进 根据用户昵称宽度在加5个像素
     
     // Do any additional setup after loading the view.
-<<<<<<< HEAD
+
     self.numbers.text=[NSString stringWithFormat:@"1"];
-=======
+
     index = 0;
     //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
->>>>>>> 037bec7834ac418bdf7da26cfb58dbf37a47bda7
+
     self.label.text=self.item[@"Discriptiondetail"];
 
     self.name.text=[NSString stringWithFormat:@"菜名：  %@",self.item[@"Dishes"]];

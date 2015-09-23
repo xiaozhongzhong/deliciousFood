@@ -53,6 +53,8 @@
 		B2E9D5941BB0FCFA005B1F43 /* tangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */; };
 		B2E9D5971BB0FD09005B1F43 /* yexiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */; };
 		B2E9D5A31BB144BC005B1F43 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E9D5A21BB144BC005B1F43 /* 5.png */; };
+		B2EB0AEE1BB26F2500ECA8EB /* Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EB0AEC1BB26F2500ECA8EB /* Selected.png */; };
+		B2EB0AEF1BB26F2500ECA8EB /* Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EB0AED1BB26F2500ECA8EB /* Unselected.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,8 @@
 		B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yexiaoViewController.h; sourceTree = "<group>"; };
 		B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yexiaoViewController.m; sourceTree = "<group>"; };
 		B2E9D5A21BB144BC005B1F43 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		B2EB0AEC1BB26F2500ECA8EB /* Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Selected.png; sourceTree = "<group>"; };
+		B2EB0AED1BB26F2500ECA8EB /* Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unselected.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +352,8 @@
 			isa = PBXGroup;
 			children = (
 				B2799DBF1BAF84A200AE8193 /* Images.xcassets */,
+				B2EB0AEC1BB26F2500ECA8EB /* Selected.png */,
+				B2EB0AED1BB26F2500ECA8EB /* Unselected.png */,
 				4651A9031BB111DD0042EFF5 /* 1.png */,
 				B2E9D5A21BB144BC005B1F43 /* 5.png */,
 				B2E9D58A1BB0F5EB005B1F43 /* Main.storyboard */,
@@ -456,6 +462,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EB0AEF1BB26F2500ECA8EB /* Unselected.png in Resources */,
+				B2EB0AEE1BB26F2500ECA8EB /* Selected.png in Resources */,
 				B2E9D58B1BB0F5EB005B1F43 /* Main.storyboard in Resources */,
 				4651A9041BB111DD0042EFF5 /* 1.png in Resources */,
 				B2E9D5A31BB144BC005B1F43 /* 5.png in Resources */,
