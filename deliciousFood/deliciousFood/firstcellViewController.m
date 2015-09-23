@@ -25,18 +25,10 @@
 //    paragraphStyle.lineSpacing = 5;  //行自定义行高度
 //    [paragraphStyle setFirstLineHeadIndent:self.label.frame.size.width + 5];//首行缩进 根据用户昵称宽度在加5个像素
     
-    // Do any additional setup after loading the view.
-<<<<<<< HEAD
-    //NSLog(@"%@",_item);
-    index = 0;
-=======
-<<<<<<< HEAD
     self.numbers.text=[NSString stringWithFormat:@"1"];
-=======
+
     index = 0;
-    //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
->>>>>>> 037bec7834ac418bdf7da26cfb58dbf37a47bda7
->>>>>>> 2ad88f011ef6dce1641275351aa94b7eff35acbd
+
     self.label.text=self.item[@"Discriptiondetail"];
 
     self.name.text=[NSString stringWithFormat:@"菜名：  %@",self.item[@"Dishes"]];
@@ -53,32 +45,34 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated{
-    
-//    NSLog(@"%@",query);
-//    PFObject *object;
-//    NSLog(@"%@",object[@"Name"]);
-//    //[query whereKey:@"objectId" containedIn:_item[@"objectId"]];
-//    NSString *str = object[@"objectId"];
-    
     PFQuery *query = [PFQuery queryWithClassName:@"Favarites"];
-    [query whereKey:@"FavVegs" equalTo:_item[@"Dishes"]];
-    PFObject *object;
-    NSString *str = object[@"Dishes"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+
+
+    
+    
+//    [query includeKey:@"FavVegs"];
+    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
 //        if (!error) {
-//            [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
-//        } else {
+//            self.storArray = array;
+//            NSLog(@"sss=%@",self.storArray);
+//        }else {
 //            NSLog(@"Error: %@ %@", error, [error userInfo]);
 //        }
 //    }];
     
-//    if(){
+
+//          if([self.item[@"Dishes"] isEqualToString:<#(NSString *)#>){
+//        
 //        [_shoucangjia setTitle:@"已收藏" forState:UIControlStateNormal];
 //    }else{
 //        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-//    }
+//}
+    
 }
 
+
+    
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -169,8 +163,8 @@
                 [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
             }
         }];
-    }
-
+        }
+         
 }
 
 - (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event {

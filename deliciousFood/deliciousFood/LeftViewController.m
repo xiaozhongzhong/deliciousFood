@@ -87,6 +87,7 @@
 }
 
 - (IBAction)passwordAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self performSegueWithIdentifier:@"pass" sender:self];
 }
 
 - (IBAction)adressAction:(UIButton *)sender forEvent:(UIEvent *)event {

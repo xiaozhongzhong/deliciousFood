@@ -11,6 +11,7 @@
 @interface firstcellViewController : UIViewController{
     //收藏夹Title文本的修改
     BOOL index;
+    int count;
 }
 
 @property (strong,nonatomic) PFObject *item;
@@ -24,5 +25,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *numbers;
 @property (weak, nonatomic) IBOutlet UIStepper *add;
 @property (strong, nonatomic) PFObject *booking;
-
+@property(strong,nonatomic)NSArray *storArray;
 @end
