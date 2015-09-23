@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -51,7 +52,54 @@
 }
 
 - (IBAction)doneAction:(UIBarButtonItem *)sender {
+    if (![self.oldpasswordTF.text isEqualToString:@""] || ![self.newpasswordTF.text isEqualToString:@""] || ![self.newnewpassword.text isEqualToString:@""]){
+      
+    if ([self.oldpasswordTF.text isEqualToString:[Utilities getUserDefaults:@"passWord"]]) {
+        
+        if ([self.newpasswordTF.text isEqualToString:self.newnewpassword.text]) {
+            PFUser *currUser=[PFUser currentUser];
+            currUser.password=self.newpasswordTF.text;
+            UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+            [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [aiv stopAnimating];
+                if (succeeded) {
+                    [Utilities setUserDefaults:@"passWord" content:self.newpasswordTF.text];
+                    [Utilities popUpAlertViewWithMsg:@"成功修改！" andTitle:nil];
                     
-
+                    [PFUser logOut];//退出Parse
+                    [aiv startAnimating];
+                    //重新登录
+                    [PFUser logInWithUsernameInBackground:currUser.username password:self.newpasswordTF.text block:^(PFUser *user, NSError *error) {
+                        
+                        [aiv stopAnimating];
+                        if (user) {
+                            [self dismissViewControllerAnimated:YES completion:nil];
+                        } else if (error.code == 101) {
+                            [Utilities popUpAlertViewWithMsg:@"用户名或密码错误" andTitle:nil];
+                        } else if (error.code == 100) {
+                            [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
+                        }else{
+                            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                        }
+                    }];
+                    
+                    
+                    //[self.navigationController popViewControllerAnimated:YES];
+                } else {
+                    [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                }
+            }];
+        }else{
+            [Utilities popUpAlertViewWithMsg:@"俩次密码不一致，请重新输入" andTitle:nil];
+        }
+        
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"与原密码不同，请重新输入" andTitle:nil];
+    }
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
+    }
 }
+
+
 @end
