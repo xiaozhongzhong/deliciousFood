@@ -10,7 +10,7 @@
 
 @interface firstcellViewController : UIViewController{
     //收藏夹Title文本的修改
-    BOOL index;
+    BOOL index ;
     int count;
 }
 
