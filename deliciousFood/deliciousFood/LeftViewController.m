@@ -40,6 +40,15 @@
     //读取用户名
     PFUser *currentUser = [PFUser currentUser];
     self.username.text=[NSString stringWithFormat:@"账号信息：%@",currentUser[@"username"]];
+    PFFile *photo =currentUser[@"Photo"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageview.image = image;
+            });
+        }
+    }];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -177,7 +186,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     NSData *photoData = UIImagePNGRepresentation(_imageview.image);
     PFFile *photoFile = [PFFile fileWithName:@"2.png" data:photoData];
-    PFUser *user = [PFUser user];
+    PFUser *user = [PFUser currentUser];
+    //PFObject *user = [PFObject objectWithClassName:@"_User"];
     user[@"TouXiang"] = photoFile;
     NSLog(@"%@",user[@"TouXiang"]);
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -190,6 +200,8 @@
         if (succeeded) {
             [Utilities popUpAlertViewWithMsg:@"保存成功" andTitle:nil];
             
+        } else {
+            NSLog(@"%@", [error description]);
         }
         
     }];
