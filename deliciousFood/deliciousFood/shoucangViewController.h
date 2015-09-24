@@ -12,6 +12,6 @@
 
 @interface shoucangViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (strong, nonatomic)NSArray *objectForShow;
+@property (strong, nonatomic)NSMutableArray *objectForShow;
 
 @end

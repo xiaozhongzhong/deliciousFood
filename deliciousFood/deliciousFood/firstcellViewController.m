@@ -161,9 +161,9 @@
             }
         }];
     }else{
-        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
         [_booking deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
+                [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
                 [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
                 index = 0;
             }
