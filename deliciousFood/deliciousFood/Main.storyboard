@@ -134,6 +134,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-QZ-FBt">
                                 <rect key="frame" x="16" y="74" width="120" height="120"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="H81-yr-TBS"/>
                                     <constraint firstAttribute="width" constant="120" id="WFe-dy-ehM"/>
@@ -143,6 +144,9 @@
                                         <integer key="value" value="60"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UUs-me-iMc" appends="YES" id="XS0-mf-bQy"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-Re-Bxb">
                                 <rect key="frame" x="16" y="382" width="240" height="50"/>
@@ -264,6 +268,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7d-ZO-Kdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UUs-me-iMc">
+                    <connections>
+                        <action selector="pickAction:" destination="F4V-sj-w65" id="OXp-qI-qiV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1037" y="2976"/>
         </scene>
