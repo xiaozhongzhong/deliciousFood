@@ -140,4 +140,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
+- (IBAction)pickAction:(UITapGestureRecognizer *)sender {
+}
 @end

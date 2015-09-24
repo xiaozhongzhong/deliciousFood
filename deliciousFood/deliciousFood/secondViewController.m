@@ -25,8 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self query];
-    
-    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+ 
+ 
+//    
+//    [self.editButtonItem addTarget:self action:@selector(allSelect:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
        // Do any additional setup after loading the view.
 }
 
@@ -65,8 +69,9 @@
         }
     }];
 }
-
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _objectForShow.count;
 }
@@ -107,6 +112,10 @@
         }];
    
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        
+        
+        
+        
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }

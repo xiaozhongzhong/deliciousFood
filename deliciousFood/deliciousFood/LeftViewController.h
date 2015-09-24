@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *xiugaiusername;
 @property (weak, nonatomic) IBOutlet UIButton *xiugaipassword;
 @property (weak, nonatomic) IBOutlet UIButton *xiugaiaddress;
+- (IBAction)pickAction:(UITapGestureRecognizer *)sender;
 
 @end
