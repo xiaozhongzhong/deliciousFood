@@ -40,12 +40,13 @@
     //读取用户名
     PFUser *currentUser = [PFUser currentUser];
     self.username.text=[NSString stringWithFormat:@"账号信息：%@",currentUser[@"username"]];
-    PFFile *photo =currentUser[@"Photo"];
+    PFFile *photo =currentUser[@"TouXiang"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageview.image = image;
+                //NSLog(@"%@",image);
             });
         }
     }];
@@ -189,7 +190,7 @@
     PFUser *user = [PFUser currentUser];
     //PFObject *user = [PFObject objectWithClassName:@"_User"];
     user[@"TouXiang"] = photoFile;
-    NSLog(@"%@",user[@"TouXiang"]);
+  //  NSLog(@"%@",user[@"TouXiang"]);
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     aiv.frame = self.view.bounds;
     [self.view addSubview:aiv];
