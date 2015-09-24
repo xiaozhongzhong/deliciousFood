@@ -146,6 +146,55 @@
     [actionSheet showInView:self.view];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
+        if (buttonIndex == 2)
+            return;
+        
+        UIImagePickerControllerSourceType temp;
+        if (buttonIndex == 0) {
+            temp = UIImagePickerControllerSourceTypeCamera;
+        } else if (buttonIndex == 1) {
+            temp = UIImagePickerControllerSourceTypePhotoLibrary;
+            
+        }
+        if ([UIImagePickerController isSourceTypeAvailable:temp]) {
+            _imagePickerController = nil;
+            _imagePickerController = [[UIImagePickerController alloc] init];
+            _imagePickerController.delegate = self;
+            _imagePickerController.allowsEditing = YES;
+            _imagePickerController.sourceType = temp;
+            [self presentViewController:_imagePickerController animated:YES completion:nil];
+        } else {
+            if (temp == UIImagePickerControllerSourceTypeCamera) {
+                [Utilities popUpAlertViewWithMsg:@"当前设备无照相功能" andTitle:nil];
+            }
+        }
+
 }
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    _imageview.image = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSData *photoData = UIImagePNGRepresentation(_imageview.image);
+    PFFile *photoFile = [PFFile fileWithName:@"2.png" data:photoData];
+    PFUser *user = [PFUser user];
+    user[@"TouXiang"] = photoFile;
+    NSLog(@"%@",user[@"TouXiang"]);
+    UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    aiv.frame = self.view.bounds;
+    [self.view addSubview:aiv];
+    [aiv startAnimating];
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        [aiv stopAnimating];
+        if (succeeded) {
+            [Utilities popUpAlertViewWithMsg:@"保存成功" andTitle:nil];
+            
+        }
+        
+    }];
+
+}
+
+
 @end
