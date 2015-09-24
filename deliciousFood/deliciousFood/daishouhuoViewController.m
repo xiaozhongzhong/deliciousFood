@@ -7,7 +7,7 @@
 //
 
 #import "daishouhuoViewController.h"
-
+#import "daishouhuoTableViewCell.h"
 @interface daishouhuoViewController ()
 
 @end
@@ -16,6 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PFQuery *query = [PFQuery queryWithClassName:@"Booking"];
+    [query includeKey:@"BookingShop"];
+    [query includeKey:@"BookingUser"];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [aiv stopAnimating];
+        if (!error) {
+            _objectArray = returnedObjects;
+            NSLog(@"%@",self.objectArray);
+            [self.tableview reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -34,10 +49,25 @@
 }
 */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return self.objectArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    daishouhuoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    PFObject *object=[self.objectArray objectAtIndex:indexPath.row];
+    PFObject *bookingshop=object[@"BookingShop"];
+    cell.pirce.text=[NSString stringWithFormat:@"总价：%@元",bookingshop[@"TotalPrice"]];
+    cell.name.text=bookingshop[@"Name"];
+    cell.times.text=bookingshop[@"timer"];
+        PFFile *photo =bookingshop[@"Photo"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageview.image = image;
+            });
+        }
+    }];
+    
     return cell;
     
 }

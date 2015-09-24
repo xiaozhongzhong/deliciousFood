@@ -61,9 +61,14 @@
             PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
             NSNumber *priceNum = object[@"TotalPrice"];
             sum += [priceNum floatValue];
-            object[@"TotalPrice"]=[NSString stringWithFormat:@"%.2f",sum];
+           
+            NSNumber *numTemp = [NSNumber numberWithFloat:sum];
+            
+            //object[@"TotalPrice"]=[NSString stringWithFormat:@"%.2f",sum];
+            object[@"TotalPrice"]=numTemp;
             shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
             shopMoneyVC.Item = object[@"TotalPrice"];
+            shopMoneyVC.Item=object;
             shopMoneyVC.hidesBottomBarWhenPushed = YES;
         }
        
@@ -146,7 +151,7 @@
         NSNumber *priceNum = object[@"TotalPrice"];
         sum += [priceNum floatValue];
     }
-    NSLog(@"%f", sum);
+    
 }
 
 - (IBAction)editAction:(UIBarButtonItem *)sender {
@@ -168,7 +173,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //[tableView deselectRowAtIndexPath:indexPath animated:NO];
     //回到当前页面,取消刚刚的选项
-   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
