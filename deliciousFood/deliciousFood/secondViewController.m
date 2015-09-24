@@ -129,9 +129,6 @@
    
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         
-        
-        
-        
           }
 }
 
