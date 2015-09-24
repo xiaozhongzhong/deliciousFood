@@ -14,5 +14,6 @@
 @property(strong,nonatomic)NSMutableDictionary *deleDic;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *button;
 @property(strong,nonatomic) PFObject *item;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *edit;
 
 @end

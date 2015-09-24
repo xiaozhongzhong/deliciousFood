@@ -164,7 +164,7 @@
 
         PFQuery *query = [PFQuery queryWithClassName:@"Favarites"];
         [query whereKey:@"FavVegs" equalTo:_item];
-        NSLog(@"%@",query);
+     
         [query findObjectsInBackgroundWithBlock:^(NSArray *comments, NSError *error) {
             
             for (PFObject *comment in comments) {
@@ -176,7 +176,10 @@
                         index = 0;
                     }
                 }];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f3fbc5d9c19173d3455a9377a5880b96e611386
             }
         }];
     }

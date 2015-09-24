@@ -93,7 +93,10 @@
     }
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //回到当前页面,取消刚刚的选项
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 -(void)uiConfiguration
