@@ -161,10 +161,11 @@
             }
         }];
     }else{
-        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-        [_booking deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [_booking deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
+                
                 [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
+                 [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
                 index = 0;
             }
         }];
