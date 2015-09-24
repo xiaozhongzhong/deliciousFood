@@ -17,14 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFQuery *query = [PFQuery queryWithClassName:@"Booking"];
-    [query includeKey:@"BookingShop"];
+    //[query includeKey:@"BookingVeg"];
     [query includeKey:@"BookingUser"];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
-            _objectArray = returnedObjects;
-            NSLog(@"%@",self.objectArray);
+            _objectArray = [[NSMutableArray alloc] initWithArray:returnedObjects];
+            NSLog(@"objectArray = %@",self.objectArray);
             [self.tableview reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -54,19 +54,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     daishouhuoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectArray objectAtIndex:indexPath.row];
-    PFObject *bookingshop=object[@"BookingShop"];
-    cell.pirce.text=[NSString stringWithFormat:@"总价：%@元",bookingshop[@"TotalPrice"]];
-    cell.name.text=bookingshop[@"Name"];
-    cell.times.text=bookingshop[@"timer"];
-        PFFile *photo =bookingshop[@"Photo"];
-    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
-        if (!error) {
-            UIImage *image = [UIImage imageWithData:photoData];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.imageview.image = image;
-            });
-        }
-    }];
+    PFUser *user = object[@"BookingUser"];
+//    for (PFObject *vege in object[@"BookingVeg"]) {
+//        PFFile *photo = vege[@"Photo"];
+//        [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+//            if (!error) {
+//                UIImage *image = [UIImage imageWithData:photoData];
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    cell.imageview.image = image;
+//                });
+//            }
+//        }];
+//        break;
+//    }
+    cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
+    cell.name.text=user.username;
+    cell.times.text=[object.createdAt description];
     
     return cell;
     

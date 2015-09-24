@@ -102,14 +102,14 @@
     PFUser *currentUser = [PFUser currentUser];
     shoping[@"ShopUser"]=currentUser;
     shoping[@"timer"]=strDate;
-    shoping[@"Name"]=self.name.text;
+    shoping[@"ShopVeg"]=self.item;
     NSNumberFormatter *numberFortnatters=[[NSNumberFormatter alloc]init];
     [numberFortnatters setNumberStyle:NSNumberFormatterDecimalStyle];
     NSNumber  *bentop= [numberFortnatters numberFromString:self.numbers.text];
-        shoping[@"TotalPrice"]=_item[@"Price"];
+       // shoping[@"TotalPrice"]=_item[@"Price"];
     shoping[@"Bento"]=bentop;
-    PFFile *photo =self.item[@"Photo"];
-        shoping[@"Photo"] =photo;
+    //PFFile *photo =self.item[@"Photo"];
+       // shoping[@"Photo"] =photo;
         UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [shoping saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv stopAnimating];

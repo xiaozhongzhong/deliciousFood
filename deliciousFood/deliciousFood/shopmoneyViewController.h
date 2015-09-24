@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;
 @property (weak, nonatomic) IBOutlet UILabel *zongjinumber;
-@property (strong, nonatomic)NSArray *objectForShow;
-@property(strong,nonatomic)PFObject *Item;
+@property (strong,nonatomic) NSNumber *totalPrice;
+@property (strong, nonatomic) NSMutableArray *vegeArr;
 @end
