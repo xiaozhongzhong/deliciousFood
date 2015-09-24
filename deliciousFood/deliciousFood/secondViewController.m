@@ -16,6 +16,7 @@
 
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender;
 
+- (IBAction)editAction:(UIBarButtonItem *)sender;
 
 
 @end
@@ -25,14 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self query];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
- 
- 
-//    
-//    [self.editButtonItem addTarget:self action:@selector(allSelect:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-       // Do any additional setup after loading the view.
-}
+        [self.tableview setEditing:NO];
+   }
 
 
 
@@ -122,11 +117,22 @@
 
 
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender {
-   }
+      [self.tableview setEditing:NO];
+}
+
+- (IBAction)editAction:(UIBarButtonItem *)sender {
+    [self.tableview setEditing:YES];    
+    
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if () {
+//        <#statements#>
+//    }
+//    
+    
     //回到当前页面,取消刚刚的选项
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

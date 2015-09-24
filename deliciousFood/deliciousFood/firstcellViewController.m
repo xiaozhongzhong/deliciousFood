@@ -161,10 +161,10 @@
             }
         }];
     }else{
-<<<<<<< HEAD
+
         PFQuery *query = [PFQuery queryWithClassName:@"Favarites"];
         [query whereKey:@"FavVegs" equalTo:_item];
-        NSLog(@"%@",query);
+     
         [query findObjectsInBackgroundWithBlock:^(NSArray *comments, NSError *error) {
             
             for (PFObject *comment in comments) {
@@ -176,25 +176,8 @@
                         index = 0;
                     }
                 }];
-=======
-
-    [_booking deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                
-
-                [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
-                 [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-                index = 0;
->>>>>>> 7d1bbbec6acc64e561cf91e74b05b84f4318449a
             }
         }];
-//        [_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-//      [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//            if (succeeded) {
-//                [Utilities popUpAlertViewWithMsg:@"您已取消收藏" andTitle:nil];
-//                index = 0;
-//            }
-//        }];
     }
     
 }

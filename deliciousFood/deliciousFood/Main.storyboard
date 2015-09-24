@@ -103,6 +103,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="购物车" id="eSz-Kt-RTw">
+                        <barButtonItem key="leftBarButtonItem" title="选择" id="xSW-W2-gY3">
+                            <connections>
+                                <action selector="editAction:" destination="cva-by-KqC" id="Qey-Hn-4jx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="结算" id="Jbu-gW-gYm">
                             <connections>
                                 <action selector="jiesuanAction:" destination="cva-by-KqC" id="9ze-ia-TsV"/>
@@ -113,6 +118,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="button" destination="Jbu-gW-gYm" id="P97-cX-lHT"/>
+                        <outlet property="edit" destination="xSW-W2-gY3" id="wxt-Od-8Yh"/>
                         <outlet property="tableview" destination="MVY-0k-Ct2" id="To0-qw-sGB"/>
                     </connections>
                 </viewController>
@@ -132,7 +138,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-QZ-FBt">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-QZ-FBt">
                                 <rect key="frame" x="16" y="74" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
