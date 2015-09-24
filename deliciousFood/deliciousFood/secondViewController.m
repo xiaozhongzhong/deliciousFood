@@ -61,8 +61,12 @@
             PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
             NSNumber *priceNum = object[@"TotalPrice"];
             sum += [priceNum floatValue];
+            object[@"TotalPrice"]=[NSString stringWithFormat:@"%.2f",sum];
+            shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
+            shopMoneyVC.Item = object[@"TotalPrice"];
+            shopMoneyVC.hidesBottomBarWhenPushed = YES;
         }
-        NSLog(@"%f", sum);
+       
         [_tableview setEditing:NO];
          [self.edit setTitle:@"选择"];
         
@@ -130,8 +134,7 @@
         
         
         
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+          }
 }
 
 
@@ -165,7 +168,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //[tableView deselectRowAtIndexPath:indexPath animated:NO];
     //回到当前页面,取消刚刚的选项
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

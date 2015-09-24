@@ -7,7 +7,7 @@
 //
 
 #import "shopmoneyViewController.h"
-
+#import "secondViewController.h"
 @interface shopmoneyViewController ()
 - (IBAction)querenAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
@@ -22,8 +22,10 @@
     self.shouhuorenTF.text=user[@"username"];
     self.phoneTF.text=user[@"Phonenumber"];
     self.addressTF.text=user[@"Address"];
-    
-    //self.zongjinumber.text=[NSString stringWithFormat:@"%@元",self.Item[@"TotalPrice"]];
+  //  NSLog(@"%@",self.Item);
+    self.zongjinumber.text=[NSString stringWithFormat:@"%@元",self.Item];
+//    PFObject *object=[PFObject object];
+//    self.zongjinumber.text=[NSString stringWithFormat:@"%@元",object[@"sum"]];
     
     
 }
