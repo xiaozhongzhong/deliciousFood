@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self zaodian];
+    [self uiConfiguration];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,5 +90,44 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //回到当前页面,取消刚刚的选项
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+//下拉刷新
+-(void)uiConfiguration
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    NSString *title = [NSString stringWithFormat:@"下拉即可刷新"];
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:NSTextAlignmentCenter];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    NSDictionary *attrsDictionary = @{NSUnderlineStyleAttributeName:
+                                          @(NSUnderlineStyleNone),
+                                      NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+                                      NSParagraphStyleAttributeName:style,
+                                      NSForegroundColorAttributeName:[UIColor brownColor]};
+    
+    
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+    refreshControl.attributedTitle = attributedTitle;
+    //tintColor旋转的小花的颜色
+    refreshControl.tintColor = [UIColor brownColor];
+    //背景色 浅灰色
+    refreshControl.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    //执行的动作
+    [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [_tableview addSubview:refreshControl];
+    
+}
+- (void)refreshData:(UIRefreshControl *)rc
+{
+    [self zaodian];
+    [_tableview reloadData];
+    //怎么样让方法延迟执行的
+    [self performSelector:@selector(endRefreshing:) withObject:rc];//afterDelay:1.f];
+}
+- (void)endRefreshing:(UIRefreshControl *)rc {
+    // [self query];
+    //[_tableView reloadData];
+    [rc endRefreshing];//闭合
 }
 @end
