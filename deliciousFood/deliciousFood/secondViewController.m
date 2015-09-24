@@ -26,7 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self query];
-        [self.tableview setEditing:NO];
+//        [self.tableview setEditing:NO];
+//    [self.edit setTitle:@"选择"];
+//    if ([[self.edit title] isEqual:@"选择"]) {
+//        [self.tableview setEditing:NO];
+//    }else if([[self.edit title] isEqual:@"取消"])
+//    {
+//        [self.tableview setEditing:YES];
+//    }
    }
 
 
@@ -47,6 +54,18 @@
         shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
         shopMoneyVC.Item = object;
         shopMoneyVC.hidesBottomBarWhenPushed = YES;
+    } else if ([segue.identifier isEqualToString:@"jiesuan"]) {
+        CGFloat sum = 0;
+        NSArray *indexPaths = [_tableview indexPathsForSelectedRows];
+        for (NSIndexPath *indexPath in indexPaths) {
+            PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
+            NSNumber *priceNum = object[@"TotalPrice"];
+            sum += [priceNum floatValue];
+        }
+        NSLog(@"%f", sum);
+        [_tableview setEditing:NO];
+         [self.edit setTitle:@"选择"];
+        
     }
 
 
@@ -117,23 +136,36 @@
 
 
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender {
-      [self.tableview setEditing:NO];
+    CGFloat sum = 0;
+    NSArray *indexPaths = [_tableview indexPathsForSelectedRows];
+    for (NSIndexPath *indexPath in indexPaths) {
+        PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
+        NSNumber *priceNum = object[@"TotalPrice"];
+        sum += [priceNum floatValue];
+    }
+    NSLog(@"%f", sum);
 }
 
 - (IBAction)editAction:(UIBarButtonItem *)sender {
-    [self.tableview setEditing:YES];    
-    
+     [self.tableview setEditing:NO];
+    if (self.edit.enabled==YES) {
+        [self.edit setTitle:@"取消"];
+        [self.tableview setEditing:YES];
+        
+        
+    }
+    if(self.edit.enabled==NO ){
+        
+        [self.tableview setEditing:NO];
+        [self.edit setTitle:@"选择"];
+           }
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if () {
-//        <#statements#>
-//    }
-//    
-    
+    //[tableView deselectRowAtIndexPath:indexPath animated:NO];
     //回到当前页面,取消刚刚的选项
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 @end
