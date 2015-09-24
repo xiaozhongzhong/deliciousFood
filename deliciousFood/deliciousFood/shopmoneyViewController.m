@@ -22,9 +22,7 @@
     self.shouhuorenTF.text=user[@"username"];
     self.phoneTF.text=user[@"Phonenumber"];
     self.addressTF.text=user[@"Address"];
-    self.zongjinumber.text=[NSString stringWithFormat:@"%@元",self.Item[@"TotalPrice"]];
-
-    
+    self.zongjinumber.text=[NSString stringWithFormat:@"%@元",self.totalPrice];
     
 }
 
@@ -57,35 +55,40 @@
           NSLog(@"%d",yuer);
          }
     NSNumber *money2=[NSNumber numberWithInt:yuer];
-    PFUser *user123 = [PFUser currentUser];
-    user123[@"Money"]=money2;
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-    [user123 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [aiv stopAnimating];
-        if (succeeded) {
-            [Utilities popUpAlertViewWithMsg:@"减款成功，谢谢再次惠顾！" andTitle:nil];
-            [self.navigationController popViewControllerAnimated:YES];
-            
-        } else {
-            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
-        }
-    }];
     
     PFObject *objectBooking=[PFObject objectWithClassName:@"Booking"];
     objectBooking[@"BookingUser"]=user;
-    objectBooking[@"BookingShop"]=self.Item;
- UIActivityIndicatorView *aiv1 = [Utilities getCoverOnView:self.view];    [objectBooking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    objectBooking[@"totalPrice"]=_totalPrice;
+    for (PFObject *vege in _vegeArr) {
+        NSLog(@"vege = %@", vege);
+        [objectBooking[@"BookingVeg"] addObject:vege];
+    }
+    
+    UIActivityIndicatorView *aiv1 = [Utilities getCoverOnView:self.view];    [objectBooking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv1 stopAnimating];
         if (succeeded) {
-            [Utilities popUpAlertViewWithMsg:@"已加入代收货" andTitle:nil];
-            [self.navigationController popViewControllerAnimated:YES];
+            PFUser *user123 = [PFUser currentUser];
+            user123[@"Money"]=money2;
+            UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+            [user123 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [aiv stopAnimating];
+                if (succeeded) {
+                    [Utilities popUpAlertViewWithMsg:@"下单成功，谢谢再次惠顾！" andTitle:nil];
+                    [self.navigationController popViewControllerAnimated:YES];
+                    
+                } else {
+                    [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                }
+            }];
             
         } else {
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
         }
     }];
-    
-    
+//    
+//    [self.Item deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+//        
+//    }];
 }
 
 @end

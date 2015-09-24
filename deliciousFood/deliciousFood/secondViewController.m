@@ -41,33 +41,35 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CGFloat sum = 0;
+    NSMutableArray *vegeArr = [NSMutableArray new];
+    shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
     if ([segue.identifier isEqualToString:@"Cell"]) {
         //获得当前tableview行选中的数据
         PFObject *object = [_objectForShow objectAtIndex:[self.tableview indexPathForSelectedRow].row];
-        shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
-        shopMoneyVC.Item = object;
-        shopMoneyVC.hidesBottomBarWhenPushed = YES;
+        PFObject *shopVeg=object[@"ShopVeg"];
+        NSNumber *priceNum =shopVeg[@"Price"];
+        sum += [priceNum floatValue];
+        NSNumber *numTemp = [NSNumber numberWithFloat:sum];
+        [vegeArr addObject:shopVeg];
+        shopMoneyVC.totalPrice = numTemp;
+        shopMoneyVC.vegeArr = vegeArr;
     } else if ([segue.identifier isEqualToString:@"jiesuan"]) {
-        CGFloat sum = 0;
         NSArray *indexPaths = [_tableview indexPathsForSelectedRows];
         for (NSIndexPath *indexPath in indexPaths) {
             PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
-            NSNumber *priceNum = object[@"TotalPrice"];
+            NSLog(@"object=%@",object);
+            PFObject *shopVeg=object[@"ShopVeg"];
+            NSNumber *priceNum =shopVeg[@"Price"];
             sum += [priceNum floatValue];
-           
-            NSNumber *numTemp = [NSNumber numberWithFloat:sum];
-            
-            //object[@"TotalPrice"]=[NSString stringWithFormat:@"%.2f",sum];
-            object[@"TotalPrice"]=numTemp;
-            shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
-            shopMoneyVC.Item = object[@"TotalPrice"];
-            shopMoneyVC.Item=object;
-            shopMoneyVC.hidesBottomBarWhenPushed = YES;
+            [vegeArr addObject:shopVeg];
         }
-       
-        [_tableview setEditing:NO];
-         [self.edit setTitle:@"选择"];
+        NSNumber *numTemp = [NSNumber numberWithFloat:sum];
+        shopMoneyVC.totalPrice = numTemp;
+        shopMoneyVC.vegeArr = vegeArr;
         
+        [_tableview setEditing:NO];
+        [self.edit setTitle:@"选择"];
     }
 
 
@@ -76,6 +78,8 @@
 -(void)query
 {
     PFQuery *query=[PFQuery queryWithClassName:@"Shoppingcart"];
+    [query includeKey:@"ShopUser"];
+    [query includeKey:@"ShopVeg"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             self.objectForShow = array;
@@ -94,10 +98,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     shopTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
-    cell.name.text=object[@"Name"];
-    cell.price.text=[NSString stringWithFormat:@"%@元",object[@"TotalPrice"]];
+    PFObject *shopveg=object[@"ShopVeg"];
+    //cell.name.text=object[@"Name"];
+    cell.name.text=shopveg[@"Dishes"];
+    //cell.price.text=[NSString stringWithFormat:@"%@元",object[@"TotalPrice"]];
+    cell.price.text=[NSString stringWithFormat:@"%@元",shopveg[@"Price"]];
    cell.number.text=[NSString stringWithFormat:@"%@份盒饭",object[@"Bento"]];
-    PFFile *photo =object[@"Photo"];
+    PFFile *photo =shopveg[@"Photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
