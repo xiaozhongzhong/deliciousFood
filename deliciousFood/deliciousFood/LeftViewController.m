@@ -138,8 +138,14 @@
 
 - (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:YES completion:nil];
-
 }
 - (IBAction)pickAction:(UITapGestureRecognizer *)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选择", nil];
+    [actionSheet setExclusiveTouch:YES];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
 }
 @end
