@@ -176,10 +176,10 @@
                         index = 0;
                     }
                 }];
+
             }
         }];
     }
-    
 }
 
 - (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event {
