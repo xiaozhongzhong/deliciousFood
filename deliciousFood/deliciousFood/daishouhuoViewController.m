@@ -8,6 +8,7 @@
 
 #import "daishouhuoViewController.h"
 #import "daishouhuoTableViewCell.h"
+#import "daishouhuocellViewController.h"
 @interface daishouhuoViewController ()
 
 @end
@@ -25,7 +26,7 @@
         if (!error) {
             _objectArray = [[NSMutableArray alloc] initWithArray:returnedObjects];
 
-            NSLog(@"objectArray = %@",self.objectArray);
+            //NSLog(@"objectArray = %@",self.objectArray);
             [self.tableview reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -40,15 +41,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"daishouhuo"]) {
+        //获得当前tableview行选中的数据
+        PFObject *object = [_objectArray objectAtIndex:[_tableview indexPathForSelectedRow].row];
+        daishouhuocellViewController *firstcellVC = segue.destinationViewController;
+        firstcellVC.item = object;
+    }
+
 }
-*/
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.objectArray.count;
 }

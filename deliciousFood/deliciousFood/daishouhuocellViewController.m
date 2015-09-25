@@ -17,13 +17,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@",_item);
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
+    NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
+    _totalPrice.text = total;
+
+
     // Do any additional setup after loading the view.
+//    PFObject *object = [PFObject objectWithClassName:@"Booking"];
+    PFRelation *relation = [_item relationForKey:@"BookingVeg"];
+    PFUser *currentUser = [PFUser currentUser];
+    PFFile *photo =currentUser[@"TouXiang"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _imageVi.image = image;
+            });
+        }
+    }];
+    [[relation query]findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
+        if (!error) {
+            _username.text = currentUser[@"username"];
+            NSString *first;
+            for (int i; i<[array count]; i++) {
+                 PFObject *object = [array objectAtIndex:i];
+                //NSLog(@"%@",object);
+                first = object[@"Dishes"];
+                NSLog(@"first = %@",first);
+            }
+            
+        }else{
+            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+        }
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -36,5 +73,6 @@
 */
 
 - (IBAction)queryAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
 }
 @end
