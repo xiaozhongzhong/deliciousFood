@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *button;
 @property(strong,nonatomic) PFObject *item;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *edit;
-
+//@property(strong,nonatomic) PFObject *object1;
+@property (strong, nonatomic) NSMutableArray *objectsArr;
 @end

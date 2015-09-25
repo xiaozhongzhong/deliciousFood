@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *zongjinumber;
 @property (strong,nonatomic) NSNumber *totalPrice;
 @property (strong, nonatomic) NSMutableArray *vegeArr;
-@property(strong,nonatomic)PFObject *objectmoney;
+@property(strong,nonatomic) NSMutableArray *objectArr;
 @end

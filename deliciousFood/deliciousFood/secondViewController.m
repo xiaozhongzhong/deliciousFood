@@ -29,6 +29,16 @@
     [self uiConfiguration];
    }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if ([[[storageMgr singletonStorageMgr]objectForKey:@"delect"]integerValue]==1) {
+        [[storageMgr singletonStorageMgr]removeObjectForKey:@"delect"];
+        [self query];
+    }
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -41,30 +51,37 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    _objectsArr = nil;
+    _objectsArr = [NSMutableArray new];
     CGFloat sum = 0;
     NSMutableArray *vegeArr = [NSMutableArray new];
     shopmoneyViewController *shopMoneyVC = segue.destinationViewController;
     if ([segue.identifier isEqualToString:@"Cell"]) {
         //获得当前tableview行选中的数据
         PFObject *object = [_objectForShow objectAtIndex:[self.tableview indexPathForSelectedRow].row];
+        [_objectsArr addObject:object];
         PFObject *shopVeg=object[@"ShopVeg"];
         NSNumber *priceNum =shopVeg[@"Price"];
         sum += [priceNum floatValue];
         NSNumber *numTemp = [NSNumber numberWithFloat:sum];
         [vegeArr addObject:shopVeg];
+        shopMoneyVC.objectArr = _objectsArr;
         shopMoneyVC.totalPrice = numTemp;
         shopMoneyVC.vegeArr = vegeArr;
     } else if ([segue.identifier isEqualToString:@"jiesuan"]) {
         NSArray *indexPaths = [_tableview indexPathsForSelectedRows];
         for (NSIndexPath *indexPath in indexPaths) {
             PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
-            shopMoneyVC.objectmoney=object;
+            [_objectsArr addObject:object];
             PFObject *shopVeg=object[@"ShopVeg"];
             NSNumber *priceNum =shopVeg[@"Price"];
             sum += [priceNum floatValue];
             [vegeArr addObject:shopVeg];
+     
         }
+        
         NSNumber *numTemp = [NSNumber numberWithFloat:sum];
+        shopMoneyVC.objectArr = _objectsArr;
         shopMoneyVC.totalPrice = numTemp;
         shopMoneyVC.vegeArr = vegeArr;
        
@@ -75,14 +92,27 @@
 
 
 }
+/*
+-(void)removeOBject{
+    for (int i = 0; i < _objectsArr.count; i ++) {
+        PFObject *object = [_objectsArr objectAtIndex:i];
+        NSLog(@"%@",object);
+        [object delete];
+    }
+    [self query];
 
+}
+ */
 -(void)query
 {
     PFQuery *query=[PFQuery queryWithClassName:@"Shoppingcart"];
     [query includeKey:@"ShopUser"];
     [query includeKey:@"ShopVeg"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
+        UIRefreshControl *rc = (UIRefreshControl *)[_tableview viewWithTag:2];
+        [rc endRefreshing];
         if (!error) {
+            self.objectForShow = nil;
             self.objectForShow =[[NSMutableArray alloc] initWithArray: array];
             [self.tableview reloadData];
         }else {
@@ -98,11 +128,11 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     shopTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
-    PFObject *shopveg=object[@"ShopVeg"];
+   PFObject *obect=[self.objectForShow objectAtIndex:indexPath.row];
+    PFObject *shopveg=obect[@"ShopVeg"];
     cell.name.text=shopveg[@"Dishes"];
     cell.price.text=[NSString stringWithFormat:@"%@元",shopveg[@"Price"]];
-   cell.number.text=[NSString stringWithFormat:@"%@份盒饭",object[@"Bento"]];
+   cell.number.text=[NSString stringWithFormat:@"%@份盒饭",obect[@"Bento"]];
     PFFile *photo =shopveg[@"Photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
@@ -122,7 +152,6 @@
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-      NSLog(@"%ld", (long)indexPath.row);
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
         UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
@@ -211,6 +240,7 @@
     //背景色 浅灰色
     refreshControl.backgroundColor = [UIColor groupTableViewBackgroundColor];
     //执行的动作
+    refreshControl.tag = 2;
     [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [_tableview addSubview:refreshControl];
     
@@ -218,9 +248,9 @@
 - (void)refreshData:(UIRefreshControl *)rc
 {
     [self query];
-    [_tableview reloadData];
+    //[_tableview reloadData];
     //怎么样让方法延迟执行的
-    [self performSelector:@selector(endRefreshing:) withObject:rc];//afterDelay:1.f];
+    //[self performSelector:@selector(endRefreshing:) withObject:rc];//afterDelay:1.f];
 }
 - (void)endRefreshing:(UIRefreshControl *)rc {
     // [self query];

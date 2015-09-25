@@ -337,6 +337,8 @@
 				B2799E331BAFE00F00AE8193 /* dingdanViewController.m */,
 				B2799E351BAFE02300AE8193 /* daishouhuoViewController.h */,
 				B2799E361BAFE02300AE8193 /* daishouhuoViewController.m */,
+				B20188DE1BB3EB1F00B15FBA /* daishouhuocellViewController.h */,
+				B20188DF1BB3EB1F00B15FBA /* daishouhuocellViewController.m */,
 				B2E9D5851BB0F005005B1F43 /* LeftViewController.h */,
 				B2E9D5861BB0F005005B1F43 /* LeftViewController.m */,
 				B2E9D58C1BB0FBEF005B1F43 /* passwordViewController.h */,
@@ -349,8 +351,6 @@
 				B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */,
 				B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */,
 				B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */,
-				B20188DE1BB3EB1F00B15FBA /* daishouhuocellViewController.h */,
-				B20188DF1BB3EB1F00B15FBA /* daishouhuocellViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
