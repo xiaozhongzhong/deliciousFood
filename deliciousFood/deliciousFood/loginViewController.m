@@ -25,8 +25,9 @@
     //登录成功后，退出后在打开第一时间显示用户名
     if (![[Utilities getUserDefaults:@"userName"] isKindOfClass:[NSNull class]]) {
         _username.text = [Utilities getUserDefaults:@"userName"];
+        _unInput = _username.text;
+        [self setHeaderImage];
     }
-
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -132,19 +133,6 @@
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
           //读取用户名
-        PFUser *currentUser = [PFUser currentUser];
-            PFFile *photo =currentUser[@"TouXiang"];
-        [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:photoData];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.iamgeView.image = image;
-                    NSLog(@"%@",self.iamgeView.image);
-                });
-            }
-        }];
-               
-        
         [aiv stopAnimating];
         if (user) {
             PFUser *curr=[PFUser currentUser];
@@ -153,7 +141,29 @@
             [Utilities setUserDefaults:@"passWord" content:password];
 
             _password.text = @"";
-        [self popUpHomePage];
+            
+            PFUser *currentUser = [PFUser currentUser];
+            NSLog(@"%@", currentUser.username);
+            PFFile *photo =currentUser[@"TouXiang"];
+            [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:photoData];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.iamgeView.image = image;
+                        //NSLog(@"%@",self.iamgeView.image);
+                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+                        NSLog(@"%@",paths);
+                        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", [Utilities getUserDefaults:@"userName"]]];   // 保存文件的名称
+                        NSLog(@"%@",filePath);
+                        NSData *imageData;
+                        imageData=UIImagePNGRepresentation(self.iamgeView.image);
+                        [imageData writeToFile:filePath atomically:YES];
+                        //[UIImagePNGRepresentation(self.iamgeView.image)writeToFile: filePath    atomically:YES];
+                    });
+                }
+            }];
+            
+            [self popUpHomePage];
         } else if (error.code == 101) {
             [Utilities popUpAlertViewWithMsg:@"用户名或密码错误" andTitle:nil];
         } else if (error.code == 100) {
@@ -270,6 +280,40 @@
     topView.layer.transform = CATransform3DMakeScale(0.75, 0.75, 1);
     topView.frame = anchoredFrame;
     topView.layer.position  = CGPointMake(anchoredFrame.origin.x + ((topView.layer.bounds.size.width * 0.75) / 2), topView.layer.position.y);
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField == _username) {
+        if (![string isEqualToString:@""]) {
+            _unInput = [NSString stringWithFormat:@"%@%@", _unInput, string];
+           // NSLog(@"%@", _unInput);
+        } else {
+            _unInput = [_unInput substringToIndex:(_unInput.length - 1)];
+           // NSLog(@"%@", _unInput);
+        }
+        [self setHeaderImage];
+    }
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == _username) {
+        _unInput = _username.text;
+    }
+}
+
+- (void)setHeaderImage {
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+   // NSLog(@"%@",paths);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", _unInput]];   // 保存文件的名称
+   // NSLog(@"%@",filePath);
+    if ([mgr fileExistsAtPath:filePath]) {
+        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+        self.iamgeView.image = image;
+    } else {
+        self.iamgeView.image = [UIImage imageNamed:@"Image"];
+    }
 }
 
 @end

@@ -147,6 +147,7 @@
 
 
 - (IBAction)tuichiAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [PFUser logOut];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)pickAction:(UITapGestureRecognizer *)sender {
