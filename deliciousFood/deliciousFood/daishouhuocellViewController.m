@@ -9,6 +9,7 @@
 #import "daishouhuocellViewController.h"
 
 @interface daishouhuocellViewController ()
+- (IBAction)queryAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,4 +35,6 @@
 }
 */
 
+- (IBAction)queryAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end

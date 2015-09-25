@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface daishouhuocellViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *imageVi;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *foodname;
+@property (weak, nonatomic) IBOutlet UILabel *totalPrice;
 
 @end

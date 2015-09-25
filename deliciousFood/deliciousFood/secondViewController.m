@@ -184,26 +184,39 @@
 }
 
 - (IBAction)editAction:(UIBarButtonItem *)sender {
+  // NSIndexPath *indexpath;
      [self.tableview setEditing:NO];
     if (self.edit.enabled==YES) {
-        [self.edit setTitle:@"取消"];
+        [self.edit setTitle:@"取消"];;
         [self.tableview setEditing:YES];
-        
-        
-    }
+        //[self tableView:self.tableview didSelectRowAtIndexPath:indexpath];
+            }
     if(self.edit.enabled==NO ){
         
         [self.tableview setEditing:NO];
         [self.edit setTitle:@"选择"];
+        
            }
 
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //[tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    if( [self.edit.title isEqualToString:@"选择"] ){
+//        [self.tableview setEditing:YES];
+//        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//        [self.edit setTitle:@"取消"];
+//        
+//    }
+//    else{
+//        [self.tableview setEditing:NO];
+//        [self.tableview deselectRowAtIndexPath:indexPath animated:YES];
+//        [self.edit setTitle:@"选择"];
+//        
+//    }
     //回到当前页面,取消刚刚的选项
-   //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
 //下拉刷新
 -(void)uiConfiguration
 {
