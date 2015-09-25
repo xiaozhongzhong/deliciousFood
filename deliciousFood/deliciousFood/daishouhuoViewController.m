@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFQuery *query = [PFQuery queryWithClassName:@"Booking"];
-    //[query includeKey:@"BookingVeg"];
     [query includeKey:@"BookingUser"];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
