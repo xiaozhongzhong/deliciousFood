@@ -54,6 +54,7 @@
     daishouhuoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectArray objectAtIndex:indexPath.row];
     PFUser *user = object[@"BookingUser"];
+    
 //    for (PFObject *vege in object[@"BookingVeg"]) {
 //        PFFile *photo = vege[@"Photo"];
 //        [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
@@ -81,9 +82,13 @@
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         PFObject *object=[_objectArray objectAtIndex:indexPath.row];
+        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+             [aiv stopAnimating];
             if (succeeded) {
                 [Utilities popUpAlertViewWithMsg:@"成功删除" andTitle:nil];
                 [self.objectArray removeObjectAtIndex:indexPath.row];

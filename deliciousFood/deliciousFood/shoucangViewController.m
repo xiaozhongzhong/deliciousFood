@@ -41,7 +41,7 @@
     PFQuery *query=[PFQuery queryWithClassName:@"Favarites"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
-            self.objectForShow = array;
+            self.objectForShow =[[NSMutableArray alloc] initWithArray:array];
             [self.tableview reloadData];
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -80,7 +80,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
+        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+            [aiv stopAnimating];
             if (succeeded) {
                 [Utilities popUpAlertViewWithMsg:@"成功删除" andTitle:nil];
                 [self.objectForShow removeObjectAtIndex:indexPath.row];

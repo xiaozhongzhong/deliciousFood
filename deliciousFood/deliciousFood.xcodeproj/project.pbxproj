@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4651A9041BB111DD0042EFF5 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4651A9031BB111DD0042EFF5 /* 1.png */; };
+		B20188E01BB3EB1F00B15FBA /* daishouhuocellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20188DF1BB3EB1F00B15FBA /* daishouhuocellViewController.m */; };
+		B20188E31BB3EB3B00B15FBA /* daishouhuocellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20188E21BB3EB3B00B15FBA /* daishouhuocellTableViewCell.m */; };
 		B2799DB51BAF84A200AE8193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DB41BAF84A200AE8193 /* main.m */; };
 		B2799DB81BAF84A200AE8193 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DB71BAF84A200AE8193 /* AppDelegate.m */; };
 		B2799DBB1BAF84A200AE8193 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799DBA1BAF84A200AE8193 /* ViewController.m */; };
@@ -69,6 +71,10 @@
 
 /* Begin PBXFileReference section */
 		4651A9031BB111DD0042EFF5 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		B20188DE1BB3EB1F00B15FBA /* daishouhuocellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daishouhuocellViewController.h; sourceTree = "<group>"; };
+		B20188DF1BB3EB1F00B15FBA /* daishouhuocellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daishouhuocellViewController.m; sourceTree = "<group>"; };
+		B20188E11BB3EB3B00B15FBA /* daishouhuocellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daishouhuocellTableViewCell.h; sourceTree = "<group>"; };
+		B20188E21BB3EB3B00B15FBA /* daishouhuocellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daishouhuocellTableViewCell.m; sourceTree = "<group>"; };
 		B2799DAF1BAF84A100AE8193 /* deliciousFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliciousFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2799DB31BAF84A100AE8193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2799DB41BAF84A200AE8193 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -344,6 +350,8 @@
 				B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */,
 				B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */,
 				B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */,
+				B20188DE1BB3EB1F00B15FBA /* daishouhuocellViewController.h */,
+				B20188DF1BB3EB1F00B15FBA /* daishouhuocellViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -370,6 +378,8 @@
 				B2E9D5801BB0EA2A005B1F43 /* dingdanTableViewCell.m */,
 				B2E9D5821BB0EB18005B1F43 /* shopTableViewCell.h */,
 				B2E9D5831BB0EB18005B1F43 /* shopTableViewCell.m */,
+				B20188E11BB3EB3B00B15FBA /* daishouhuocellTableViewCell.h */,
+				B20188E21BB3EB3B00B15FBA /* daishouhuocellTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -504,6 +514,7 @@
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,
 				B2799E191BAFAEBC00AE8193 /* loginViewController.m in Sources */,
 				B2799E3A1BAFEFB400AE8193 /* firstTableViewCell.m in Sources */,
+				B20188E31BB3EB3B00B15FBA /* daishouhuocellTableViewCell.m in Sources */,
 				B2799DB51BAF84A200AE8193 /* main.m in Sources */,
 				B2799E021BAF8A9600AE8193 /* ECSlidingInteractiveTransition.m in Sources */,
 				B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */,
@@ -511,6 +522,7 @@
 				B2E9D57B1BB0E881005B1F43 /* shoucangTableViewCell.m in Sources */,
 				B2799E011BAF8A9600AE8193 /* ECSlidingAnimationController.m in Sources */,
 				B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */,
+				B20188E01BB3EB1F00B15FBA /* daishouhuocellViewController.m in Sources */,
 				B2799DE41BAF863C00AE8193 /* Utilities.m in Sources */,
 				B2799E001BAF8A9600AE8193 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				B2799E071BAF8AA400AE8193 /* UIViewController+ECSlidingViewController.m in Sources */,
