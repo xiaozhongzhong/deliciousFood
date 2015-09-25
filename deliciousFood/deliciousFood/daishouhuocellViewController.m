@@ -19,7 +19,7 @@
     [super viewDidLoad];
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
-    _totalPrice.text = total;
+    _totalPrice.text =[NSString stringWithFormat:@"%@元" ,total];
 
 
     // Do any additional setup after loading the view.
@@ -86,6 +86,10 @@
 */
 
 - (IBAction)queryAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    
+    
+    
     
 }
 @end
