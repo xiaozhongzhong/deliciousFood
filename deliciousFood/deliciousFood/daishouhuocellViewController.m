@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",_item);
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
     _totalPrice.text = total;
@@ -39,13 +38,27 @@
     [[relation query]findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             _username.text = currentUser[@"username"];
-            NSString *first;
-            for (int i; i<[array count]; i++) {
-                 PFObject *object = [array objectAtIndex:i];
-                //NSLog(@"%@",object);
-                first = object[@"Dishes"];
-                NSLog(@"first = %@",first);
-            }
+            //NSLog(@"%@",array);
+            
+                     // for (int i=0; i<[array count]; i++) {
+//                if (i) {
+//                object = [array objectAtIndex:i-1];
+//                    NSLog(@"%@",object);
+//                str = object[@"Dishes"];
+//                    _foodname.text = [NSString stringWithFormat:@"%@%@%@",str,str,str];
+//               
+//                    continue;
+//                }
+//                NSLog(@"111 = %@",str);
+            PFObject *object=[array objectAtIndex:0];
+            NSString *str=[NSString stringWithFormat:@"1.%@  ", object[@"Dishes"]];
+            PFObject *object1=[array objectAtIndex:1];
+            NSString *str1=[NSString stringWithFormat:@"2.%@  ", object1[@"Dishes"]];
+            PFObject *object2=[array objectAtIndex:2];
+            NSString *str2=[NSString stringWithFormat:@"3.%@  ",object2[@"Dishes"]];
+            NSString *str12=[str stringByAppendingString:str1];
+            NSString *str123=[str12 stringByAppendingString:str2];
+            self.foodname.text=str123;
             
         }else{
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
