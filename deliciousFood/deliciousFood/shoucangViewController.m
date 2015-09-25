@@ -82,7 +82,6 @@
         PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
         UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
             [aiv stopAnimating];
             if (succeeded) {
                 [Utilities popUpAlertViewWithMsg:@"成功删除" andTitle:nil];

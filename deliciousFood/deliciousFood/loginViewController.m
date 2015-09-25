@@ -131,6 +131,19 @@
     [aiv startAnimating];
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+          //读取用户名
+        PFUser *currentUser = [PFUser currentUser];
+            PFFile *photo =currentUser[@"TouXiang"];
+        [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:photoData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.iamgeView.image = image;
+                    NSLog(@"%@",self.iamgeView.image);
+                });
+            }
+        }];
+               
         
         [aiv stopAnimating];
         if (user) {
