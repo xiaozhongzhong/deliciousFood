@@ -18,11 +18,13 @@
     [super viewDidLoad];
     PFQuery *query = [PFQuery queryWithClassName:@"Booking"];
     [query includeKey:@"BookingUser"];
+    
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
             _objectArray = [[NSMutableArray alloc] initWithArray:returnedObjects];
+
             NSLog(@"objectArray = %@",self.objectArray);
             [self.tableview reloadData];
         } else {
@@ -54,19 +56,17 @@
     daishouhuoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectArray objectAtIndex:indexPath.row];
     PFUser *user = object[@"BookingUser"];
+    //PFUser *currentuser = [PFUser currentUser];
+    PFFile *photo =user[@"TouXiang"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageview.image = image;
+            });
+        }
+    }];
     
-//    for (PFObject *vege in object[@"BookingVeg"]) {
-//        PFFile *photo = vege[@"Photo"];
-//        [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
-//            if (!error) {
-//                UIImage *image = [UIImage imageWithData:photoData];
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    cell.imageview.image = image;
-//                });
-//            }
-//        }];
-//        break;
-//    }
     cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
     cell.times.text=[object.createdAt description];

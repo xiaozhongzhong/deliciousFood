@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     PFUser *user=[PFUser currentUser];
     self.shouhuorenTF.text=user[@"username"];
     self.phoneTF.text=user[@"Phonenumber"];
@@ -58,9 +57,10 @@
     PFObject *objectBooking=[PFObject objectWithClassName:@"Booking"];
     objectBooking[@"BookingUser"]=user;
     objectBooking[@"totalPrice"]=_totalPrice;
+    PFRelation *relation = [objectBooking relationForKey:@"BookingVeg"];
     for (PFObject *vege in _vegeArr) {
-        [objectBooking[@"BookingVeg"] addObject:vege];
-    }
+        [relation addObject:vege];
+        }
     
     UIActivityIndicatorView *aiv1 = [Utilities getCoverOnView:self.view];
     [objectBooking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -70,18 +70,16 @@
             user123[@"Money"]=money2;
             UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
             [user123 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                [aiv stopAnimating];
+                
                 if (succeeded) {
-                    for (PFObject *vege in _vegeArr) {
-                        [objectBooking[@"BookingVeg"] addObject:vege];
-                    }
-                    [objectBooking[@"BookingVeg"] deleteInBackgroundWithBlock:^(BOOL succeeded,NSError *error){
-                        
-                    }];
+                    [self removeOBject];
+                    [aiv stopAnimating];
+                    [[storageMgr singletonStorageMgr] addKeyAndValue:@"delect" And:@1];
                     [Utilities popUpAlertViewWithMsg:@"下单成功，谢谢再次惠顾！" andTitle:nil];
                     [self.navigationController popViewControllerAnimated:YES];
                     
                 } else {
+                    [aiv stopAnimating];
                     [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
                 }
             }];
@@ -94,6 +92,14 @@
 //    [self.Item deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
 //        
 //    }];
+}
+
+-(void)removeOBject{
+    for (int i = 0; i < _objectArr.count; i ++) {
+        PFObject *object = [_objectArr objectAtIndex:i];
+        NSLog(@"%@",object);
+        [object delete];
+    }
 }
 
 @end
