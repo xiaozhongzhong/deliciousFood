@@ -51,8 +51,7 @@
     
     int yuer;
        if (money1>number) {
-       yuer=money1-number;
-          NSLog(@"%d",yuer);
+           yuer=money1-number;
          }
     NSNumber *money2=[NSNumber numberWithInt:yuer];
     
@@ -60,11 +59,11 @@
     objectBooking[@"BookingUser"]=user;
     objectBooking[@"totalPrice"]=_totalPrice;
     for (PFObject *vege in _vegeArr) {
-        NSLog(@"vege = %@", vege);
         [objectBooking[@"BookingVeg"] addObject:vege];
     }
     
-    UIActivityIndicatorView *aiv1 = [Utilities getCoverOnView:self.view];    [objectBooking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    UIActivityIndicatorView *aiv1 = [Utilities getCoverOnView:self.view];
+    [objectBooking saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv1 stopAnimating];
         if (succeeded) {
             PFUser *user123 = [PFUser currentUser];
@@ -73,6 +72,12 @@
             [user123 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 [aiv stopAnimating];
                 if (succeeded) {
+                    for (PFObject *vege in _vegeArr) {
+                        [objectBooking[@"BookingVeg"] addObject:vege];
+                    }
+                    [objectBooking[@"BookingVeg"] deleteInBackgroundWithBlock:^(BOOL succeeded,NSError *error){
+                        
+                    }];
                     [Utilities popUpAlertViewWithMsg:@"下单成功，谢谢再次惠顾！" andTitle:nil];
                     [self.navigationController popViewControllerAnimated:YES];
                     

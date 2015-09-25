@@ -58,7 +58,7 @@
         NSArray *indexPaths = [_tableview indexPathsForSelectedRows];
         for (NSIndexPath *indexPath in indexPaths) {
             PFObject *object = [_objectForShow objectAtIndex:indexPath.row];
-            NSLog(@"object=%@",object);
+            shopMoneyVC.objectmoney=object;
             PFObject *shopVeg=object[@"ShopVeg"];
             NSNumber *priceNum =shopVeg[@"Price"];
             sum += [priceNum floatValue];
@@ -67,6 +67,7 @@
         NSNumber *numTemp = [NSNumber numberWithFloat:sum];
         shopMoneyVC.totalPrice = numTemp;
         shopMoneyVC.vegeArr = vegeArr;
+       
         
         [_tableview setEditing:NO];
         [self.edit setTitle:@"选择"];
@@ -99,9 +100,7 @@
     shopTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectForShow objectAtIndex:indexPath.row];
     PFObject *shopveg=object[@"ShopVeg"];
-    //cell.name.text=object[@"Name"];
     cell.name.text=shopveg[@"Dishes"];
-    //cell.price.text=[NSString stringWithFormat:@"%@元",object[@"TotalPrice"]];
     cell.price.text=[NSString stringWithFormat:@"%@元",shopveg[@"Price"]];
    cell.number.text=[NSString stringWithFormat:@"%@份盒饭",object[@"Bento"]];
     PFFile *photo =shopveg[@"Photo"];
