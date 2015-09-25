@@ -20,10 +20,6 @@
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
     _totalPrice.text = total;
-
-
-    // Do any additional setup after loading the view.
-//    PFObject *object = [PFObject objectWithClassName:@"Booking"];
     PFRelation *relation = [_item relationForKey:@"BookingVeg"];
     PFUser *currentUser = [PFUser currentUser];
     PFFile *photo =currentUser[@"TouXiang"];
@@ -38,19 +34,7 @@
     [[relation query]findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             _username.text = currentUser[@"username"];
-            //NSLog(@"%@",array);
-            
-                     // for (int i=0; i<[array count]; i++) {
-//                if (i) {
-//                object = [array objectAtIndex:i-1];
-//                    NSLog(@"%@",object);
-//                str = object[@"Dishes"];
-//                    _foodname.text = [NSString stringWithFormat:@"%@%@%@",str,str,str];
-//               
-//                    continue;
-//                }
-//                NSLog(@"111 = %@",str);
-            PFObject *object=[array objectAtIndex:0];
+                     PFObject *object=[array objectAtIndex:0];
             NSString *str=[NSString stringWithFormat:@"1.%@  ", object[@"Dishes"]];
             PFObject *object1=[array objectAtIndex:1];
             NSString *str1=[NSString stringWithFormat:@"2.%@  ", object1[@"Dishes"]];
