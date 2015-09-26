@@ -17,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *image=[UIImage imageNamed:@"login"];
+    self.view.layer.contents=(__bridge id)(image.CGImage);
+ 
+
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+
     PFQuery *query = [PFQuery queryWithClassName:@"Dingdan"];
     [query includeKey:@"DingdanUser"];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
