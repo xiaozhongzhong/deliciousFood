@@ -19,30 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-//    paragraphStyle.alignment = NSTextAlignmentLeft;
-//    paragraphStyle.maximumLineHeight = 60;  //最大的行高
-//    paragraphStyle.lineSpacing = 5;  //行自定义行高度
-//    [paragraphStyle setFirstLineHeadIndent:self.label.frame.size.width + 5];//首行缩进 根据用户昵称宽度在加5个像素
+    UIImage *image=[UIImage imageNamed:@"login"];
+    self.view.layer.contents=(__bridge id)(image.CGImage);
+    self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
+      self.add.minimumValue=1;
     
-
-//    self.numbers.text=[NSString stringWithFormat:@"1"];
-//
-//    index = 0;
-//
-//
-//    // Do any additional setup after loading the view.
-//
-//    //NSLog(@"%@",_item);
-//    index = 0;
-
     self.numbers.text=[NSString stringWithFormat:@"1"];
-
-    
-    //[_shoucangjia setTitle:@"加入收藏夹" forState:UIControlStateNormal];
-
     self.label.text=self.item[@"Discriptiondetail"];
-
     self.name.text=[NSString stringWithFormat:@"菜名：  %@",self.item[@"Dishes"]];
     self.pirce.text=[NSString stringWithFormat:@"价格：  %@元",_item[@"Price"]];
     PFFile *photo =self.item[@"Photo"];
@@ -185,7 +168,7 @@
 - (IBAction)addAction:(UIStepper *)sender forEvent:(UIEvent *)event {
     
     
-    self.add.minimumValue=1;
+  
     self.add.maximumValue=5;
     [self.add setStepValue:1.0];
     [self.add setWraps:NO];

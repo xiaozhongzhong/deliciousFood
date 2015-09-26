@@ -150,7 +150,7 @@
 
 
 - (IBAction)zaodian:(UIButton *)sender forEvent:(UIEvent *)event {
-       [self performSegueWithIdentifier:@"first" sender:self];
+      // [self performSegueWithIdentifier:@"zaodian" sender:self];
 }
 
 - (IBAction)caociaAction:(UIButton *)sender forEvent:(UIEvent *)event {

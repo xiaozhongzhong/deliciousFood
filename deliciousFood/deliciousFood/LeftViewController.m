@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *image=[UIImage imageNamed:@"5.png"];
+    UIImage *image=[UIImage imageNamed:@"left"];
     self.view.layer.contents=(__bridge id)(image.CGImage);
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
     

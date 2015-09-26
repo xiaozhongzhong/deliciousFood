@@ -65,7 +65,7 @@
     PFObject *object=[self.objectArray objectAtIndex:indexPath.row];
     PFUser *user = object[@"BookingUser"];
     PFFile *photo =user[@"TouXiang"];
-    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+      [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -73,18 +73,17 @@
             });
         }
     }];
-    
     cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
-    cell.times.text=[object.createdAt description];
-    
-    return cell;
-    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:object.createdAt];
+    cell.times.text=[NSString stringWithFormat:@"时间：%@",strDate];
+        return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+       return YES;
 }
 
 

@@ -17,17 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *image=[UIImage imageNamed:@"login"];
+    self.view.layer.contents=(__bridge id)(image.CGImage);
+    self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
-<<<<<<< HEAD
     _totalPrice.text = total;
-=======
+
     _totalPrice.text =[NSString stringWithFormat:@"%@元" ,total];
 
 
     // Do any additional setup after loading the view.
 //    PFObject *object = [PFObject objectWithClassName:@"Booking"];
->>>>>>> 1bc4a2c37f1daf592c3f6616425e894e185212f3
+
     PFRelation *relation = [_item relationForKey:@"BookingVeg"];
     PFUser *currentUser = [PFUser currentUser];
     PFFile *photo =currentUser[@"TouXiang"];

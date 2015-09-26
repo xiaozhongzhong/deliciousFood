@@ -25,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self query];
+     _tableview.tableFooterView = [[UIView alloc] init];
+     [self query];
     [self uiConfiguration];
    }
 
@@ -171,6 +172,10 @@
           }
 }
 
+- ( UITableViewCellEditingStyle )tableView:( UITableView *)tableView editingStyleForRowAtIndexPath:( NSIndexPath *)indexPath
+{
+    return 3 ;
+}
 
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender {
     CGFloat sum = 0;
@@ -184,15 +189,13 @@
 }
 
 - (IBAction)editAction:(UIBarButtonItem *)sender {
-  // NSIndexPath *indexpath;
-     [self.tableview setEditing:NO];
-    if (self.edit.enabled==YES) {
+ 
+     if( [self.edit.title isEqualToString:@"选择"] ){
+
         [self.edit setTitle:@"取消"];;
-        [self.tableview setEditing:YES];
-        //[self tableView:self.tableview didSelectRowAtIndexPath:indexpath];
-            }
-    if(self.edit.enabled==NO ){
-        
+         [self.tableview setEditing:YES];
+     }else{
+
         [self.tableview setEditing:NO];
         [self.edit setTitle:@"选择"];
         
@@ -200,19 +203,7 @@
 
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if( [self.edit.title isEqualToString:@"选择"] ){
-//        [self.tableview setEditing:YES];
-//        [tableView deselectRowAtIndexPath:indexPath animated:NO];
-//        [self.edit setTitle:@"取消"];
-//        
-//    }
-//    else{
-//        [self.tableview setEditing:NO];
-//        [self.tableview deselectRowAtIndexPath:indexPath animated:YES];
-//        [self.edit setTitle:@"选择"];
-//        
-//    }
-    //回到当前页面,取消刚刚的选项
+       //回到当前页面,取消刚刚的选项
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
