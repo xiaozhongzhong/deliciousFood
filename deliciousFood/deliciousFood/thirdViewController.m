@@ -47,7 +47,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    PFUser *currentUser = [PFUser currentUser];
+    NSNumberFormatter *numberFortnatters=[[NSNumberFormatter alloc]init];
+    self.username.text=[NSString stringWithFormat:@"%@",currentUser[@"username"]];
+    NSString *numbers=[numberFortnatters stringFromNumber:currentUser[@"Money"]];
+    self.toprice.text=[NSString stringWithFormat:@"%@元",numbers];
+    PFFile *photo =currentUser[@"TouXiang"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageview.image = image;
+            });
+        }
+    }];
+    
+}
 
 
 /*

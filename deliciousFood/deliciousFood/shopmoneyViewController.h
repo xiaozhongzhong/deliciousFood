@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface shopmoneyViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *dateDay;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UITextField *shouhuorenTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;

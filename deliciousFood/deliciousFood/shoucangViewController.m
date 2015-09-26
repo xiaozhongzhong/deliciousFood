@@ -43,7 +43,11 @@
 */
 -(void)query
 {
-    PFQuery *query=[PFQuery queryWithClassName:@"Favarites"];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    //查询当前表中所有owner字段当前用户的信息
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"FavaritesUser == %@", currentUser];
+    PFQuery *query=[PFQuery queryWithClassName:@"Favarites" predicate:predicate];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
             self.objectForShow =[[NSMutableArray alloc] initWithArray:array];

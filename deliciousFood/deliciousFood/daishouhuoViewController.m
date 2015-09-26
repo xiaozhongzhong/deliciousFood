@@ -30,7 +30,10 @@
         [self query];
     }
 -(void)query{
-    PFQuery *query = [PFQuery queryWithClassName:@"Booking"];
+    PFUser *currentUser = [PFUser currentUser];
+    //查询当前表中所有owner字段当前用户的信息
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"BookingUser == %@", currentUser];
+    PFQuery *query=[PFQuery queryWithClassName:@"Booking" predicate:predicate];
     [query includeKey:@"BookingUser"];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
@@ -62,7 +65,6 @@
         daishouhuocellViewController *firstcellVC = segue.destinationViewController;
         firstcellVC.item = object;
     }
-
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -83,10 +85,11 @@
     }];
     cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *strDate = [dateFormatter stringFromDate:object.createdAt];
-    cell.times.text=[NSString stringWithFormat:@"时间：%@",strDate];
+    PFObject *object1 = [PFObject objectWithClassName:@"Booking"];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+//    NSString *strDate = [dateFormatter stringFromDate:object1[@"eatDate"]];
+    cell.times.text=[NSString stringWithFormat:@"到货时间：%@",object1[@"eatDate"]];
         return cell;
 }
 
