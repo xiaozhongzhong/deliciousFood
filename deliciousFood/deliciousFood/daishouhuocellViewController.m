@@ -86,7 +86,8 @@
 */
 
 - (IBAction)queryAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    
+    PFUser *currentUser = [PFUser currentUser];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     
     
     
