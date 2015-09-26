@@ -98,28 +98,24 @@
 
 
 }
-/*
--(void)removeOBject{
-    for (int i = 0; i < _objectsArr.count; i ++) {
-        PFObject *object = [_objectsArr objectAtIndex:i];
-        NSLog(@"%@",object);
-        [object delete];
-    }
-    [self query];
-
-}
- */
 -(void)query
 {
-    PFQuery *query=[PFQuery queryWithClassName:@"Shoppingcart"];
-    [query includeKey:@"ShopUser"];
+    PFUser *currentUser = [PFUser currentUser];
+    //查询当前表中所有owner字段当前用户的信息
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ShopUser == %@", currentUser];
+    PFQuery *query=[PFQuery queryWithClassName:@"Shoppingcart" predicate:predicate];
+    //[query includeKey:@"ShopUser"];
     [query includeKey:@"ShopVeg"];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [aiv startAnimating];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         UIRefreshControl *rc = (UIRefreshControl *)[_tableview viewWithTag:2];
         [rc endRefreshing];
         if (!error) {
+            [aiv stopAnimating];
             self.objectForShow = nil;
             self.objectForShow =[[NSMutableArray alloc] initWithArray: array];
+            
             [self.tableview reloadData];
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);

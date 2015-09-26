@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _dateDay.text = [NSString stringWithFormat:@"送货时间"];
     UIImage *image=[UIImage imageNamed:@"login"];
     self.view.layer.contents=(__bridge id)(image.CGImage);
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
@@ -60,6 +61,13 @@
     PFObject *objectBooking=[PFObject objectWithClassName:@"Booking"];
     objectBooking[@"BookingUser"]=user;
     objectBooking[@"totalPrice"]=_totalPrice;
+    
+    NSDate *select  = [_datePicker date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
+    NSString *dateAndTime = [dateFormatter stringFromDate:select];
+    
+    objectBooking[@"eatDate"] =dateAndTime;
     PFRelation *relation = [objectBooking relationForKey:@"BookingVeg"];
     for (PFObject *vege in _vegeArr) {
         [relation addObject:vege];
