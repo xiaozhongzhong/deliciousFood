@@ -17,25 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self query];
+    // Do any additional setup after loading the view.
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+        [self query];
+    }
+-(void)query{
     PFQuery *query = [PFQuery queryWithClassName:@"Booking"];
     [query includeKey:@"BookingUser"];
-    
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
             _objectArray = [[NSMutableArray alloc] initWithArray:returnedObjects];
-
-            //NSLog(@"objectArray = %@",self.objectArray);
             [self.tableview reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    
-    // Do any additional setup after loading the view.
-}
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
