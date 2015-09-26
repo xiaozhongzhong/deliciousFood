@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIImage *image=[UIImage imageNamed:@"login"];
     self.view.layer.contents=(__bridge id)(image.CGImage);
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;

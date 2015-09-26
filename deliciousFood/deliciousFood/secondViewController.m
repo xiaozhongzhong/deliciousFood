@@ -29,7 +29,7 @@
     UIImage *image=[UIImage imageNamed:@"login"];
     self.view.layer.contents=(__bridge id)(image.CGImage);
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-
+    //清除多余的下划线
      _tableview.tableFooterView = [[UIView alloc] init];
      [self query];
     [self uiConfiguration];
