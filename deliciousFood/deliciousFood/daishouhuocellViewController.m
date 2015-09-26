@@ -22,20 +22,15 @@
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
-<<<<<<< HEAD
-=======
-
->>>>>>> 06bae0b6f67ed4b132bff4f132a472e59d186336
     _totalPrice.text = total;
 
     _totalPrice.text =[NSString stringWithFormat:@"%@元" ,total];
 
 
-<<<<<<< HEAD
+
     // Do any additional setup after loading the view.
 //    PFObject *object = [PFObject objectWithClassName:@"Booking"];
-=======
->>>>>>> 06bae0b6f67ed4b132bff4f132a472e59d186336
+
 
     PFRelation *relation = [_item relationForKey:@"BookingVeg"];
     PFUser *currentUser = [PFUser currentUser];

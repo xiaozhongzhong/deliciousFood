@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     _tableview.tableFooterView = [[UIView alloc] init];
     [self query];
     // Do any additional setup after loading the view.
     [self uiConfiguration];
