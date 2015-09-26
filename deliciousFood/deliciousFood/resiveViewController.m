@@ -48,7 +48,7 @@
     NSString *confirmPwd = self.confirm.text;
     NSString *address = self.address.text;
     NSString *phoneNumber=self.phoneNumber.text;
-    
+    NSInteger i=11;
     if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""] || [phoneNumber isEqualToString:@""]) {
         //调用了Utilities公有方法弹出框
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
@@ -56,6 +56,10 @@
     }
     if (![password isEqualToString:confirmPwd]) {
         [Utilities popUpAlertViewWithMsg:@"俩次输入的密码不一致" andTitle:nil];
+        return;
+    }
+    if (!([phoneNumber length]==i)){
+        [Utilities popUpAlertViewWithMsg:@"请填写正确的手机号码！" andTitle:nil];
         return;
     }
     //写人数据库
