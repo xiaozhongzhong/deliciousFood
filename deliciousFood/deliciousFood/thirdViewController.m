@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImage *image=[UIImage imageNamed:@"login"];
-    self.view.layer.contents=(__bridge id)(image.CGImage);
-    self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
+    //self.view.layer.contents=(__bridge id)(image.CGImage);
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     //读取用户名
     PFUser *currentUser = [PFUser currentUser];
      NSNumberFormatter *numberFortnatters=[[NSNumberFormatter alloc]init];
