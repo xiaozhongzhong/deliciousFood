@@ -10,6 +10,6 @@
 
 @interface dingdanViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property(strong,nonatomic)NSArray *objectsForShow;
+@property(strong,nonatomic)NSMutableArray *objectsForShow;
 
 @end
