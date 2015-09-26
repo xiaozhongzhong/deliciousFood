@@ -36,7 +36,6 @@
 		B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */; };
 		B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E241BAFCDC600AE8193 /* firstcellViewController.m */; };
 		B2799E281BAFD20800AE8193 /* firstbuttonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */; };
-		B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E2A1BAFD25C00AE8193 /* shopViewController.m */; };
 		B2799E2E1BAFD46E00AE8193 /* shopmoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */; };
 		B2799E311BAFE00000AE8193 /* shoucangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E301BAFE00000AE8193 /* shoucangViewController.m */; };
 		B2799E341BAFE00F00AE8193 /* dingdanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2799E331BAFE00F00AE8193 /* dingdanViewController.m */; };
@@ -124,8 +123,6 @@
 		B2799E241BAFCDC600AE8193 /* firstcellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstcellViewController.m; sourceTree = "<group>"; };
 		B2799E261BAFD20800AE8193 /* firstbuttonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstbuttonViewController.h; sourceTree = "<group>"; };
 		B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstbuttonViewController.m; sourceTree = "<group>"; };
-		B2799E291BAFD25C00AE8193 /* shopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopViewController.h; sourceTree = "<group>"; };
-		B2799E2A1BAFD25C00AE8193 /* shopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopViewController.m; sourceTree = "<group>"; };
 		B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopmoneyViewController.h; sourceTree = "<group>"; };
 		B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopmoneyViewController.m; sourceTree = "<group>"; };
 		B2799E2F1BAFE00000AE8193 /* shoucangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shoucangViewController.h; sourceTree = "<group>"; };
@@ -325,8 +322,6 @@
 				B2799E181BAFAEBC00AE8193 /* loginViewController.m */,
 				B2799E1A1BAFAEFB00AE8193 /* resiveViewController.h */,
 				B2799E1B1BAFAEFB00AE8193 /* resiveViewController.m */,
-				B2799E291BAFD25C00AE8193 /* shopViewController.h */,
-				B2799E2A1BAFD25C00AE8193 /* shopViewController.m */,
 				B2799E2C1BAFD46E00AE8193 /* shopmoneyViewController.h */,
 				B2799E2D1BAFD46E00AE8193 /* shopmoneyViewController.m */,
 				B2799E2F1BAFE00000AE8193 /* shoucangViewController.h */,
@@ -344,8 +339,8 @@
 				B2799E261BAFD20800AE8193 /* firstbuttonViewController.h */,
 				B2799E271BAFD20800AE8193 /* firstbuttonViewController.m */,
 				B2E9D58F1BB0FCEE005B1F43 /* caocaiViewController.h */,
-				B2E9D5921BB0FCFA005B1F43 /* tangViewController.h */,
 				B2E9D5901BB0FCEE005B1F43 /* caocaiViewController.m */,
+				B2E9D5921BB0FCFA005B1F43 /* tangViewController.h */,
 				B2E9D5931BB0FCFA005B1F43 /* tangViewController.m */,
 				B2E9D5951BB0FD09005B1F43 /* yexiaoViewController.h */,
 				B2E9D5961BB0FD09005B1F43 /* yexiaoViewController.m */,
@@ -503,7 +498,6 @@
 				B2799E1C1BAFAEFB00AE8193 /* resiveViewController.m in Sources */,
 				B2799E251BAFCDC600AE8193 /* firstcellViewController.m in Sources */,
 				B2E9D5871BB0F005005B1F43 /* LeftViewController.m in Sources */,
-				B2799E2B1BAFD25C00AE8193 /* shopViewController.m in Sources */,
 				B2E9D5811BB0EA2A005B1F43 /* dingdanTableViewCell.m in Sources */,
 				B2799E031BAF8A9600AE8193 /* ECSlidingSegue.m in Sources */,
 				B2799DE11BAF861C00AE8193 /* storageMgr.m in Sources */,

@@ -146,7 +146,6 @@
             _password.text = @"";
             
             PFUser *currentUser = [PFUser currentUser];
-            NSLog(@"%@", currentUser.username);
             PFFile *photo =currentUser[@"TouXiang"];
             [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
                 if (!error) {

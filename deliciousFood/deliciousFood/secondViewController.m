@@ -25,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   //背景色
+    UIImage *image=[UIImage imageNamed:@"login"];
+    self.view.layer.contents=(__bridge id)(image.CGImage);
+        [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+
      _tableview.tableFooterView = [[UIView alloc] init];
      [self query];
     [self uiConfiguration];

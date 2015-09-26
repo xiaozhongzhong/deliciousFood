@@ -23,9 +23,6 @@
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
     _totalPrice.text =[NSString stringWithFormat:@"%@元" ,total];
-
-
-
     PFRelation *relation = [_item relationForKey:@"BookingVeg"];
     PFUser *currentUser = [PFUser currentUser];
     PFFile *photo =currentUser[@"TouXiang"];

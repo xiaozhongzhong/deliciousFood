@@ -24,13 +24,16 @@
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
       self.add.minimumValue=1;
     
-    self.numbers.text=[NSString stringWithFormat:@"1"];
-    self.label.text=self.item[@"Discriptiondetail"];
+    self.numbers.text=[NSString stringWithFormat:@"1 份"];
+    self.label.text=[NSString stringWithFormat:@"简介：\n     %@" ,self.item[@"Discriptiondetail"]];
     self.name.text=[NSString stringWithFormat:@"菜名：  %@",self.item[@"Dishes"]];
     self.pirce.text=[NSString stringWithFormat:@"价格：  %@元",_item[@"Price"]];
     PFFile *photo =self.item[@"Photo"];
+     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [aiv startAnimating];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
+            [aiv stopAnimating];
             UIImage *image = [UIImage imageWithData:photoData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageview.image = image;
