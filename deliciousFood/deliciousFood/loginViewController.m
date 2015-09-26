@@ -155,9 +155,9 @@
                         self.iamgeView.image = image;
                         //NSLog(@"%@",self.iamgeView.image);
                         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-                        NSLog(@"%@",paths);
+                       // NSLog(@"%@",paths);
                         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", [Utilities getUserDefaults:@"userName"]]];   // 保存文件的名称
-                        NSLog(@"%@",filePath);
+                       // NSLog(@"%@",filePath);
                         NSData *imageData;
                         imageData=UIImagePNGRepresentation(self.iamgeView.image);
                         [imageData writeToFile:filePath atomically:YES];

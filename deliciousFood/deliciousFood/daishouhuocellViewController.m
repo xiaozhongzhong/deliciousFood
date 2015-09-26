@@ -22,17 +22,26 @@
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     NSString *total = [numberFormatter stringFromNumber:_item[@"totalPrice"]];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 06bae0b6f67ed4b132bff4f132a472e59d186336
     _totalPrice.text = total;
 
     _totalPrice.text =[NSString stringWithFormat:@"%@元" ,total];
 
 
+<<<<<<< HEAD
     // Do any additional setup after loading the view.
 //    PFObject *object = [PFObject objectWithClassName:@"Booking"];
+=======
+>>>>>>> 06bae0b6f67ed4b132bff4f132a472e59d186336
 
     PFRelation *relation = [_item relationForKey:@"BookingVeg"];
     PFUser *currentUser = [PFUser currentUser];
     PFFile *photo =currentUser[@"TouXiang"];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [aiv startAnimating];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
@@ -43,17 +52,15 @@
     }];
     [[relation query]findObjectsInBackgroundWithBlock:^(NSArray *array,NSError *error){
         if (!error) {
+            [aiv stopAnimating];
             _username.text = currentUser[@"username"];
-                     PFObject *object=[array objectAtIndex:0];
-            NSString *str=[NSString stringWithFormat:@"1.%@  ", object[@"Dishes"]];
-            PFObject *object1=[array objectAtIndex:1];
-            NSString *str1=[NSString stringWithFormat:@"2.%@  ", object1[@"Dishes"]];
-            PFObject *object2=[array objectAtIndex:2];
-            NSString *str2=[NSString stringWithFormat:@"3.%@  ",object2[@"Dishes"]];
-            NSString *str12=[str stringByAppendingString:str1];
-            NSString *str123=[str12 stringByAppendingString:str2];
-            self.foodname.text=str123;
-            
+            PFObject *object;
+            NSMutableArray *mutable = [NSMutableArray new];
+            for (object in array) {
+            [mutable addObject:object[@"Dishes"]];
+                         }
+            NSString *string = [mutable componentsJoinedByString:@","];
+            self.foodname.text=[NSString stringWithFormat:@"%@",string];
         }else{
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
         }
@@ -81,9 +88,25 @@
 
 - (IBAction)queryAction:(UIButton *)sender forEvent:(UIEvent *)event {
     
-    
-    
-    
-    
+    PFObject *object = [PFObject objectWithClassName:@"Dingdan"];
+    object[@"Name"] = _foodname.text;
+        object[@"totalPrice"] = _item[@"totalPrice"];
+    PFUser *currentUser = [PFUser currentUser];
+    object[@"DingdanUser"] = currentUser;
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [aiv startAnimating];
+    [object saveInBackgroundWithBlock:^(BOOL successed,NSError *error){
+        if (successed) {
+                [_item deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                 [aiv stopAnimating];
+                    [Utilities popUpAlertViewWithMsg:@"已确认成功！" andTitle:nil];
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }
+                }];
+
+        }
+    }];
+ 
 }
 @end
