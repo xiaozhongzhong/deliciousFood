@@ -7,6 +7,7 @@
 //
 
 #import "dingdanViewController.h"
+#import "dingdanTableViewCell.h"
 
 @interface dingdanViewController ()
 
@@ -16,9 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    PFQuery *query = [PFQuery queryWithClassName:@"Dingdan"];
+    [query includeKey:@"DingdanUser"];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [aiv startAnimating];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error){
+        [aiv stopAnimating];
+        if (!error) {
+            _objectsForShow = returnedObjects;
+            
+            [_tableview reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+
+    }];
        
-   }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,10 +51,30 @@
 */
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return [_objectsForShow count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    dingdanTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    PFObject *object=[self.objectsForShow objectAtIndex:indexPath.row
+                      ];
+    cell.name.text=object[@"Name"];
+    cell.price.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
+    NSDate *currentdate = [NSDate date];
+    NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *locationString=[dateformatter stringFromDate:currentdate];
+    cell.times.text=[NSString stringWithFormat:@"%@",locationString];
+    PFUser *currentUser = [PFUser currentUser];
+    PFFile *photo =currentUser[@"TouXiang"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageview.image = image;
+            });
+        }
+    }];
+
     return cell;
     
 }

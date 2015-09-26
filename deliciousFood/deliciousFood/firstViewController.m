@@ -36,6 +36,7 @@
 - (void)requestData {
     PFQuery *query = [PFQuery queryWithClassName:@"Vegetables"];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [aiv startAnimating];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
