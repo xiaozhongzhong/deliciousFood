@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
-
+@property (strong,nonatomic) NSString *number;
 
 @end

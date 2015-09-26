@@ -7,6 +7,7 @@
 //
 
 #import "resiveViewController.h"
+#import "loginViewController.h"
 
 @interface resiveViewController ()
 - (IBAction)reserveAction:(UIBarButtonItem *)sender;
@@ -48,17 +49,17 @@
     NSString *confirmPwd = self.confirm.text;
     NSString *address = self.address.text;
     NSString *phoneNumber=self.phoneNumber.text;
-    
-    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""] || [phoneNumber isEqualToString:@""]) {
+   
+    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""]) {
         //调用了Utilities公有方法弹出框
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
     }
     if (![password isEqualToString:confirmPwd]) {
-        [Utilities popUpAlertViewWithMsg:@"俩次输入的密码不一致" andTitle:nil];
-        return;
+            [Utilities popUpAlertViewWithMsg:@"俩次输入的密码不一致" andTitle:nil];
+            return;
     }
-    //写人数据库
+       //写人数据库
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
@@ -67,7 +68,7 @@
     user[@"Phonenumber"] = phoneNumber;
     user[@"Money"] = @10000;
     
-     UIImage *imag=[UIImage imageNamed:@"1.png"];
+     UIImage *imag=[UIImage imageNamed:@"Image"];
     NSData *photoData = UIImagePNGRepresentation(imag);
     PFFile *photoFile = [PFFile fileWithName:@"photo.png" data:photoData];
     user[@"TouXiang"] = photoFile;
@@ -80,7 +81,9 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
-            [Utilities setUserDefaults:@"userName" content:username];         [[storageMgr singletonStorageMgr] addKeyAndValue:@"signup" And:@1];
+           // [Utilities setUserDefaults:@"userName" content:_username];
+            [[storageMgr singletonStorageMgr] addKeyAndValue:@"signup" And:@1];
+            
             [self.navigationController popViewControllerAnimated:YES];
         } else if (error.code == 202) {
             [Utilities popUpAlertViewWithMsg:@"该用户名已被使用，请尝试其它名称" andTitle:nil];
@@ -90,14 +93,15 @@
             [Utilities popUpAlertViewWithMsg:@"该电子邮箱已被使用，请尝试其它名称" andTitle:nil];
         } else if (error.code == 100) {
             [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
-        }else{
+        } else{
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
             return;
         }
         
     }];
-
+        
 }
+
 //
 //- (IBAction)backAction:(UIBarButtonItem *)sender {
 //    [self dismissViewControllerAnimated:YES completion:nil];
@@ -110,5 +114,11 @@
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
 }
+
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+//    return [self validateNumber:string];
+//}
+
+
 
 @end
