@@ -64,7 +64,6 @@
     daishouhuoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *object=[self.objectArray objectAtIndex:indexPath.row];
     PFUser *user = object[@"BookingUser"];
-    //PFUser *currentuser = [PFUser currentUser];
     PFFile *photo =user[@"TouXiang"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
@@ -108,7 +107,10 @@
         
     }
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //回到当前页面,取消刚刚的选项
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 @end
