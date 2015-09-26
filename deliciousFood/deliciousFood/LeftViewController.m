@@ -113,14 +113,14 @@
 }
 
 #pragma mark - Navigation
-
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     
     
    }
-
+*/
 
 - (IBAction)usenameAction:(UIButton *)sender forEvent:(UIEvent *)event {
     UIAlertView *sellView = [[UIAlertView alloc]initWithTitle:@"警告" message:[NSString stringWithFormat:@"修改的用户名是：%@\n请输入你修改后的用户名",self.username.text] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
