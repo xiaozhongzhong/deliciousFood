@@ -85,10 +85,17 @@
             });
         }
     }];
-      cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
+    cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
 
+<<<<<<< HEAD
      cell.times.text=[NSString stringWithFormat:@"送货时间：%@",object[@"eatDate"]];
+=======
+    cell.times.text=[NSString stringWithFormat:@"送货时间：%@",object[@"eatDate"]];
+    NSLog(@"%@",cell.times.text);
+
+
+>>>>>>> 7d43edec729fab3158d586fbf520d1ea0480cb7c
         return cell;
 }
 

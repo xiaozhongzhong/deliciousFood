@@ -64,7 +64,7 @@
     objectBooking[@"totalPrice"]=_totalPrice;
     NSDate *select  = [_datePicker date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
     NSString *dateAndTime = [dateFormatter stringFromDate:select];
     
     objectBooking[@"eatDate"] =dateAndTime;
