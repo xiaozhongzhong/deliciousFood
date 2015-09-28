@@ -114,6 +114,10 @@
            yuer=money1-number;
          }
     NSNumber *money2=[NSNumber numberWithInt:yuer];
+    if (number == 0) {
+        [Utilities popUpAlertViewWithMsg:@"您还没有选择食物,请选择" andTitle:nil];
+        return;
+    }
     
     PFObject *objectBooking=[PFObject objectWithClassName:@"Booking"];
     objectBooking[@"BookingUser"]=user;
@@ -139,11 +143,10 @@
     for (vege in _vegeArr) {
         [relation addObject:vege];
         [mutable addObject:vege[@"Type"]];
-          //创建了两个日期对象
-    //    if ([vege[@"Type"]isEqualToString:@"早点"]&&[vege[@"Type"]isEqualToString:@"夜宵"]) {
-//            [Utilities popUpAlertViewWithMsg:@"早点夜宵不能同时预定" andTitle:nil];
+//        if ([vege[@"Type"]isEqualToString:@""]) {
+//            [Utilities popUpAlertViewWithMsg:@"请选取你要购买的食品" andTitle:nil];
+//            return;
 //        }
-        NSLog(@"%@",mutable);
     if ([vege[@"Type"] isEqualToString:@"早点"]&&timeBetween>0) {
         [Utilities popUpAlertViewWithMsg:@"你订的早点过了我们的订餐时间，请 在每天8点之前预定" andTitle:nil];
         return;
