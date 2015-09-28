@@ -10,7 +10,7 @@
 
 @interface shopmoneyViewController : UIViewController<UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *dateDay;
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UITextField *shouhuorenTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;

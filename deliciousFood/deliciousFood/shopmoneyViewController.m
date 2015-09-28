@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dateDay.text = [NSString stringWithFormat:@"送货时间"];
-    UIImage *image=[UIImage imageNamed:@"login"];
+        UIImage *image=[UIImage imageNamed:@"login"];
     self.view.layer.contents=(__bridge id)(image.CGImage);
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
     PFUser *user=[PFUser currentUser];
