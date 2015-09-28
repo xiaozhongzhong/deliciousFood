@@ -19,4 +19,5 @@
 @property (strong,nonatomic) NSNumber *totalPrice;
 @property (strong, nonatomic) NSMutableArray *vegeArr;
 @property(strong,nonatomic) NSMutableArray *objectArr;
+@property(strong,nonatomic)NSString *string;
 @end

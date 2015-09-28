@@ -125,8 +125,8 @@
     [dateFormatter setDateFormat:@"HH:mm"];
     NSString *dateAndTime = [dateFormatter stringFromDate:select];
     objectBooking[@"eatDate"] =dateAndTime;
-    //当前时间
-   // NSDate *now=[NSDate date];
+    
+    
     NSDate *datepice=[dateFormatter dateFromString:dateAndTime];
     NSDate *date1=[dateFormatter dateFromString:@"08:00"];
      NSTimeInterval timeBetween=[datepice timeIntervalSinceDate:date1];
@@ -134,44 +134,104 @@
     NSTimeInterval timeBetween1=[datepice timeIntervalSinceDate:date2];
     PFRelation *relation = [objectBooking relationForKey:@"BookingVeg"];
     PFObject *vege;
+     NSMutableArray *mutable = [NSMutableArray new];
+    
     for (vege in _vegeArr) {
         [relation addObject:vege];
+        [mutable addObject:vege[@"Type"]];
           //创建了两个日期对象
+    //    if ([vege[@"Type"]isEqualToString:@"早点"]&&[vege[@"Type"]isEqualToString:@"夜宵"]) {
+//            [Utilities popUpAlertViewWithMsg:@"早点夜宵不能同时预定" andTitle:nil];
+//        }
+        NSLog(@"%@",mutable);
     if ([vege[@"Type"] isEqualToString:@"早点"]&&timeBetween>0) {
-   // UIAlertView *sellView = [[UIAlertView alloc]initWithTitle:@"警告" message:@"你订的早点过了我们的订餐时间。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-       // sellView.tag=8001;
-             // [sellView show];
         [Utilities popUpAlertViewWithMsg:@"你订的早点过了我们的订餐时间，请 在每天8点之前预定" andTitle:nil];
         return;
         
-    }else
-        if ([vege[@"Type"] isEqualToString:@"夜宵"]&&timeBetween1>0){
-    [Utilities popUpAlertViewWithMsg:@"你定的夜宵过了我们的订餐时间,请在每天23点之前预定" andTitle:nil];
-            //UIAlertView *sellView= [[UIAlertView alloc]initWithTitle:@"警告" message:@"你定的夜宵过了我们的订餐时间，我们将于明晚派送" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-            //sellView.tag=9001;
-            //[sellView show];
+    }
+    if ([vege[@"Type"] isEqualToString:@"夜宵"]&&timeBetween1>0){
+        [Utilities popUpAlertViewWithMsg:@"你定的夜宵过了我们的订餐时间,请在每天23点之前预定" andTitle:nil];
+        return;
     
-        }else{
-            [self public];
-            return;
         }
     }
+    
+    
 
+    self.string=[mutable componentsJoinedByString:@","];
+    //NSLog(@"aaa=%@",self.string);
+    int i=0;
+    int j =0;
+    for (NSString *mu in mutable){
+        if ([mu isEqualToString:@"早点"]) {
+            i ++;
         }
+        if ([mu isEqualToString:@"夜宵"]) {
+            j++;
+        }
+    }
+    if (i >= 1 && j >=1) {
+        [Utilities popUpAlertViewWithMsg:@"早点和夜宵不能同时预定" andTitle:nil];
+        return;
+    }
+    
+    for (NSString *mu in mutable){
+        if ([mu isEqualToString:@"早点"]) {
+            i ++;
+        }
+        if ([mu isEqualToString:@"汤"]) {
+            j++;
+        }
+    }
+    if (i >= 1 && j >=1) {
+        [Utilities popUpAlertViewWithMsg:@"早点和汤不能同时预定" andTitle:nil];
+        return;
+    }
+    
+    for (NSString *mu in mutable){
+        if ([mu isEqualToString:@"早点"]) {
+            i ++;
+        }
+        if ([mu isEqualToString:@"炒菜"]) {
+            j++;
+        }
+    }
+    if (i >= 1 && j >=1) {
+        [Utilities popUpAlertViewWithMsg:@"早点和炒菜不能同时预定" andTitle:nil];
+        return;
+    }
+    
+    for (NSString *mu in mutable){
+        if ([mu isEqualToString:@"汤"]) {
+            i ++;
+        }
+        if ([mu isEqualToString:@"夜宵"]) {
+            j++;
+        }
+    }
+    if (i >= 1 && j >=1) {
+        [Utilities popUpAlertViewWithMsg:@"汤和夜宵不能同时预定" andTitle:nil];
+        return;
+    }
+    
+    for (NSString *mu in mutable){
+        if ([mu isEqualToString:@"炒菜"]) {
+            i ++;
+        }
+        if ([mu isEqualToString:@"夜宵"]) {
+            j++;
+        }
+    }
+    if (i >= 1 && j >=1) {
+        [Utilities popUpAlertViewWithMsg:@"炒菜和夜宵不能同时预定" andTitle:nil];
+        return;
+    }
+    
+    [self public];
+ }
 
 
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    if (alertView.tag==8001) {
-//       if(buttonIndex==1){
-//           [self public];
-//  
-//    }
-//    }else {
-//        if(buttonIndex==1){
-//            [self public];
-//        }
-//    }
-//}
+
 -(void)removeOBject{
     for (int i = 0; i < _objectArr.count; i ++) {
         PFObject *object = [_objectArr objectAtIndex:i];
@@ -179,5 +239,8 @@
         [object delete];
     }
 }
+
+
+
 
 @end
