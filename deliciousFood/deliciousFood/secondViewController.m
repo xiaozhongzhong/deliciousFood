@@ -173,10 +173,7 @@
           }
 }
 
-- ( UITableViewCellEditingStyle )tableView:( UITableView *)tableView editingStyleForRowAtIndexPath:( NSIndexPath *)indexPath
-{
-    return 3 ;
-}
+
 
 - (IBAction)jiesuanAction:(UIBarButtonItem *)sender {
     CGFloat sum = 0;
