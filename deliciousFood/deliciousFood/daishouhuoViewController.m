@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     _tableview.tableFooterView = [[UIView alloc] init];
     UIImage *image=[UIImage imageNamed:@"login"];
     self.view.layer.contents=(__bridge id)(image.CGImage);
     self.view.layer.backgroundColor=[UIColor clearColor].CGColor;
@@ -45,6 +46,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+   
 
 }
 - (void)didReceiveMemoryWarning {
@@ -83,13 +85,9 @@
             });
         }
     }];
-    cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
+      cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
-    PFObject *object1 = [PFObject objectWithClassName:@"Booking"];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-//    NSString *strDate = [dateFormatter stringFromDate:object1[@"eatDate"]];
-    cell.times.text=[NSString stringWithFormat:@"到货时间：%@",object1[@"eatDate"]];
+     cell.times.text=[NSString stringWithFormat:@"送货时间：%@",object[@"eatDate"]];
         return cell;
 }
 

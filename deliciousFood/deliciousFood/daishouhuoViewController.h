@@ -11,4 +11,5 @@
 @interface daishouhuoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property(strong,nonatomic) NSMutableArray *objectArray;
+@property(strong,nonatomic)NSArray *array1;
 @end

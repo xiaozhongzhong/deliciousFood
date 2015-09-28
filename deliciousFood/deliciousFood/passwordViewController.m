@@ -56,7 +56,7 @@
 }
 
 - (IBAction)doneAction:(UIBarButtonItem *)sender {
-    if (![self.oldpasswordTF.text isEqualToString:@""] || ![self.newpasswordTF.text isEqualToString:@""] || ![self.newnewpassword.text isEqualToString:@""]){
+    if (![self.oldpasswordTF.text isEqualToString:@""] && (![self.newpasswordTF.text isEqualToString:@""] || ![self.newnewpassword.text isEqualToString:@""])){
       
     if ([self.oldpasswordTF.text isEqualToString:[Utilities getUserDefaults:@"passWord"]]) {
         
