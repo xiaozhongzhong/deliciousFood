@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface shopmoneyViewController : UIViewController
+@interface shopmoneyViewController : UIViewController<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *dateDay;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;

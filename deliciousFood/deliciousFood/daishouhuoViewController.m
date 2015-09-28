@@ -86,10 +86,11 @@
     cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
     PFObject *object1 = [PFObject objectWithClassName:@"Booking"];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-//    NSString *strDate = [dateFormatter stringFromDate:object1[@"eatDate"]];
-    cell.times.text=[NSString stringWithFormat:@"到货时间：%@",object1[@"eatDate"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+   NSString *strDate = [dateFormatter stringFromDate:object1[@"eatDate"]];
+    cell.times.text=strDate;
+    //cell.times.text=[NSString stringWithFormat:@"到货时间：%@",object1[@"eatDate"]];
         return cell;
 }
 

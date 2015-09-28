@@ -57,12 +57,11 @@
     NSString *confirmPwd = self.confirm.text;
     NSString *address = self.address.text;
     NSString *phoneNumber=self.phoneNumber.text;
-
-   
+    
+    NSInteger i=11;
     if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""]) {
 
-    NSInteger i=11;
-    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""] || [phoneNumber isEqualToString:@""]) {
+  
         //调用了Utilities公有方法弹出框
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
@@ -115,6 +114,6 @@
         }
     }];
     }
-}
+
 
 @end

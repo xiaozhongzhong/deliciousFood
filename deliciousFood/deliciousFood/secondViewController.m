@@ -37,10 +37,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+     [self query];
     if ([[[storageMgr singletonStorageMgr]objectForKey:@"delect"]integerValue]==1) {
         [[storageMgr singletonStorageMgr]removeObjectForKey:@"delect"];
-        [self query];
+       
     }
     
 }
