@@ -31,6 +31,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
 
 /*
 #pragma mark - Navigation
@@ -49,13 +57,12 @@
     NSString *confirmPwd = self.confirm.text;
     NSString *address = self.address.text;
     NSString *phoneNumber=self.phoneNumber.text;
-<<<<<<< HEAD
+
    
     if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""]) {
-=======
+
     NSInteger i=11;
     if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]|| [address isEqualToString:@""] || [phoneNumber isEqualToString:@""]) {
->>>>>>> c177046d13e0f1d1de1fb921af174cc017a5c648
         //调用了Utilities公有方法弹出框
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
@@ -64,15 +71,11 @@
             [Utilities popUpAlertViewWithMsg:@"俩次输入的密码不一致" andTitle:nil];
             return;
     }
-<<<<<<< HEAD
-       //写人数据库
-=======
     if (!([phoneNumber length]==i)){
         [Utilities popUpAlertViewWithMsg:@"请填写正确的手机号码！" andTitle:nil];
         return;
     }
     //写人数据库
->>>>>>> c177046d13e0f1d1de1fb921af174cc017a5c648
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
@@ -110,28 +113,8 @@
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
             return;
         }
-        
     }];
-        
+    }
 }
-
-//
-//- (IBAction)backAction:(UIBarButtonItem *)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [theTextField resignFirstResponder];
-    return YES;
-}
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    [self.view endEditing:YES];
-}
-
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-//    return [self validateNumber:string];
-//}
-
-
 
 @end
