@@ -114,6 +114,10 @@
            yuer=money1-number;
          }
     NSNumber *money2=[NSNumber numberWithInt:yuer];
+    if (number == 0) {
+        [Utilities popUpAlertViewWithMsg:@"您还没有选择食物,请选择" andTitle:nil];
+        return;
+    }
     
     PFObject *objectBooking=[PFObject objectWithClassName:@"Booking"];
     objectBooking[@"BookingUser"]=user;
@@ -129,9 +133,17 @@
     
     NSDate *datepice=[dateFormatter dateFromString:dateAndTime];
     NSDate *date1=[dateFormatter dateFromString:@"08:00"];
-     NSTimeInterval timeBetween=[datepice timeIntervalSinceDate:date1];
+    
     NSDate *date2=[dateFormatter dateFromString:@"23:00"];
+    NSDate *date3=[dateFormatter dateFromString:@"06:00"];
+    NSDate *date4=[dateFormatter dateFromString:@"20:00"];
+    NSTimeInterval timeBetween=[datepice timeIntervalSinceDate:date1];
+   
     NSTimeInterval timeBetween1=[datepice timeIntervalSinceDate:date2];
+    NSTimeInterval timeBetween2=[datepice timeIntervalSinceDate:date3];
+
+    NSTimeInterval timeBetween3=[datepice timeIntervalSinceDate:date4];
+  
     PFRelation *relation = [objectBooking relationForKey:@"BookingVeg"];
     PFObject *vege;
      NSMutableArray *mutable = [NSMutableArray new];
@@ -139,18 +151,17 @@
     for (vege in _vegeArr) {
         [relation addObject:vege];
         [mutable addObject:vege[@"Type"]];
-          //创建了两个日期对象
-    //    if ([vege[@"Type"]isEqualToString:@"早点"]&&[vege[@"Type"]isEqualToString:@"夜宵"]) {
-//            [Utilities popUpAlertViewWithMsg:@"早点夜宵不能同时预定" andTitle:nil];
+//        if ([vege[@"Type"]isEqualToString:@""]) {
+//            [Utilities popUpAlertViewWithMsg:@"请选取你要购买的食品" andTitle:nil];
+//            return;
 //        }
-        NSLog(@"%@",mutable);
-    if ([vege[@"Type"] isEqualToString:@"早点"]&&timeBetween>0) {
-        [Utilities popUpAlertViewWithMsg:@"你订的早点过了我们的订餐时间，请 在每天8点之前预定" andTitle:nil];
+    if (([vege[@"Type"] isEqualToString:@"早点"]&&timeBetween>0)|| ([vege[@"Type"] isEqualToString:@"早点"]&&timeBetween2<0)) {
+        [Utilities popUpAlertViewWithMsg:@"你订的早点不在我们的订餐时间范围内，请在每天6-8点预定" andTitle:nil];
         return;
         
     }
-    if ([vege[@"Type"] isEqualToString:@"夜宵"]&&timeBetween1>0){
-        [Utilities popUpAlertViewWithMsg:@"你定的夜宵过了我们的订餐时间,请在每天23点之前预定" andTitle:nil];
+    if (([vege[@"Type"] isEqualToString:@"夜宵"]&&timeBetween1>0)||([vege[@"Type"] isEqualToString:@"夜宵"]&&timeBetween3<0)){
+        [Utilities popUpAlertViewWithMsg:@"你定的夜宵不在我们的订餐时间范围内,请在每天20-23点预定" andTitle:nil];
         return;
     
         }

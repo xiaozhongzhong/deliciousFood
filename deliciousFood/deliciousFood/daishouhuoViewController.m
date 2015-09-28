@@ -88,9 +88,7 @@
     cell.pirce.text=[NSString stringWithFormat:@"%@元",object[@"totalPrice"]];
     cell.name.text=user.username;
 
-    cell.times.text=[NSString stringWithFormat:@"送货时间：%@",object[@"eatDate"]];
-    NSLog(@"%@",cell.times.text);
-
+     cell.times.text=[NSString stringWithFormat:@"送货时间:\n%@",object[@"eatDate"]];
 
         return cell;
 }

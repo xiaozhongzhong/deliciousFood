@@ -30,7 +30,10 @@
 
 }
 -(void)query{
-    PFQuery *query = [PFQuery queryWithClassName:@"Dingdan"];
+    PFUser *currentUser = [PFUser currentUser];
+    //查询当前表中所有owner字段当前用户的信息
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"DingdanUser == %@", currentUser];
+    PFQuery *query=[PFQuery queryWithClassName:@"Dingdan" predicate:predicate];
     [query includeKey:@"DingdanUser"];
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [aiv startAnimating];
